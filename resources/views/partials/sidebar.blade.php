@@ -5,13 +5,23 @@
     <section class="sidebar">
         <ul class="sidebar-menu">
 
-            <li class="{{ $request->segment(1) == 'home' ? 'active' : '' }}">
-                <a href="{{ url('/') }}">
-                    <i class="fa fa-wrench"></i>
-                    <span class="title">@lang('global.app_dashboard')</span>
+            @can('invitation_access')
+            <li class="{{ $request->segment(2) == 'invitations' ? 'active' : '' }}">
+                <a href="{{ route('admin.invitations.index') }}">
+                    <i class="fa fa-gears"></i>
+                    <span class="title">@lang('global.invitations.title')</span>
                 </a>
             </li>
-
+            @endcan
+            
+            @can('event_access')
+            <li class="{{ $request->segment(2) == 'events' ? 'active' : '' }}">
+                <a href="{{ route('admin.events.index') }}">
+                    <i class="fa fa-gears"></i>
+                    <span class="title">@lang('global.events.title')</span>
+                </a>
+            </li>
+            @endcan
             
             @can('user_management_access')
             <li class="treeview">
@@ -56,36 +66,21 @@
                 @endcan
                 </ul>
             </li>
-            @endcan
-            @can('event_access')
-            <li class="{{ $request->segment(2) == 'events' ? 'active' : '' }}">
-                <a href="{{ route('admin.events.index') }}">
-                    <i class="fa fa-gears"></i>
-                    <span class="title">@lang('global.events.title')</span>
+            @endcan         
+            
+            <li class="{{ $request->segment(1) == 'home' ? 'active' : '' }}">
+                <a href="{{ url('/') }}">
+                    <i class="fa fa-wrench"></i>
+                    <span class="title">@lang('global.app_dashboard')</span>
                 </a>
             </li>
-            @endcan
-            
-            @can('invitation_access')
-            <li class="{{ $request->segment(2) == 'invitations' ? 'active' : '' }}">
-                <a href="{{ route('admin.invitations.index') }}">
-                    <i class="fa fa-gears"></i>
-                    <span class="title">@lang('global.invitations.title')</span>
-                </a>
-            </li>
-            @endcan
-            
 
-            
-
-            
-
-            <li class="{{ $request->segment(1) == 'change_password' ? 'active' : '' }}">
+            <!-- <li class="{{ $request->segment(1) == 'change_password' ? 'active' : '' }}">
                 <a href="{{ route('auth.change_password') }}">
                     <i class="fa fa-key"></i>
                     <span class="title">@lang('global.app_change_password')</span>
                 </a>
-            </li>
+            </li> -->
 
             <li>
                 <a href="#logout" onclick="$('#logout').submit();">

@@ -3,7 +3,7 @@
 return [
 	
 	'user-management' => [
-		'title' => 'User management',
+		'title' => 'Settings',
 		'fields' => [
 		],
 	],
@@ -46,7 +46,7 @@ return [
 	],
 	
 	'invitations' => [
-		'title' => 'Invitations',
+		'title' => 'Dashboard',
 		'fields' => [
 			'event' => 'Event',
 			'email' => 'Email',
@@ -74,7 +74,7 @@ return [
 	'app_add_new' => 'Add new',
 	'app_are_you_sure' => 'Are you sure?',
 	'app_back_to_list' => 'Back to list',
-	'app_dashboard' => 'Dashboard',
+	'app_dashboard' => 'Contacts',
 	'app_delete' => 'Delete',
 	'app_delete_selected' => 'Delete selected',
 	'app_category' => 'Category',
@@ -285,5 +285,5 @@ return [
 	'app_registration' => 'Registration',
 	'app_not_approved_title' => 'You are not approved',
 	'app_not_approved_p' => 'Your account is still not approved by administrator. Please, be patient and try again later.',
-	'global_title' => 'Event Invitations',
+	'global_title' => 'ARTIST/ACT',
 ];
