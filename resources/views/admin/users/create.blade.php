@@ -11,7 +11,7 @@
         
         <div class="panel-body">
             <div class="row">
-                <div class="col-xs-12 form-group mt-2">
+                <div class="col-xs-12 form-group mb-2">
                     {!! Form::label('name', trans('global.users.fields.name').'*', ['class' => 'control-label']) !!}
                     {!! Form::text('name', old('name'), ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
                     <p class="help-block"></p>
