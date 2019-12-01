@@ -6,9 +6,9 @@
     </div>
     <div class="row">
         <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
-            <form role="form" method="POST" action="{{ url('login') }}" style="background: #e2e2e2;padding: 20px;margin-bottom: 15px;background: #f7f7f7;box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);padding: 30px;">
+            <form role="form" method="POST" action="{{ url('signup') }}" style="background: #e2e2e2;padding: 20px;margin-bottom: 15px;background: #f7f7f7;box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);padding: 30px;">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <h3 class="text-center" style="margin-top: 0;margin-bottom: 20px;">LOGIN</h3>
+                <h3 class="text-center" style="margin-top: 0;margin-bottom: 20px;">SIGNUP</h3>
                 <div class="form-group">
         	        <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-user"></i></span>
@@ -31,9 +31,9 @@
                 <div class="clearfix">
                     <label class="pull-left checkbox-inline"><input type="checkbox" name="remember"> Remember me</label>
                     <a href="{{ route('auth.password.reset') }}" class="pull-right text-success">Forgot Password?</a>
-                </div>
+                </div>  
             </form>
-            <div class="hint-text small" style="text-align: center;">Don't have an account? <a href="{{ route('auth.signup') }}" class="text-success">Register Now!</a></div>
+            <div class="hint-text small" style="text-align: center;">Don't have an account? <a href="#" class="text-success">Register Now!</a></div>
         </div>
     </div>
 @endsection

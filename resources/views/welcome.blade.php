@@ -68,6 +68,7 @@
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
+                    <div class="header" style="font-size:30px;align-content: center;">TWENTRYFIVESEVEN</div>
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else

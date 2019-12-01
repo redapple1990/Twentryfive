@@ -285,5 +285,5 @@ return [
 	'app_registration' => 'Registration',
 	'app_not_approved_title' => 'You are not approved',
 	'app_not_approved_p' => 'Your account is still not approved by administrator. Please, be patient and try again later.',
-	'global_title' => 'ARTIST/ACT',
+	'global_title' => 'TWENTYFIVE/SEVEN',
 ];

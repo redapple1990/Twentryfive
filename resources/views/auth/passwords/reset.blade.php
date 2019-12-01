@@ -2,7 +2,8 @@
 
 @section('content')
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+    <!-- col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2 -->
+        <div class="col-md-4 col-md-offset-4">
             <div class="panel panel-default">
                 <div class="panel-heading">@lang('global.app_reset_password')</div>
                 <div class="panel-body">
