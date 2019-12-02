@@ -1,10 +1,10 @@
 @extends('auth.app')
 
 @section('content')
-
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <form id="sign_in" role="form" method="POST" action="{{ route('login') }}">
     {{ csrf_field() }}
-    <div class="msg">Sign in to start your session</div>
+    <div class="msg">LOGIN</div>
     <div class="input-group">
         <span class="input-group-addon">
         <i class="material-icons">person</i>
@@ -33,7 +33,19 @@
             <label for="rememberme">Remember Me</label>
         </div>
         <div class="col-xs-4">
-            <button class="btn btn-block bg-pink waves-effect" type="submit">SIGN IN</button>
+            <button class="btn btn-success bg-pink waves-effect" type="submit">SIGN IN</button>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col-sm-12">
+            <button class="btn btn-primary waves-effect btn-social">
+                <i class="fa fa-facebook-f m-r-30"></i>Sign in with Facebook
+            </button>
+        </div>
+        <div class="col-sm-12">
+            <button class="btn btn-danger waves-effect btn-social">
+                <i class="fa fa-google m-r-30"></i>Sign in with Google
+            </button>
         </div>
     </div>
     <div class="row m-t-15 m-b--20">

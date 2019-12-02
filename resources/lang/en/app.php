@@ -13,8 +13,8 @@ return [
     |
     */
 
-    'app-tag' => 'EX',
-    'app-name' => 'AMPLE',
-    'welcome' => 'Welcome You All'
+    'app-tag' => '',
+    'app-name' => 'TWENTYFIVE/SEVEN',
+    'welcome' => ''
 
 ];

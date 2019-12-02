@@ -28,7 +28,6 @@
     <body class="theme-blue">
         @include('layouts.partials.main-header')
 
-      
     <section class="content">
          @if (session('status'))
             <div class="alert alert-success">
