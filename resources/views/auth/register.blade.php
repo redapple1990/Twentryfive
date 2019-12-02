@@ -51,7 +51,7 @@
     </div>
     <div class="row">
         <div class="col-xs-12">
-            <button class="btn btn-block btn-lg bg-pink waves-effect" type="submit">Register</button>
+            <button class="btn btn-block btn-success btn-lg bg-pink waves-effect" type="submit">Register</button>
         </div>
     </div>
     <div class="m-t-25 m-b--5 align-center">

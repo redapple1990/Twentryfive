@@ -33,17 +33,17 @@
             <label for="rememberme">Remember Me</label>
         </div>
         <div class="col-xs-4">
-            <button class="btn btn-success bg-pink waves-effect" type="submit">SIGN IN</button>
+            <button class="btn btn-success bg-pink waves-effect" type="submit">Sign In</button>
         </div>
     </div>
     <div class="row text-center">
         <div class="col-sm-12">
-            <button class="btn btn-primary waves-effect btn-social">
+            <button class="btn btn-primary btn-lg waves-effect btn-social">
                 <i class="fa fa-facebook-f m-r-30"></i>Sign in with Facebook
             </button>
         </div>
         <div class="col-sm-12">
-            <button class="btn btn-danger waves-effect btn-social">
+            <button class="btn btn-danger btn-lg waves-effect btn-social">
                 <i class="fa fa-google m-r-30"></i>Sign in with Google
             </button>
         </div>
