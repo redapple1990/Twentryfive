@@ -1,89 +1,138 @@
-@inject('request', 'Illuminate\Http\Request')
-@extends('layouts.app')
+@extends('index')
+
+@section('title')
+	User
+@endsection
+
+@section('extra-css')
+<!-- Colorpicker Css -->
+    {{ Html::style('bsbmd/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.css') }}
+
+    <!-- Dropzone Css -->
+    {{ Html::style('bsbmd/plugins/dropzone/dropzone.css') }}
+
+    <!-- Multi Select Css -->
+    {{ Html::style('bsbmd/plugins/multi-select/css/multi-select.css') }}
+
+    <!-- Bootstrap Spinner Css -->
+    {{ Html::style('bsbmd/plugins/jquery-spinner/css/bootstrap-spinner.css') }}
+
+    <!-- Bootstrap Tagsinput Css -->
+    {{ Html::style('bsbmd/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css') }}
+
+    <!-- Bootstrap Select Css -->
+    {{ Html::style('bsbmd/plugins/bootstrap-select/css/bootstrap-select.css') }}
+
+    <!-- noUISlider Css -->
+    {{ Html::style('bsbmd/plugins/nouislider/nouislider.min.css') }}
+
+     <!-- JQuery DataTable Css -->
+    {{ Html::style('bsbmd/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css') }}
+	
+@endsection
 
 @section('content')
-    <h3 class="page-title">@lang('global.users.title')</h3>
-    @can('user_create')
-    <p>
-        <a href="{{ route('admin.users.create') }}" class="btn btn-success">@lang('global.app_add_new')</a>
-        
-    </p>
-    @endcan
+        <div class="container-fluid">
+            <div class="block-header">
+                <h2>User</h2>
+            </div>
 
-    
-
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            @lang('global.app_list')
+            <!-- Vertical Layout -->
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>User</h2>
+                            <a href="{{route('users.create')}}" class="btn btn-success btn-block m-t-15 waves-effect">Add New</a>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">                        	
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                                    <thead>
+                                        <tr>
+                                        	<th>Id</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Roles</th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                        	<th>Id</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                    	@foreach($users as $row)
+                                        <tr>                                        	
+                                        	<td>{{ $row->id }}</td>
+                                        	<td>{{ $row->name }}</td>
+                                            <td>{{ $row->email }}</td>
+                                            <td>
+                                                @foreach($row->roles()->pluck('name') as $role)
+                                                    {{ $role }},
+                                                @endforeach
+                                            </td>
+                                        	<td>
+                                        		<a href="{{route('users.edit',$row->id)}}" class="btn btn-warning waves-effect">Edit</a>
+                                        	</td>
+                                        	<td>
+                                        		<form id="delete_form" method="POST" action="{{ route('users.destroy',$row->id) }}">
+					                            	{{ csrf_field() }}
+					                            	<input name="_method" type="hidden" value="DELETE">
+					                                <button class="btn btn-danger waves-effect" type="submit">Delete</button>
+					                            </form>
+                                        	</td>	                                   
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #END# Vertical Layout -->
+           
         </div>
+@endsection
 
-        <div class="panel-body table-responsive">
-            <table class="table table-bordered table-striped {{ count($users) > 0 ? 'datatable' : '' }} @can('user_delete') dt-select @endcan">
-                <thead>
-                    <tr>
-                        @can('user_delete')
-                            <th style="text-align:center;"><input type="checkbox" id="select-all" /></th>
-                        @endcan
+@section('extra-script')
+	{{Html::script('bsbmd/plugins/autosize/autosize.js')}}
+	{{Html::script('bsbmd/plugins/momentjs/moment.js')}}
+	{{Html::script('bsbmd/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js')}}
+	{{Html::script('bsbmd/js/pages/forms/basic-form-elements.js')}}	
+    {{Html::script('bsbmd/plugins/jquery-validation/jquery.validate.js')}}
+    {{Html::script('bsbmd/plugins/jquery-steps/jquery.steps.js')}}
+    {{Html::script('bsbmd/plugins/sweetalert/sweetalert.min.js')}}
+    {{Html::script('bsbmd/js/pages/forms/form-validation.js')}}
 
-                        <th>@lang('global.users.fields.name')</th>
-                        <th>@lang('global.users.fields.email')</th>
-                        <th>@lang('global.users.fields.role')</th>
-                                                <th>&nbsp;</th>
-
-                    </tr>
-                </thead>
-                
-                <tbody>
-                    @if (count($users) > 0)
-                        @foreach ($users as $user)
-                            <tr data-entry-id="{{ $user->id }}">
-                                @can('user_delete')
-                                    <td></td>
-                                @endcan
-
-                                <td field-key='name'>{{ $user->name }}</td>
-                                <td field-key='email'>{{ $user->email }}</td>
-                                <td field-key='role'>
-                                    @foreach ($user->role as $singleRole)
-                                        <span class="label label-info label-many">{{ $singleRole->title }}</span>
-                                    @endforeach
-                                </td>
-                                                                <td>
-                                    @can('user_view')
-                                    <a href="{{ route('admin.users.show',[$user->id]) }}" class="btn btn-xs btn-primary">@lang('global.app_view')</a>
-                                    @endcan
-                                    @can('user_edit')
-                                    <a href="{{ route('admin.users.edit',[$user->id]) }}" class="btn btn-xs btn-info">@lang('global.app_edit')</a>
-                                    @endcan
-                                    @can('user_delete')
-{!! Form::open(array(
-                                        'style' => 'display: inline-block;',
-                                        'method' => 'DELETE',
-                                        'onsubmit' => "return confirm('".trans("global.app_are_you_sure")."');",
-                                        'route' => ['admin.users.destroy', $user->id])) !!}
-                                    {!! Form::submit(trans('global.app_delete'), array('class' => 'btn btn-xs btn-danger')) !!}
-                                    {!! Form::close() !!}
-                                    @endcan
-                                </td>
-
-                            </tr>
-                        @endforeach
-                    @else
-                        <tr>
-                            <td colspan="10">@lang('global.app_no_entries_in_table')</td>
-                        </tr>
-                    @endif
-                </tbody>
-            </table>
-        </div>
-    </div>
-@stop
-
-@section('javascript') 
-    <script>
-        @can('user_delete')
-            window.route_mass_crud_entries_destroy = '{{ route('admin.users.mass_destroy') }}';
-        @endcan
-
-    </script>
+    <!-- Jquery DataTable Plugin Js -->
+    {{Html::script('bsbmd/plugins/jquery-datatable/jquery.dataTables.js')}}	
+    {{Html::script('bsbmd/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js')}}	
+    {{Html::script('bsbmd/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js')}}	
+    {{Html::script('bsbmd/plugins/jquery-datatable/extensions/export/buttons.flash.min.js')}}	
+    {{Html::script('bsbmd/plugins/jquery-datatable/extensions/export/jszip.min.js')}}	
+    {{Html::script('bsbmd/plugins/jquery-datatable/extensions/export/pdfmake.min.js')}}	
+    {{Html::script('bsbmd/plugins/jquery-datatable/extensions/export/vfs_fonts.js')}}	
+    {{Html::script('bsbmd/plugins/jquery-datatable/extensions/export/buttons.html5.min.js')}}	
+    {{Html::script('bsbmd/plugins/jquery-datatable/extensions/export/buttons.print.min.js')}}	
+    {{Html::script('bsbmd/js/pages/tables/jquery-datatable.js') }}
 @endsection

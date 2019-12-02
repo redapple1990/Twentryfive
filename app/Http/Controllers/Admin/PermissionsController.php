@@ -2,30 +2,32 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Permission;
+use Spatie\Permission\Models\Permission;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\StorePermissionsRequest;
-use App\Http\Requests\Admin\UpdatePermissionsRequest;
 
 class PermissionsController extends Controller
 {
+    /**
+    *
+    * allow admin only
+    *
+    */
+
+    public function __construct() {
+        $this->middleware('role:admin');
+    }
+
     /**
      * Display a listing of Permission.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        if (! Gate::allows('permission_access')) {
-            return abort(401);
-        }
-
-
-                $permissions = Permission::all();
-
-        return view('admin.permissions.index', compact('permissions'));
+    {        
+        $permissions = Permission::all();
+        return view('admin.permissions.index',compact('permissions'));
     }
 
     /**
@@ -35,9 +37,6 @@ class PermissionsController extends Controller
      */
     public function create()
     {
-        if (! Gate::allows('permission_create')) {
-            return abort(401);
-        }
         return view('admin.permissions.create');
     }
 
@@ -47,16 +46,15 @@ class PermissionsController extends Controller
      * @param  \App\Http\Requests\StorePermissionsRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorePermissionsRequest $request)
+    public function store(Request $request)
     {
-        if (! Gate::allows('permission_create')) {
-            return abort(401);
-        }
-        $permission = Permission::create($request->all());
+        $request->validate([
+            'name' => 'required|unique:permissions|max:20',
+        ]);
 
+        Permission::create($request->all());
 
-
-        return redirect()->route('admin.permissions.index');
+        return redirect()->route('permissions.index');
     }
 
 
@@ -68,9 +66,6 @@ class PermissionsController extends Controller
      */
     public function edit($id)
     {
-        if (! Gate::allows('permission_edit')) {
-            return abort(401);
-        }
         $permission = Permission::findOrFail($id);
 
         return view('admin.permissions.edit', compact('permission'));
@@ -83,39 +78,16 @@ class PermissionsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatePermissionsRequest $request, $id)
+    public function update(Request $request, $id)
     {
-        if (! Gate::allows('permission_edit')) {
-            return abort(401);
-        }
+        $request->validate([
+            'name' => 'required|unique:permissions|max:20',
+        ]);
+
         $permission = Permission::findOrFail($id);
         $permission->update($request->all());
 
-
-
-        return redirect()->route('admin.permissions.index');
-    }
-
-
-    /**
-     * Display Permission.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        if (! Gate::allows('permission_view')) {
-            return abort(401);
-        }
-        $roles = \App\Role::whereHas('permission',
-                    function ($query) use ($id) {
-                        $query->where('id', $id);
-                    })->get();
-
-        $permission = Permission::findOrFail($id);
-
-        return view('admin.permissions.show', compact('permission', 'roles'));
+        return redirect()->route('permissions.index');
     }
 
 
@@ -127,13 +99,10 @@ class PermissionsController extends Controller
      */
     public function destroy($id)
     {
-        if (! Gate::allows('permission_delete')) {
-            return abort(401);
-        }
         $permission = Permission::findOrFail($id);
         $permission->delete();
 
-        return redirect()->route('admin.permissions.index');
+        return redirect()->route('permissions.index');
     }
 
     /**
@@ -143,9 +112,6 @@ class PermissionsController extends Controller
      */
     public function massDestroy(Request $request)
     {
-        if (! Gate::allows('permission_delete')) {
-            return abort(401);
-        }
         if ($request->input('ids')) {
             $entries = Permission::whereIn('id', $request->input('ids'))->get();
 

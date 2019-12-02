@@ -2,15 +2,25 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Role;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\StoreRolesRequest;
-use App\Http\Requests\Admin\UpdateRolesRequest;
+use JavaScript;
 
 class RolesController extends Controller
 {
+    /**
+    *
+    * allow admin only
+    *
+    */
+
+    public function __construct() {
+        $this->middleware('role:admin');
+    }
+
     /**
      * Display a listing of Role.
      *
@@ -18,12 +28,7 @@ class RolesController extends Controller
      */
     public function index()
     {
-        if (! Gate::allows('role_access')) {
-            return abort(401);
-        }
-
-
-                $roles = Role::all();
+        $roles = Role::all();
 
         return view('admin.roles.index', compact('roles'));
     }
@@ -35,12 +40,7 @@ class RolesController extends Controller
      */
     public function create()
     {
-        if (! Gate::allows('role_create')) {
-            return abort(401);
-        }
-        
-        $permissions = \App\Permission::get()->pluck('title', 'id');
-
+        $permissions = Permission::get()->pluck('name', 'name');
 
         return view('admin.roles.create', compact('permissions'));
     }
@@ -51,17 +51,18 @@ class RolesController extends Controller
      * @param  \App\Http\Requests\StoreRolesRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreRolesRequest $request)
+    public function store(Request $request)
     {
-        if (! Gate::allows('role_create')) {
-            return abort(401);
-        }
-        $role = Role::create($request->all());
-        $role->permission()->sync(array_filter((array)$request->input('permission')));
+        $request->validate([
+            'name' => 'required|unique:roles|max:20',
+            'permission' => 'required',
+        ]);
 
+        $role = Role::create($request->except('permission'));
+        $permissions = $request->input('permission') ? $request->input('permission') : [];
+        $role->givePermissionTo($permissions);
 
-
-        return redirect()->route('admin.roles.index');
+        return redirect()->route('roles.index');
     }
 
 
@@ -73,16 +74,17 @@ class RolesController extends Controller
      */
     public function edit($id)
     {
-        if (! Gate::allows('role_edit')) {
-            return abort(401);
-        }
-        
-        $permissions = \App\Permission::get()->pluck('title', 'id');
-
+        $permissions = Permission::get()->pluck('name', 'name');
 
         $role = Role::findOrFail($id);
 
-        return view('admin.roles.edit', compact('role', 'permissions'));
+        $selectedPermissions = $role->permissions()->pluck('name');
+
+        JavaScript::put([
+            'foo' => $selectedPermissions
+        ]);
+
+        return view('admin.roles.edit', compact('role', 'permissions','selectedPermissions'));
     }
 
     /**
@@ -92,42 +94,19 @@ class RolesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateRolesRequest $request, $id)
+    public function update(Request $request, $id)
     {
-        if (! Gate::allows('role_edit')) {
-            return abort(401);
-        }
+        $request->validate([
+            'name' => 'required|unique:roles|max:20',
+            'permission' => 'required',
+        ]);
+
         $role = Role::findOrFail($id);
-        $role->update($request->all());
-        $role->permission()->sync(array_filter((array)$request->input('permission')));
-
-
+        $role->update($request->except('permission'));
+        $permissions = $request->input('permission') ? $request->input('permission') : [];
+        $role->syncPermissions($permissions);
 
         return redirect()->route('admin.roles.index');
-    }
-
-
-    /**
-     * Display Role.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        if (! Gate::allows('role_view')) {
-            return abort(401);
-        }
-        
-        $permissions = \App\Permission::get()->pluck('title', 'id');
-$users = \App\User::whereHas('role',
-                    function ($query) use ($id) {
-                        $query->where('id', $id);
-                    })->get();
-
-        $role = Role::findOrFail($id);
-
-        return view('admin.roles.show', compact('role', 'users'));
     }
 
 
@@ -139,13 +118,10 @@ $users = \App\User::whereHas('role',
      */
     public function destroy($id)
     {
-        if (! Gate::allows('role_delete')) {
-            return abort(401);
-        }
         $role = Role::findOrFail($id);
         $role->delete();
 
-        return redirect()->route('admin.roles.index');
+        return redirect()->route('roles.index');
     }
 
     /**
@@ -155,9 +131,6 @@ $users = \App\User::whereHas('role',
      */
     public function massDestroy(Request $request)
     {
-        if (! Gate::allows('role_delete')) {
-            return abort(401);
-        }
         if ($request->input('ids')) {
             $entries = Role::whereIn('id', $request->input('ids'))->get();
 

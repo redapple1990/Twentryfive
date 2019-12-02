@@ -1,43 +1,44 @@
 <?php
+
 namespace App;
 
-use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use App\Notifications\ResetPassword;
-use Hash;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Spatie\Permission\Traits\HasRoles;
 
-/**
- * Class User
- *
- * @package App
- * @property string $name
- * @property string $email
- * @property string $password
- * @property string $remember_token
-*/
+
 class User extends Authenticatable
 {
     use Notifiable;
-    protected $fillable = ['name', 'email', 'password', 'remember_token'];
-    
-    
+    use HasRoles;
+
     /**
-     * Hash password
-     * @param $input
+     * The attributes that are mass assignable.
+     *
+     * @var array
      */
-    public function setPasswordAttribute($input)
-    {
-        if ($input)
-            $this->attributes['password'] = app('hash')->needsRehash($input) ? Hash::make($input) : $input;
-    }
-    
-    public function role()
-    {
+    protected $fillable = [
+        'name', 'email', 'password',
+    ];
+
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
+
+    public function role() {
         return $this->belongsToMany(Role::class, 'role_user');
+    }   
+
+    public function profiles(){
+        return $this->hasOne(Profile::class, 'user_id');
     }
-    
-    public function sendPasswordResetNotification($token)
-    {
-       $this->notify(new ResetPassword($token));
+
+    public function items(){
+        return $this->hasMany(Item::class, 'id');
     }
 }

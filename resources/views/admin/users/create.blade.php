@@ -1,68 +1,127 @@
-@extends('layouts.app')
+@extends('index')
+
+@section('title')
+	User
+@endsection
+
+@section('extra-css')
+<!-- Colorpicker Css -->
+    {{ Html::style('bsbmd/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.css') }}
+
+    <!-- Dropzone Css -->
+    {{ Html::style('bsbmd/plugins/dropzone/dropzone.css') }}
+
+    <!-- Multi Select Css -->
+    {{ Html::style('bsbmd/plugins/multi-select/css/multi-select.css') }}
+
+    <!-- Bootstrap Spinner Css -->
+    {{ Html::style('bsbmd/plugins/jquery-spinner/css/bootstrap-spinner.css') }}
+
+    <!-- Bootstrap Tagsinput Css -->
+    {{ Html::style('bsbmd/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css') }}
+
+    <!-- Bootstrap Select Css -->
+    {{ Html::style('bsbmd/plugins/bootstrap-select/css/bootstrap-select.css') }}
+
+    <!-- noUISlider Css -->
+    {{ Html::style('bsbmd/plugins/nouislider/nouislider.min.css') }}
+	
+@endsection
 
 @section('content')
-    <h3 class="page-title">@lang('global.users.title')</h3>
-    {!! Form::open(['method' => 'POST', 'route' => ['admin.users.store']]) !!}
+        <div class="container-fluid">
+            <div class="block-header">
+                <h2>Add New User</h2>
+            </div>
 
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            @lang('global.app_create')
+            <!-- Vertical Layout -->
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>
+                                Add New User
+                            </h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                           <form id="form_validation" method="POST" action="{{ route('users.store') }}">
+                            {{ csrf_field() }}
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">person</i>
+                                    </span>
+                                    <div class="form-line {{ $errors->has('name') ? ' error' : '' }}">
+                                        <input type="text" class="form-control" name="name" value="{{old('name')}}" placeholder="Username" required autofocus>
+                                    </div>
+                                    @if ($errors->has('email'))
+                                        <label id="name-error" class="error" for="name">{{ $errors->first('name') }}</label>
+                                    @endif
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                    <i class="material-icons">email</i>
+                                    </span>
+                                    <div class="form-line {{ $errors->has('email') ? ' error' : '' }}">
+                                        <input type="text" class="form-control" name="email" value="{{old('email')}}" placeholder="Email Address" required autofocus>
+                                    </div>
+                                    @if ($errors->has('email'))
+                                        <label id="email-error" class="error" for="email">{{ $errors->first('email') }}</label>
+                                    @endif
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                    <i class="material-icons">lock</i>
+                                    </span>
+                                    <div class="form-line {{ $errors->has('password') ? ' error' : '' }}">
+                                        <input type="password" class="form-control" name="password" placeholder="Password" required>
+                                    </div>
+                                    @if ($errors->has('password'))
+                                        <label id="password-error" class="error" for="name">{{ $errors->first('password') }}</label>
+                                    @endif
+                                </div>
+                                <div class="form-group form-float">
+                                    <label class="form-label">Roles</label>
+                                    <select class="form-control show-tick" name="roles[]" multiple required>
+                                        <optgroup label="Roles" data-max-options="2">
+                                            @foreach($roles as $role)
+                                                <option>{{ $role }}</option>
+                                            @endforeach
+                                        </optgroup>
+                                    </select>
+                                     @if ($errors->has('roles'))
+                                        <label id="name-error" class="error" for="email">{{ $errors->first('roles') }}</label>
+                                    @endif
+                                </div>
+                                <button class="btn btn-primary waves-effect" type="submit">SUBMIT</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #END# Vertical Layout -->
+           
         </div>
-        
-        <div class="panel-body">
-            <div class="row">
-                <div class="col-xs-12 form-group mb-2">
-                    {!! Form::label('name', trans('global.users.fields.name').'*', ['class' => 'control-label']) !!}
-                    {!! Form::text('name', old('name'), ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
-                    <p class="help-block"></p>
-                    @if($errors->has('name'))
-                        <p class="help-block">
-                            {{ $errors->first('name') }}
-                        </p>
-                    @endif
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 form-group">
-                    {!! Form::label('email', trans('global.users.fields.email').'*', ['class' => 'control-label']) !!}
-                    {!! Form::email('email', old('email'), ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
-                    <p class="help-block"></p>
-                    @if($errors->has('email'))
-                        <p class="help-block">
-                            {{ $errors->first('email') }}
-                        </p>
-                    @endif
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 form-group">
-                    {!! Form::label('password', trans('global.users.fields.password').'*', ['class' => 'control-label']) !!}
-                    {!! Form::password('password', ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
-                    <p class="help-block"></p>
-                    @if($errors->has('password'))
-                        <p class="help-block">
-                            {{ $errors->first('password') }}
-                        </p>
-                    @endif
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 form-group">
-                    {!! Form::label('role', trans('global.users.fields.role').'*', ['class' => 'control-label']) !!}
-                    {!! Form::select('role[]', $roles, old('role'), ['class' => 'form-control select2', 'multiple' => 'multiple', 'required' => '']) !!}
-                    <p class="help-block"></p>
-                    @if($errors->has('role'))
-                        <p class="help-block">
-                            {{ $errors->first('role') }}
-                        </p>
-                    @endif
-                </div>
-            </div>
-            
-        </div>
-    </div>
+@endsection
 
-    {!! Form::submit(trans('global.app_save'), ['class' => 'btn btn-danger']) !!}
-    {!! Form::close() !!}
-@stop
-
+@section('extra-script')
+	{{Html::script('bsbmd/plugins/autosize/autosize.js')}}
+	{{Html::script('bsbmd/plugins/momentjs/moment.js')}}
+	{{Html::script('bsbmd/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js')}}
+	{{Html::script('bsbmd/js/pages/forms/basic-form-elements.js')}}
+    {{Html::script('bsbmd/plugins/jquery-validation/jquery.validate.js')}}
+    {{Html::script('bsbmd/plugins/jquery-steps/jquery.steps.js')}}
+    {{Html::script('bsbmd/plugins/sweetalert/sweetalert.min.js')}}
+    {{Html::script('bsbmd/js/pages/forms/form-validation.js')}}
+@endsection

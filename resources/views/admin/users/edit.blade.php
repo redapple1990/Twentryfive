@@ -1,69 +1,127 @@
-@extends('layouts.app')
+@extends('index')
+
+@section('title')
+    Edit Permission
+@endsection
+
+@section('extra-css')
+<!-- Colorpicker Css -->
+    {{ Html::style('bsbmd/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.css') }}
+
+    <!-- Dropzone Css -->
+    {{ Html::style('bsbmd/plugins/dropzone/dropzone.css') }}
+
+    <!-- Multi Select Css -->
+    {{ Html::style('bsbmd/plugins/multi-select/css/multi-select.css') }}
+
+    <!-- Bootstrap Spinner Css -->
+    {{ Html::style('bsbmd/plugins/jquery-spinner/css/bootstrap-spinner.css') }}
+
+    <!-- Bootstrap Tagsinput Css -->
+    {{ Html::style('bsbmd/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css') }}
+
+    <!-- Bootstrap Select Css -->
+    {{ Html::style('bsbmd/plugins/bootstrap-select/css/bootstrap-select.css') }}
+
+    <!-- noUISlider Css -->
+    {{ Html::style('bsbmd/plugins/nouislider/nouislider.min.css') }}
+    
+@endsection
 
 @section('content')
-    <h3 class="page-title">@lang('global.users.title')</h3>
-    
-    {!! Form::model($user, ['method' => 'PUT', 'route' => ['admin.users.update', $user->id]]) !!}
+        <div class="container-fluid">
+            <div class="block-header">
+                <h2>Edit Permission</h2>
+            </div>
 
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            @lang('global.app_edit')
+            <!-- Vertical Layout -->
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>
+                                Edit Permission
+                            </h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                           <form id="form_validation" method="POST" action="{{ route('users.update',$user->id) }}">
+                            {{ csrf_field() }}
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">person</i>
+                                    </span>
+                                    <div class="form-line {{ $errors->has('name') ? ' error' : '' }}">
+                                        <input name="_method" type="hidden" value="PUT">
+                                        <input type="text" class="form-control" name="name" value="{{$user->name}}" placeholder="Username" required autofocus>
+                                    </div>
+                                    @if ($errors->has('email'))
+                                        <label id="name-error" class="error" for="name">{{ $errors->first('name') }}</label>
+                                    @endif
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                    <i class="material-icons">email</i>
+                                    </span>
+                                    <div class="form-line {{ $errors->has('email') ? ' error' : '' }}">
+                                        <input type="text" class="form-control" name="email" value="{{$user->email}}" placeholder="Email Address" required autofocus>
+                                    </div>
+                                    @if ($errors->has('email'))
+                                        <label id="email-error" class="error" for="email">{{ $errors->first('email') }}</label>
+                                    @endif
+                                </div>                               
+                                <div class="form-group form-float">
+                                    <label class="form-label">Roles</label>
+                                    <select class="form-control show-tick" name="roles[]" id="you" multiple required>
+                                        <optgroup label="Roles" data-max-options="2">
+                                            @foreach($roles as $role)
+                                                <option>{{ $role }}</option>
+                                            @endforeach
+                                        </optgroup>
+                                    </select>
+                                     @if ($errors->has('roles'))
+                                        <label id="name-error" class="error" for="email">{{ $errors->first('roles') }}</label>
+                                    @endif
+                                </div>
+                                <button class="btn btn-primary waves-effect" type="submit">UPDATE</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #END# Vertical Layout -->
+           
         </div>
+@endsection
 
-        <div class="panel-body">
-            <div class="row">
-                <div class="col-xs-12 form-group">
-                    {!! Form::label('name', trans('global.users.fields.name').'*', ['class' => 'control-label']) !!}
-                    {!! Form::text('name', old('name'), ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
-                    <p class="help-block"></p>
-                    @if($errors->has('name'))
-                        <p class="help-block">
-                            {{ $errors->first('name') }}
-                        </p>
-                    @endif
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 form-group">
-                    {!! Form::label('email', trans('global.users.fields.email').'*', ['class' => 'control-label']) !!}
-                    {!! Form::email('email', old('email'), ['class' => 'form-control', 'placeholder' => '', 'required' => '']) !!}
-                    <p class="help-block"></p>
-                    @if($errors->has('email'))
-                        <p class="help-block">
-                            {{ $errors->first('email') }}
-                        </p>
-                    @endif
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 form-group">
-                    {!! Form::label('password', trans('global.users.fields.password').'*', ['class' => 'control-label']) !!}
-                    {!! Form::password('password', ['class' => 'form-control', 'placeholder' => '']) !!}
-                    <p class="help-block"></p>
-                    @if($errors->has('password'))
-                        <p class="help-block">
-                            {{ $errors->first('password') }}
-                        </p>
-                    @endif
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 form-group">
-                    {!! Form::label('role', trans('global.users.fields.role').'*', ['class' => 'control-label']) !!}
-                    {!! Form::select('role[]', $roles, old('role') ? old('role') : $user->role->pluck('id')->toArray(), ['class' => 'form-control select2', 'multiple' => 'multiple', 'required' => '']) !!}
-                    <p class="help-block"></p>
-                    @if($errors->has('role'))
-                        <p class="help-block">
-                            {{ $errors->first('role') }}
-                        </p>
-                    @endif
-                </div>
-            </div>
-            
-        </div>
-    </div>
+@section('extra-script')
+    {{Html::script('bsbmd/plugins/autosize/autosize.js')}}
+    {{Html::script('bsbmd/plugins/momentjs/moment.js')}}
+    {{Html::script('bsbmd/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js')}}
+    {{Html::script('bsbmd/js/pages/forms/basic-form-elements.js')}}
+    {{Html::script('bsbmd/plugins/jquery-validation/jquery.validate.js')}}
+    {{Html::script('bsbmd/plugins/jquery-steps/jquery.steps.js')}}
+    {{Html::script('bsbmd/plugins/sweetalert/sweetalert.min.js')}}
+    {{Html::script('bsbmd/js/pages/forms/form-validation.js')}}
 
-    {!! Form::submit(trans('global.app_update'), ['class' => 'btn btn-danger']) !!}
-    {!! Form::close() !!}
-@stop
+    <!-- Multi Select Plugin Js -->
+    {{Html::script('bsbmd/plugins/multi-select/js/jquery.multi-select.js')}}
+    {{Html::script('bsbmd/plugins/sweetalert/sweetalert.min.js')}}
+    {{Html::script('bsbmd/js/pages/forms/form-validation.js')}}
 
+     <script type="text/javascript">
+     console.log(role);
+        $("select").val(role).prop("selected", true);
+    </script>
+@endsection

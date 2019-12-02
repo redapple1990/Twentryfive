@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Role;
 
 class RoleSeed extends Seeder
 {
@@ -11,15 +12,10 @@ class RoleSeed extends Seeder
      */
     public function run()
     {
-        $items = [
-            
-            ['id' => 1, 'title' => 'Administrator (can create other users)',],
-            ['id' => 2, 'title' => 'Simple user',],
+        $role = Role::create(['name' => 'admin']);
+        $role->givePermissionTo('admin');
 
-        ];
-
-        foreach ($items as $item) {
-            \App\Role::create($item);
-        }
+        $role = Role::create(['name' => 'user']);
+        $role->givePermissionTo('user');
     }
 }

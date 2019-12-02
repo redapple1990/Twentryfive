@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\User;
+use Spatie\Permission\Models\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\StoreUsersRequest;
-use App\Http\Requests\Admin\UpdateUsersRequest;
+use JavaScript;
 
 class UsersController extends Controller
 {
@@ -18,12 +18,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        if (! Gate::allows('user_access')) {
-            return abort(401);
-        }
-
-
-                $users = User::all();
+        $users = User::all();
 
         return view('admin.users.index', compact('users'));
     }
@@ -35,12 +30,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        if (! Gate::allows('user_create')) {
-            return abort(401);
-        }
-        
-        $roles = \App\Role::get()->pluck('title', 'id');
-
+        $roles = Role::get()->pluck('name', 'name');
 
         return view('admin.users.create', compact('roles'));
     }
@@ -51,17 +41,13 @@ class UsersController extends Controller
      * @param  \App\Http\Requests\StoreUsersRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreUsersRequest $request)
+    public function store(Request $request)
     {
-        if (! Gate::allows('user_create')) {
-            return abort(401);
-        }
-        $user = User::create($request->all());
-        $user->role()->sync(array_filter((array)$request->input('role')));
+        $user = User::create(array_merge($request->all(),['status' => 'Active']));
+        $roles = $request->input('roles') ? $request->input('roles') : [];
+        $user->assignRole($roles);
 
-
-
-        return redirect()->route('admin.users.index');
+        return redirect()->route('users.index');
     }
 
 
@@ -73,14 +59,15 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        if (! Gate::allows('user_edit')) {
-            return abort(401);
-        }
-        
-        $roles = \App\Role::get()->pluck('title', 'id');
-
+        $roles = Role::get()->pluck('name', 'name');
 
         $user = User::findOrFail($id);
+
+        $selectedRoles = $user->roles()->pluck('name');
+
+        JavaScript::put([
+            'role' => $selectedRoles
+        ]);
 
         return view('admin.users.edit', compact('user', 'roles'));
     }
@@ -92,37 +79,15 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateUsersRequest $request, $id)
+    public function update(Request $request, $id)
     {
-        if (! Gate::allows('user_edit')) {
-            return abort(401);
-        }
         $user = User::findOrFail($id);
         $user->update($request->all());
-        $user->role()->sync(array_filter((array)$request->input('role')));
+        $roles = $request->input('roles') ? $request->input('roles') : [];
+        $user->syncRoles($roles);
 
-
-
-        return redirect()->route('admin.users.index');
+        return redirect()->route('users.index');
     }
-
-
-    /**
-     * Display User.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        if (! Gate::allows('user_view')) {
-            return abort(401);
-        }
-        $user = User::findOrFail($id);
-
-        return view('admin.users.show', compact('user'));
-    }
-
 
     /**
      * Remove User from storage.
@@ -132,13 +97,10 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        if (! Gate::allows('user_delete')) {
-            return abort(401);
-        }
         $user = User::findOrFail($id);
         $user->delete();
 
-        return redirect()->route('admin.users.index');
+        return redirect()->route('users.index');
     }
 
     /**
@@ -148,9 +110,6 @@ class UsersController extends Controller
      */
     public function massDestroy(Request $request)
     {
-        if (! Gate::allows('user_delete')) {
-            return abort(401);
-        }
         if ($request->input('ids')) {
             $entries = User::whereIn('id', $request->input('ids'))->get();
 
