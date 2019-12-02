@@ -33,7 +33,7 @@
                     <a href="{{ route('auth.password.reset') }}" class="pull-right text-success">Forgot Password?</a>
                 </div>
             </form>
-            <div class="hint-text small" style="text-align: center;">Don't have an account? <a href="{{ route('auth.signup') }}" class="text-success">Register Now!</a></div>
+            <div class="hint-text small" style="text-align: center;">Don't have an account? <a href="{{ route('auth.password.reset') }}" class="text-success">Register Now!</a></div>
         </div>
     </div>
 @endsection
