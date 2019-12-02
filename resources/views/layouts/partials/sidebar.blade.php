@@ -4,7 +4,7 @@
             <!-- User Info -->
             <div class="user-info">
                 <div class="image">
-                    <img src="{{url('storage/profile',Auth::user()->profiles?Auth::user()->profiles->avatar:'user.png')}}" width="60" height="60" alt="User" />
+                    <img src="{{url('images',Auth::user()->profiles?Auth::user()->profiles->avatar:'user.png')}}" width="60" height="60" alt="User" />
                 </div>
                 <div class="info-container">
                     <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{Auth::user()->name}}</div>
