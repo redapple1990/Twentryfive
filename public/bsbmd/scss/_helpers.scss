@@ -113,6 +113,41 @@
     }
 }
 
+.d-flex {
+    display: flex !important;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.justify-content-around {
+    justify-content: space-around;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.align-items-start {
+    align-items: flex-start;
+}
+
+.align-items-end {
+    align-items: flex-end;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-warp {
+    flex-wrap: wrap;
+}
 @each $key, $val in $colors {
     .bg-#{$key} {
         background-color: $val !important;

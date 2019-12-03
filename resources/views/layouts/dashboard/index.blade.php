@@ -99,7 +99,7 @@
                                             </div>
                                         </td>
                                         <td class="p-t-30 p-b-30">
-                                            <div class="bg-pink font-14 inbox-level text-center">X EVENT</div>
+                                            <div class="bg-red font-14 inbox-level text-center">X EVENT</div>
                                         </td>
                                         <td class="text-center p-t-30 p-b-30">1 days ago</td>
                                         <td class="text-right p-t-30 p-b-30">
@@ -134,6 +134,36 @@
                 </div>
             </div>
             <!-- #END# Task Info -->
+        </div>
+        <div class="row">
+            <div class="col-sm-3 text-left">
+                <h4>Upcoming Events</h4>
+                <div class="d-flex justify-content-between m-b-30">
+                    <span class="d-flex align-items-center">14 March</span>
+                    <img src="images/user.png" alt="User" width="60" height="70">
+                    <div>
+                        <h4>X SHOW/EVENTS</h4>
+                        <p>Number of Guests</p>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between m-b-30">
+                    <span class="d-flex align-items-center">14 March</span>
+                    <img src="images/user.png" alt="User" width="60" height="70">
+                    <div>
+                        <h4>X SHOW/EVENTS</h4>
+                        <p>Number of Guests</p>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between m-b-30">
+                    <span class="d-flex align-items-center">14 March</span>
+                    <img src="images/user.png" alt="User" width="60" height="70">
+                    <div>
+                        <h4>X SHOW/EVENTS</h4>
+                        <p>Number of Guests</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8"></div>
         </div>
     </div>
 @section('extra-script')
