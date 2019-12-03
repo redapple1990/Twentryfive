@@ -18,7 +18,10 @@
                             <i class="material-icons">event</i>
                             <span>Events</span>
                         </a>
-                        <ul class="ml-menu">                            
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="{{route('events.index')}}">events</a>
+                            </li>                        
                             <li  {{Route::is('permissions.index')||Route::is('permissions.create')||Route::is('permissions.edit')? 'class=active':''}}>
                                 <a href="{{route('permissions.index')}}">Permissions</a>
                             </li>

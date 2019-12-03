@@ -27,6 +27,7 @@ Route::get('/chart',['as'=>'chart','uses'=>'HomeController@chart']);
 Route::get('/form',['as'=>'form','uses'=>'HomeController@form']);
 
 Route::group(['middleware' => ['role:admin']], function () {
+    Route::resource('events', 'Admin\EventsController');
 	Route::resource('permissions', 'Admin\PermissionsController');     
     Route::resource('roles', 'Admin\RolesController');     
     Route::resource('users', 'Admin\UsersController'); 
