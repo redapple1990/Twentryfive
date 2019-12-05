@@ -58,8 +58,8 @@
                                 <table class="table table-bordered table-hover dataTable js-basic-example">
                                     <thead>
                                         <tr>
-                                        	<th class="non-sorting">
-                                                <input type="checkbox" id="indeterminate-checkbox" checked="checked" class="filled-in"/>
+                                        	<th class="align-middle" width="3%">
+                                                <input type="checkbox" name="event-check" class="filled-in chk-col-pink">
                                             </th>
                                             <th>Event</th>
                                             <th>Date</th>

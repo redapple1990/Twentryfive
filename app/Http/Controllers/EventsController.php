@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
 use Spatie\Permission\Models\Permission;
 use Illuminate\Http\Request;
@@ -16,7 +16,7 @@ class EventsController extends Controller
     */
 
     public function __construct() {
-        $this->middleware('role:admin');
+        $this->middleware('auth');
     }
 
     /**
@@ -25,9 +25,12 @@ class EventsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {        
-        // $permissions = Permission::all();
-        return view('admin.events.index',compact('events'));
+    {
+        return view('events.index');
     }
 
+    public function single()
+    {
+        return view('events.single');
+    }
 }
