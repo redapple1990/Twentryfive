@@ -12,17 +12,16 @@
                     </a>
                 </li>
 
-                {{-- @role('admin')  --}}
-                    <li>
+                <li>
                     <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">event</i>
                         <span>Events</span>
                     </a>
                     <ul class="ml-menu">
-                        <li {{Route::is('events.index')? 'class=active': ''}}>
+                        <li {{Route::is('events')? 'class=active': ''}}>
                             <a href="{{route('events')}}">List of Events</a>
                         </li>
-                        <li {{Route::is('events.single')? 'class=active': ''}}>
+                        <li {{Route::is('single')? 'class=active': ''}}>
                             <a href="{{route('single')}}">Single of Events</a>
                         </li> 
                         <li  {{Route::is('permissions.index')||Route::is('permissions.create')||Route::is('permissions.edit')? 'class=active':''}}>
@@ -36,7 +35,6 @@
                         </li>
                     </ul>
                 </li>
-                {{-- @endrole --}}
 
                 <li {{Route::is('typography')? 'class=active':''}}>
                     <a href="{{route('typography')}}">
