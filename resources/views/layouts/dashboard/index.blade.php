@@ -136,34 +136,54 @@
             <!-- #END# Task Info -->
         </div>
         <div class="row">
-            <div class="col-sm-3 text-left">
-                <h4>Upcoming Events</h4>
-                <div class="d-flex justify-content-between m-b-30">
-                    <span class="d-flex align-items-center">14 March</span>
-                    <img src="images/user.png" alt="User" width="60" height="70">
-                    <div>
-                        <h4>X SHOW/EVENTS</h4>
-                        <p>Number of Guests</p>
+            <div class="col-sm-4 text-left">
+                <div class="card">
+                    <div class="header">
+                        <h2>Upcoming Events</h2>
+                        <ul class="header-dropdown m-r--5">
+                            <li class="dropdown">
+                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <i class="material-icons">more_vert</i>
+                                </a>
+                                <ul class="dropdown-menu pull-right">
+                                    <li><a href="javascript:void(0);">Action</a></li>
+                                    <li><a href="javascript:void(0);">Another action</a></li>
+                                    <li><a href="javascript:void(0);">Something else here</a></li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
-                </div>
-                <div class="d-flex justify-content-between m-b-30">
-                    <span class="d-flex align-items-center">14 March</span>
-                    <img src="images/user.png" alt="User" width="60" height="70">
-                    <div>
-                        <h4>X SHOW/EVENTS</h4>
-                        <p>Number of Guests</p>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between m-b-30">
-                    <span class="d-flex align-items-center">14 March</span>
-                    <img src="images/user.png" alt="User" width="60" height="70">
-                    <div>
-                        <h4>X SHOW/EVENTS</h4>
-                        <p>Number of Guests</p>
+                    <div class="body padding-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover dashboard-task-infos m-b-0">
+                                <tbody>
+                                    <tr>
+                                        <td class="align-middle text-center"><span>14 March</span></td>
+                                        <td><img src="images/user.png" alt="User" width="60" height="70"></td>
+                                        <td><h4>X SHOW/EVENTS</h4>
+                                            <p>Number of Guests</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="align-middle text-center"><span>14 March</span></td>
+                                        <td><img src="images/user.png" alt="User" width="60" height="70"></td>
+                                        <td><h4>X SHOW/EVENTS</h4>
+                                            <p>Number of Guests</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="align-middle text-center"><span>14 March</span></td>
+                                        <td><img src="images/user.png" alt="User" width="60" height="70"></td>
+                                        <td><h4>X SHOW/EVENTS</h4>
+                                            <p>Number of Guests</p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-8"></div>
         </div>
     </div>
 @section('extra-script')
