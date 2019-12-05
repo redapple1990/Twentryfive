@@ -1,49 +1,49 @@
 ﻿.table {
     tbody {
         tr {
-            td, th {
+            td,
+            th {
                 padding: 10px;
                 border-top: 1px solid #eee;
                 border-bottom: 1px solid #eee;
             }
         }
-
         tr.primary {
-            td, th {
+            td,
+            th {
                 background-color: #1f91f3;
                 color: #fff;
             }
         }
-
         tr.success {
-            td, th {
+            td,
+            th {
                 background-color: #2b982b;
                 color: #fff;
             }
         }
-
         tr.info {
-            td, th {
+            td,
+            th {
                 background-color: #00b0e4;
                 color: #fff;
             }
         }
-
         tr.warning {
-            td, th {
+            td,
+            th {
                 background-color: #ff9600;
                 color: #fff;
             }
         }
-
         tr.danger {
-            td, th {
+            td,
+            th {
                 background-color: #fb483a;
                 color: #fff;
             }
         }
     }
-
     thead {
         tr {
             th {
@@ -56,16 +56,15 @@
 
 .table-bordered {
     border-top: 1px solid #eee;
-
     tbody {
         tr {
-            td, th {
+            td,
+            th {
                 padding: 10px;
                 border: 1px solid #eee;
             }
         }
     }
-
     thead {
         tr {
             th {
