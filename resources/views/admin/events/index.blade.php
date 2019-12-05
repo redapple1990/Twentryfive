@@ -58,7 +58,7 @@
                                 <table class="table table-bordered table-hover dataTable js-basic-example">
                                     <thead>
                                         <tr>
-                                        	<th>
+                                        	<th class="non-sorting">
                                                 <input type="checkbox" id="indeterminate-checkbox" checked="checked" class="filled-in"/>
                                             </th>
                                             <th>Event</th>
