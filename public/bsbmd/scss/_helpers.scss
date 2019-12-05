@@ -3,15 +3,12 @@
     .m-l-#{$i * 5} {
         margin-left: #{$i * 5}px !important;
     }
-
     .m-t-#{$i * 5} {
         margin-top: #{$i * 5}px !important;
     }
-
     .m-r-#{$i * 5} {
         margin-right: #{$i * 5}px !important;
     }
-
     .m-b-#{$i * 5} {
         margin-bottom: #{$i * 5}px !important;
     }
@@ -25,15 +22,12 @@
     .p-l-#{$i * 5} {
         padding-left: #{$i * 5}px !important;
     }
-
     .p-t-#{$i * 5} {
         padding-top: #{$i * 5}px !important;
     }
-
     .p-r-#{$i * 5} {
         padding-right: #{$i * 5}px !important;
     }
-
     .p-b-#{$i * 5} {
         padding-bottom: #{$i * 5}px !important;
     }
@@ -65,10 +59,13 @@
     text-align: justify;
 }
 
+.align-middle {
+    vertical-align: middle !important;
+}
+
 .no-resize {
     resize: none;
 }
-
 
 .font-bold {
     font-weight: bold;
@@ -92,19 +89,16 @@
 
 .block-header {
     margin-bottom: 15px;
-
     h2 {
         margin: 0 !important;
         color: #666 !important;
         font-weight: normal;
         font-size: 16px;
-
         small {
             display: block;
             font-size: 12px;
             margin-top: 8px;
             color: #888;
-
             a {
                 font-weight: bold;
                 color: #777;
@@ -148,11 +142,12 @@
 .flex-warp {
     flex-wrap: wrap;
 }
-@each $key, $val in $colors {
+
+@each $key,
+$val in $colors {
     .bg-#{$key} {
         background-color: $val !important;
         color: #fff;
-
         .content {
             .text,
             .number {
@@ -162,7 +157,8 @@
     }
 }
 
-@each $key, $val in $colors {
+@each $key,
+$val in $colors {
     .col-#{$key} {
         color: $val !important;
     }
