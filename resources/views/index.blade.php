@@ -17,6 +17,8 @@
         {{ Html::style('bsbmd/plugins/morrisjs/morris.css') }}
         {{ Html::style('bsbmd/css/style.css') }}
         {{ Html::style('bsbmd/css/themes/all-themes.css') }}
+        {{ Html::style('bsbmd/plugins/bootstrap-select/css/bootstrap-select.min.css')}}
+        {{ Html::style('bsbmd/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css')}}
 
          <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
@@ -53,6 +55,8 @@
         {{Html::script('bsbmd/plugins/bootstrap-select/js/bootstrap-select.js')}}
         {{Html::script('bsbmd/plugins/jquery-slimscroll/jquery.slimscroll.js')}}
         {{Html::script('bsbmd/plugins/node-waves/waves.js')}}
+        {{Html::script('bsbmd/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js')}}
+        {{Html::script('bsbmd/plugins/bootstrap-select/js/bootstrap-select.min.js')}}
 
     @show    
     @yield('extra-script')
