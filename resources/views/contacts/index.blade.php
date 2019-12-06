@@ -38,13 +38,17 @@
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
-                        <div class="header">
-                            <h2>List of Events</h2>
+                        <div class="header d-flex justify-content-between align-items-center">
+                            <h2>Contacts</h2>
+                            <div class="pull-right">
+                                <a href="javascript:void(0);" class="dropdown-toggle d-flex align-items-center" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <i class="material-icons font-30 m-r-10">add_box</i>
+                                    Add Contacts
+                                </a>
+                            </div>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
-                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
-                                    </a>
+                                    
                                     <ul class="dropdown-menu pull-right">
                                         <li><a href="javascript:void(0);">Action</a></li>
                                         <li><a href="javascript:void(0);">Another action</a></li>
@@ -55,60 +59,33 @@
                         </div>
                         <div class="body">                        	
                             <div class="table-responsive">
-                                <table class="table table-bordered table-hover dataTable js-check-example">
+                                <table class="table table-bordered table-hover dataTable js-basic-example">
                                     <thead>
                                         <tr>
-                                        	<th class="align-middle" width="3%">
-                                                <input type="checkbox" name="event-check" class="filled-in chk-col-pink">
-                                            </th>
-                                            <th>Event</th>
-                                            <th>Date</th>
-                                            <th>Approved</th>
-                                            <th>Pending</th>
-                                            <th>Declined</th>
-                                            <th>status</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Phone</th>
+                                            <th>Created Date</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>
-                                                <input type="checkbox" checked="checked" />
-                                            </td>
-                                            <td>Event Sample</td>
-                                            <td>Date</td>
-                                            <td>20</td>
-                                            <td>2</td>
-                                            <td>0</td>
-                                            <td class="d-flex align-items-center">
-                                                <a href="javascript:void(0);" class="d-flex align-items-center"><i class="material-icons m-r-10">add_box</i>New Guest List Entry</a>
-                                                <a href="" class="m-l-30"><span class="bg-red font-14 inbox-level text-center p-t-8 p-b-8 p-l-20 p-r-20">Public</span></a>
-                                            </td>
+                                            <td>Admin</td>
+                                            <td>admin@admin.com</td>
+                                            <td>1234456789</td>
+                                            <td>2019-11-10</td>
                                         </tr>
                                         <tr>
-                                            <td><input type="checkbox" checked="checked" /></td>
-                                            <td>Event Sample</td>
-                                            <td>Date</td>
-                                            <td>20</td>
-                                            <td>2</td>
-                                            <td>0</td>
-                                            <td class="d-flex align-items-center">
-                                                <a href="javascript:void(0);" class="d-flex align-items-center"><i class="material-icons m-r-10">add_box</i>New Guest List Entry</a>
-                                                <a href="" class="m-l-30"><span class="bg-red font-14 inbox-level text-center p-t-8 p-b-8 p-l-20 p-r-20">Public</span></a>
-                                            </td>
+                                            <td>User</td>
+                                            <td>User@user.com</td>
+                                            <td>1234456789</td>
+                                            <td>2019-11-10</td>
                                         </tr>
                                         <tr>
-                                            <td>
-                                                <input type="checkbox" class="fill-in">
-                                            </td>
-                                            <td>Event Samples</td>
-                                            <td>Date</td>
-                                            <td>20</td>
-                                            <td>2</td>
-                                            <td>0</td>
-                                            <td class="d-flex align-items-center">
-                                                <a href="javascript:void(0);" class="d-flex align-items-center"><i class="material-icons m-r-10">add_box</i>New Guest List Entry</a>
-                                                <a href="" class="m-l-30"><span class="bg-red font-14 inbox-level text-center p-t-8 p-b-8 p-l-20 p-r-20">Public</span></a>
-                                            </td>
+                                            <td>Justin</td>
+                                            <td>justin@justin.com</td>
+                                            <td>1234456789</td>
+                                            <td>2019-11-10</td>
                                         </tr>
                                     </tbody>
                                 </table>

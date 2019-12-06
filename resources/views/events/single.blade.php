@@ -55,7 +55,7 @@
                         </div>
                         <div class="body">                        	
                             <div class="table-responsive">
-                                <table class="table table-bordered table-hover dataTable js-basic-example">
+                                <table class="table table-bordered table-hover dataTable js-check-example">
                                     <thead>
                                         <tr>
                                         	<th width="3%">

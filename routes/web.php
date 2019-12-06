@@ -25,11 +25,11 @@ Route::get('/table',['as'=>'table','uses'=>'HomeController@table']);
 Route::get('/media',['as'=>'media','uses'=>'HomeController@media']);
 Route::get('/chart',['as'=>'chart','uses'=>'HomeController@chart']);
 Route::get('/form',['as'=>'form','uses'=>'HomeController@form']);
-Route::get('/events',['as'=>'events','uses'=>'EventsController@index']);
-Route::get('/events/single',['as'=>'single','uses'=>'EventsController@single']);
+Route::get('/events/index',['as'=>'events/index','uses'=>'EventsController@index']);
+Route::get('/events/single',['as'=>'events/single','uses'=>'EventsController@single']);
+Route::get('/contacts/index',['as'=>'contacts/index','uses'=>'ContactsController@index']);
 
 Route::group(['middleware' => ['role:admin']], function () {
-    // Route::resource('events', 'Admin\EventsController');
 	Route::resource('permissions', 'Admin\PermissionsController');     
     Route::resource('roles', 'Admin\RolesController');     
     Route::resource('users', 'Admin\UsersController'); 
