@@ -39,7 +39,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
-                            <h2>List of Events</h2>
+                            <h2>Single of Events</h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
                                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -55,18 +55,16 @@
                         </div>
                         <div class="body">                        	
                             <div class="table-responsive">
-                                <table class="table table-bordered table-hover dataTable js-check-example">
+                                <table class="table table-bordered table-hover dataTable js-basic-example">
                                     <thead>
                                         <tr>
-                                        	<th class="align-middle" width="3%">
-                                                <input type="checkbox" name="event-check" class="filled-in chk-col-pink">
+                                        	<th width="3%">
+                                                <input type="checkbox" checked="checked"/>
                                             </th>
-                                            <th>Event</th>
-                                            <th>Date</th>
-                                            <th>Approved</th>
-                                            <th>Pending</th>
-                                            <th>Declined</th>
-                                            <th>status</th>
+                                            <th>FirstName</th>
+                                            <th>LastName</th>
+                                            <th>Status</th>
+                                            <th>UserName</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -76,25 +74,41 @@
                                             </td>
                                             <td>Event Sample</td>
                                             <td>Date</td>
-                                            <td>20</td>
-                                            <td>2</td>
-                                            <td>0</td>
-                                            <td class="d-flex align-items-center">
-                                                <a href="javascript:void(0);" class="d-flex align-items-center"><i class="material-icons m-r-10">add_box</i>New Guest List Entry</a>
-                                                <a href="" class="m-l-30"><span class="bg-red font-14 inbox-level text-center p-t-8 p-b-8 p-l-20 p-r-20">Public</span></a>
+                                            <td class="d-flex justify-content-between align-items-center">
+                                                <span>On</span>
+                                                <ul style="list-style-type: none;" class="padding-0 margin-0">
+                                                    <li class="dropdown">
+                                                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                            <i class="material-icons">keyboard_arrow_down</i>
+                                                        </a>
+                                                        <ul class="dropdown-menu pull-right">
+                                                            <li><a href="javascript:void(0);">ON</a></li>
+                                                            <li><a href="javascript:void(0);">Off</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
                                             </td>
+                                            <td>2</td>
                                         </tr>
                                         <tr>
                                             <td><input type="checkbox" checked="checked" /></td>
                                             <td>Event Sample</td>
                                             <td>Date</td>
-                                            <td>20</td>
-                                            <td>2</td>
-                                            <td>0</td>
-                                            <td class="d-flex align-items-center">
-                                                <a href="javascript:void(0);" class="d-flex align-items-center"><i class="material-icons m-r-10">add_box</i>New Guest List Entry</a>
-                                                <a href="" class="m-l-30"><span class="bg-red font-14 inbox-level text-center p-t-8 p-b-8 p-l-20 p-r-20">Public</span></a>
+                                            <td class="d-flex justify-content-between align-items-center">
+                                                <span>OFF</span>
+                                                <ul style="list-style-type: none;" class="padding-0 margin-0">
+                                                    <li class="dropdown">
+                                                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                            <i class="material-icons">keyboard_arrow_down</i>
+                                                        </a>
+                                                        <ul class="dropdown-menu pull-right">
+                                                            <li><a href="javascript:void(0);">ON</a></li>
+                                                            <li><a href="javascript:void(0);">Off</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
                                             </td>
+                                            <td>2</td>
                                         </tr>
                                         <tr>
                                             <td>
@@ -102,13 +116,21 @@
                                             </td>
                                             <td>Event Samples</td>
                                             <td>Date</td>
-                                            <td>20</td>
-                                            <td>2</td>
-                                            <td>0</td>
-                                            <td class="d-flex align-items-center">
-                                                <a href="javascript:void(0);" class="d-flex align-items-center"><i class="material-icons m-r-10">add_box</i>New Guest List Entry</a>
-                                                <a href="" class="m-l-30"><span class="bg-red font-14 inbox-level text-center p-t-8 p-b-8 p-l-20 p-r-20">Public</span></a>
+                                            <td class="d-flex justify-content-between align-items-center">
+                                                <span>On</span>
+                                                <ul style="list-style-type: none;" class="padding-0 margin-0">
+                                                    <li class="dropdown">
+                                                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                            <i class="material-icons">keyboard_arrow_down</i>
+                                                        </a>
+                                                        <ul class="dropdown-menu pull-right">
+                                                            <li><a href="javascript:void(0);">ON</a></li>
+                                                            <li><a href="javascript:void(0);">Off</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
                                             </td>
+                                            <td>2</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -118,7 +140,6 @@
                 </div>
             </div>
             <!-- #END# Vertical Layout -->
-           
         </div>
 @endsection
 

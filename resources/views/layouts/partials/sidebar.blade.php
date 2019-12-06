@@ -18,29 +18,28 @@
                         <span>Events</span>
                     </a>
                     <ul class="ml-menu">
-                        <li {{Route::is('events')? 'class=active': ''}}>
-                            <a href="{{route('events')}}">List of Events</a>
+                        <li {{Route::is('events/index')? 'class=active': ''}}>
+                            <a href="{{route('events/index')}}">List of Events</a>
                         </li>
-                        <li {{Route::is('single')? 'class=active': ''}}>
-                            <a href="{{route('single')}}">Single of Events</a>
+                        <li {{Route::is('events/single')? 'class=active': ''}}>
+                            <a href="{{route('events/single')}}">Single of Events</a>
                         </li> 
-                        <li  {{Route::is('permissions.index')||Route::is('permissions.create')||Route::is('permissions.edit')? 'class=active':''}}>
-                            <a href="{{route('permissions.create')}}">Permissions</a>
-                        </li>
-                        <li {{Route::is('roles.index')||Route::is('roles.create')||Route::is('roles.edit')? 'class=active':''}}>
-                            <a href="{{ route('roles.index') }}">Roles</a>
-                        </li>
-                        <li {{Route::is('users.index')||Route::is('users.create')||Route::is('users.edit')? 'class=active':''}}>
-                            <a href="{{ route('users.index') }}">Users</a>
-                        </li>
                     </ul>
                 </li>
 
-                <li {{Route::is('typography')? 'class=active':''}}>
-                    <a href="{{route('typography')}}">
+                <li>
+                    <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">people</i>
                         <span>Contacts</span>
                     </a>
+                    <ul class="ml-menu">
+                        <li {{Route::is('contacts/index')? 'class=active': ''}}>
+                            <a href="{{route('contacts/index')}}">Contacts Detail</a>
+                        </li>
+                        {{-- <li {{Route::is('single')? 'class=active': ''}}>
+                            <a href="{{route('single')}}">Single of Events</a>
+                        </li>  --}}
+                    </ul>
                 </li>
                 <li {{Route::is('helper')? 'class=active':''}}>
                     <a href="{{route('form')}}">

@@ -1,5 +1,5 @@
 $(function() {
-    $('.js-basic-example').DataTable({
+    $('.js-check-example').DataTable({
 
         responsive: true,
         "processing": true, //Feature control the processing indicator.
@@ -12,6 +12,10 @@ $(function() {
             "targets": [0], //first column / numbering column
             "orderable": false, //set not orderable
         }, ],
+    });
+
+    $('.js-basic-example').DataTable({
+        responsive: true
     });
 
     //Exportable table
