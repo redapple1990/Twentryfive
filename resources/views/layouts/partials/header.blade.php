@@ -1,8 +1,4 @@
 
-{{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script> --}}
-
 <!-- Search Bar -->
     <div class="search-bar">
         <div class="search-icon">
@@ -189,14 +185,14 @@
                             </div>
                             <div class="col-md-9">
                                 <div class="form-group">
-                                    <input type="radio" name="gender" id="male" class="with-gap">
-                                    <label for="male">AAA</label>
+                                    <input type="radio" name="credential" id="AAA" class="with-gap">
+                                    <label for="AAA">AAA</label>
         
-                                    <input type="radio" name="gender" id="female" class="with-gap">
-                                    <label for="female" class="m-l-20">GA</label>
+                                    <input type="radio" name="credential" id="GA" class="with-gap">
+                                    <label for="GA" class="m-l-20">GA</label>
 
-                                    <input type="radio" name="gender" id="female" class="with-gap">
-                                    <label for="female" class="m-l-20">VIP</label>
+                                    <input type="radio" name="credential" id="VIP" class="with-gap">
+                                    <label for="VIP" class="m-l-20">VIP</label>
                                 </div>
                             </div>
                         </div>

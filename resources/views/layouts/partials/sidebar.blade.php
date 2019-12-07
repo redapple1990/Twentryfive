@@ -204,5 +204,116 @@
             </div>
         </div>
     </aside>
+    <aside id="userightsidebar" class="right-sidebar">
+        <div class="card">
+            <form id="form_validation" method="POST" novalidate="novalidate">
+                <div class="header">
+                    <img src="../images/user.png" width="60" height="60" alt="User">
+                    <button type="button" class="btn btn-danger">Remove</button>
+                    <button type="button" class="btn btn-success">Update</button>
+                </div>
+                <div class="body">
+                    <div class="row form-group form-float">
+                        <div class="col-md-4">
+                            <label class="form-label">First Name</label>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-line">   
+                                <input type="text" class="form-control" name="Eventname" required="" aria-required="true">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group form-float">
+                        <div class="col-md-4">
+                            <label class="form-label">Last Name</label>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-line">   
+                                <input type="text" class="form-control" name="location" required="" aria-required="true">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group form-float">
+                        <div class="col-md-4">
+                            <label class="form-label">Company</label>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-line">   
+                                <input type="text" class="form-control" name="location" required="" aria-required="true">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group form-float">
+                        <div class="col-md-4">
+                            <label class="form-label">Title</label>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-line">   
+                                <input type="text" class="form-control" name="location" required="" aria-required="true">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group form-float">
+                        <div class="col-md-4">
+                            <label class="form-label">Birthday</label>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-line">   
+                                <input type="number" class="form-control" name="location" required="" aria-required="true">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group form-float">
+                        <div class="col-md-4">
+                            <label class="form-label">Gender</label>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <input type="radio" name="Gender" id="unspecified" class="with-gap">
+                                <label for="unspecified">Unspecified</label>
+    
+                                <input type="radio" name="Gender" id="male" class="with-gap">
+                                <label for="male" class="m-l-20">male</label>
+
+                                <input type="radio" name="Gender" id="female" class="with-gap">
+                                <label for="female" class="m-l-20">Female</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group form-float">
+                        <div class="col-md-4">
+                            <label class="form-label">note</label>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-line">   
+                                <textarea name="note" id="note" cols="30" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group form-float">
+                        <div class="col-md-4">
+                            <label class="form-label">Home</label>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-line">   
+                                <input type="email" class="form-control" name="email" required="" aria-required="true">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group form-float">
+                        <div class="col-md-4">
+                            <label class="form-label">Guest List Templete</label>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-line">   
+                                <input type="text" class="form-control" name="guestemplete" required="" aria-required="true">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div>asdfasdfasd</div>
+        </div>
+    </aside>
     <!-- #END# Right Sidebar -->
 </section>

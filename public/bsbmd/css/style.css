@@ -10719,6 +10719,11 @@ fieldset[disabled] .form-control {
   width: 55%;
 }
 
+.user-right-sidebar {
+  width: 600px;
+  right: 0;
+}
+
 /* Bootstrap Notify ============================ */
 
 .bootstrap-notify-container {
