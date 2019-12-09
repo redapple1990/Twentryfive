@@ -69,10 +69,11 @@
         
         {{Html::script('bsbmd/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js')}}
         {{Html::script('bsbmd/plugins/dropzone/dropzone.js')}}
+        {{Html::script('bsbmd/plugins/autosize/autosize.js')}}
+        {{Html::script('bsbmd/js/pages/forms/basic-form-elements.js')}}
         {{Html::script('bsbmd/js/pages/forms/advanced-form-elements.js')}}
 
         {{Html::script('bsbmd/plugins/jquery-inputmask/jquery.inputmask.bundle.js')}}
-        {{Html::script('bsbmd/js/pages/forms/basic-form-elements.js')}}
         {{Html::script('bsbmd/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js')}}
 
      

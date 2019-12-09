@@ -29,6 +29,8 @@ Route::get('/events/index',['as'=>'events/index','uses'=>'EventsController@index
 Route::get('/events/single',['as'=>'events/single','uses'=>'EventsController@single']);
 Route::get('/contacts/index',['as'=>'contacts/index','uses'=>'ContactsController@index']);
 
+Route::get('/guests/password',['as'=>'guests','uses'=>'GuestsController@index']);
+
 Route::group(['middleware' => ['role:admin']], function () {
 	Route::resource('permissions', 'Admin\PermissionsController');     
     Route::resource('roles', 'Admin\RolesController');     

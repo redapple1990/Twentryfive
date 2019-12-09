@@ -143,6 +143,10 @@
     flex-wrap: wrap;
 }
 
+.text-white {
+    color: white !important;
+}
+
 @each $key,
 $val in $colors {
     .bg-#{$key} {
