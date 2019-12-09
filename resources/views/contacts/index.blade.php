@@ -20,9 +20,6 @@
     <!-- Bootstrap Tagsinput Css -->
     {{ Html::style('bsbmd/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css') }}
 
-    <!-- Bootstrap Select Css -->
-    {{ Html::style('bsbmd/plugins/bootstrap-select/css/bootstrap-select.css') }}
-
     <!-- noUISlider Css -->
     {{ Html::style('bsbmd/plugins/nouislider/nouislider.min.css') }}
 
@@ -41,21 +38,11 @@
                         <div class="header d-flex justify-content-between align-items-center">
                             <h2>Contacts</h2>
                             <div class="pull-right">
-                                <a href="javascript:void(0);" class="dropdown-toggle d-flex align-items-center" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <a href="javascript:void(0);" class="d-flex align-items-center">
                                     <i class="material-icons font-30 m-r-10">add_box</i>
                                     Add Contacts
                                 </a>
                             </div>
-                            <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
-                                    
-                                    <ul class="dropdown-menu pull-right">
-                                        <li><a href="javascript:void(0);">Action</a></li>
-                                        <li><a href="javascript:void(0);">Another action</a></li>
-                                        <li><a href="javascript:void(0);">Something else here</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
                         </div>
                         <div class="body">                        	
                             <div class="table-responsive">
@@ -70,7 +57,11 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>Admin</td>
+                                            <td>
+                                                <a href="javascript:void(0);" class="js-user-right-sidebar" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
+                                                    admin
+                                                </a>
+                                            </td>
                                             <td>admin@admin.com</td>
                                             <td>1234456789</td>
                                             <td>2019-11-10</td>

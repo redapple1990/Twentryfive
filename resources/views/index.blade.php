@@ -19,10 +19,13 @@
         {{ Html::style('bsbmd/css/themes/all-themes.css') }}
         {{ Html::style('bsbmd/plugins/bootstrap-select/css/bootstrap-select.min.css')}}
         {{ Html::style('bsbmd/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css')}}
+        {{ Html::style('bsbmd/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css')}}
+
 
          <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+    
     @show
 
     @yield('extra-css')
@@ -55,9 +58,26 @@
         {{Html::script('bsbmd/plugins/bootstrap-select/js/bootstrap-select.js')}}
         {{Html::script('bsbmd/plugins/jquery-slimscroll/jquery.slimscroll.js')}}
         {{Html::script('bsbmd/plugins/node-waves/waves.js')}}
+
+        {{Html::script('bsbmd/plugins/momentjs/moment.js')}}
+
         {{Html::script('bsbmd/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js')}}
         {{Html::script('bsbmd/plugins/bootstrap-select/js/bootstrap-select.min.js')}}
 
+        {{-- {{Html::script('bsbmd/plugins/jquery-inputmask/inputmask/inputmask.js')}}
+        {{Html::script('bsbmd/plugins/multi-select/js/jquery.multi-select.js')}} --}}
+        
+        {{Html::script('bsbmd/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js')}}
+        {{Html::script('bsbmd/plugins/dropzone/dropzone.js')}}
+        {{Html::script('bsbmd/js/pages/forms/advanced-form-elements.js')}}
+
+        {{Html::script('bsbmd/plugins/jquery-inputmask/jquery.inputmask.bundle.js')}}
+        {{Html::script('bsbmd/js/pages/forms/basic-form-elements.js')}}
+        {{Html::script('bsbmd/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js')}}
+
+     
+
+        
     @show    
     @yield('extra-script')
     @section('script-bottom')
