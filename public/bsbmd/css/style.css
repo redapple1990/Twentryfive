@@ -2866,6 +2866,10 @@ input[type=checkbox]:not(:disabled).tabbed:focus~.lever::after {
       flex-wrap: wrap;
 }
 
+.text-white {
+  color: white !important;
+}
+
 .bg-red {
   background-color: #F44336 !important;
   color: #fff;

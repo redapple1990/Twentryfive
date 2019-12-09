@@ -37,23 +37,28 @@
         </div>
     </div>
     <div class="row text-center">
-        <div class="col-sm-12">
+        <div class="col-sm-12 m-b-30 m-t-30">
             <button class="btn btn-primary btn-lg waves-effect btn-social">
                 <i class="fa fa-facebook-f m-r-30"></i>Sign in with Facebook
             </button>
         </div>
-        <div class="col-sm-12">
+        <div class="col-sm-12 m-b-30">
             <button class="btn btn-danger btn-lg waves-effect btn-social">
                 <i class="fa fa-google m-r-30"></i>Sign in with Google
             </button>
         </div>
     </div>
-    <div class="row m-t-15 m-b--20">
+    <div class="row p-b-10" style="border-bottom: 2px solid lightgray;">
         <div class="col-xs-6">
             <a href="{{route('register')}}">Register Now!</a>
         </div>
         <div class="col-xs-6 align-right">
             <a href="{{ route('password.request') }}">Forgot Your Password?</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 text-center m-t-20">
+            <a href="{{ route('guests')}}" class="btn btn-success btn-lg waves-effect text-white">Continue as Guest</a>
         </div>
     </div>
 </form>
