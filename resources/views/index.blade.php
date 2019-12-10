@@ -76,9 +76,7 @@
         {{Html::script('bsbmd/plugins/jquery-inputmask/jquery.inputmask.bundle.js')}}
         {{Html::script('bsbmd/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js')}}
 
-     
-
-        
+  
     @show    
     @yield('extra-script')
     @section('script-bottom')
