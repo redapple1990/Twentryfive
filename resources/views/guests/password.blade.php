@@ -20,7 +20,7 @@
         </div>
     </div> --}}
     <div class="input-group">
-        <label for="password" class="text-left control-label">Password</label>
+        {{-- <label for="password" class="text-left control-label">Password</label> --}}
         <span class="input-group-addon">
             <i class="material-icons">lock</i>
         </span>
@@ -44,9 +44,9 @@
             <option value="50">50</option>
         </select>
     </div>
-    <div class="form-group">
+    <div class="input-group margin-0">
         <div class="col-md-12 text-center">
-            <a type="submit" class="btn btn-success text-white">
+        <a href="{{route('register')}}" class="btn btn-success text-white font-14 p-l-30 p-r-30">
             Submit
             </a>
         </div>
