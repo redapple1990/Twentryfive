@@ -14,6 +14,7 @@
         {{ Html::style('bsbmd/plugins/morrisjs/morris.css') }}
         {{ Html::style('bsbmd/css/style.css') }}
         {{ Html::style('bsbmd/css/themes/all-themes.css') }}
+        {{ Html::style('bsbmd/plugins/bootstrap-select/css/bootstrap-select.min.css')}}
 
          <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
@@ -41,6 +42,7 @@
         {{Html::script('bsbmd/plugins/jquery-validation/jquery.validate.js')}}
         {{Html::script('bsbmd/js/admin.js')}}
         {{Html::script('bsbmd/js/pages/examples/sign-in.js')}}
+        {{Html::script('bsbmd/plugins/bootstrap-select/js/bootstrap-select.js')}}
     @show
 
 </body>
