@@ -31,6 +31,9 @@ Route::get('/contacts/index',['as'=>'contacts/index','uses'=>'ContactsController
 
 Route::get('/guests/password',['as'=>'guests','uses'=>'GuestsController@index']);
 
+Route::get('/setting/admins',['as'=>'setting/admins','uses'=>'SettingController@admins']);
+Route::get('/setting/ungrouped',['as'=>'setting/ungrouped','uses'=>'SettingController@ungrouped']);
+
 Route::group(['middleware' => ['role:admin']], function () {
 	Route::resource('permissions', 'Admin\PermissionsController');     
     Route::resource('roles', 'Admin\RolesController');     
