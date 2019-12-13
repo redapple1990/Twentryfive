@@ -41,11 +41,25 @@
                         </li>  --}}
                     </ul>
                 </li>
-                <li {{Route::is('helper')? 'class=active':''}}>
-                    <a href="{{route('form')}}">
+                <li>
+                    <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">settings</i>
                         <span>Settings</span>
                     </a>
+                    <ul class="ml-menu">
+                        <li {{Route::is('setting/admins')? 'class=active': ''}}>
+                            <a href="{{route('setting/admins')}}">admins</a>
+                        </li>
+                        <li {{Route::is('setting/ungrouped')? 'class=active': ''}}>
+                            <a href="{{route('setting/ungrouped')}}">ungrouped</a>
+                        </li>
+                        <li {{Route::is('setting/ungrouped')? 'class=active': ''}}>
+                            <a href="">Regular Users</a>
+                        </li> 
+                        <li {{Route::is('setting/ungrouped')? 'class=active': ''}}>
+                            <a href="">External Users</a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </div>
