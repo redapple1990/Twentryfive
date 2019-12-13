@@ -31,7 +31,7 @@
     <div class="input-group">
         <label for="password" class="text-left control-label">This Request is for:</label>
         <div class="switch text-center m-t-10">
-            <label>Myself<input type="checkbox" checked=""><span class="lever"></span>Someone else</label>
+            <label>Myself<input type="checkbox" checked=""><span class="lever switch-col-green"></span>Someone else</label>
         </div>
     </div>
     <div class="input-group">
