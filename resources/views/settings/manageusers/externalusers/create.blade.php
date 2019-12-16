@@ -56,7 +56,7 @@
                             </ul>
                         </div>
                         <div class="body">
-                           <form id="form_validation" method="POST" action="{{ route('users.store') }}">
+                           <form id="form_validation" method="POST" action="{{ route('externalusers.store') }}">
                             {{ csrf_field() }}
                                 <div class="input-group">
                                     <span class="input-group-addon">

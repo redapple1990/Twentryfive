@@ -62,7 +62,7 @@ class UngroupedController extends Controller
         $permissions = $request->input('permission') ? $request->input('permission') : [];
         $role->givePermissionTo($permissions);
 
-        return redirect()->route('roles.index');
+        return redirect()->route('ungrouped.index');
     }
 
 
@@ -106,7 +106,7 @@ class UngroupedController extends Controller
         $permissions = $request->input('permission') ? $request->input('permission') : [];
         $role->syncPermissions($permissions);
 
-        return redirect()->route('admin.roles.index');
+        return redirect()->route('settings.manageusers.ungrouped.index');
     }
 
 
@@ -121,7 +121,7 @@ class UngroupedController extends Controller
         $role = Role::findOrFail($id);
         $role->delete();
 
-        return redirect()->route('roles.index');
+        return redirect()->route('settings.manageusers.ungrouped.index');
     }
 
     /**
