@@ -47,10 +47,39 @@
                         <span>Settings</span>
                     </a>
                     <ul class="ml-menu">
-                        <li {{Route::is('setting/admins')? 'class=active': ''}}>
-                            <a href="{{route('setting/admins')}}">admins</a>
+                        @role('admin') 
+                            <li>
+                                <a href="javascript:void(0);" class="menu-toggle">
+                                    <i class="material-icons">face</i>
+                                    <span>Manage Users</span>
+                                </a>
+                                <ul class="ml-menu">                            
+                                    <li  {{Route::is('admins.index')||Route::is('admins.create')||Route::is('admins.edit')? 'class=active':''}}>
+                                        <a href="{{route('admins.index')}}">Admins</a>
+                                    </li>
+                                    <li {{Route::is('ungrouped.index')||Route::is('ungrouped.create')||Route::is('ungrouped.edit')? 'class=active':''}}>
+                                        <a href="{{ route('ungrouped.index') }}">Ungrouped</a>
+                                    </li>
+                                    <li {{Route::is('regularusers.index')||Route::is('regularusers.create')||Route::is('regularusers.edit')? 'class=active':''}}>
+                                        <a href="{{ route('regularusers.index') }}">Regular Users</a>
+                                    </li>
+                                    <li {{Route::is('externalusers.index')||Route::is('externalusers.create')||Route::is('externalusers.edit')? 'class=active':''}}>
+                                        <a href="{{ route('externalusers.index') }}">External Users</a>
+                                    </li>
+                                    {{-- <li {{Route::is('add-items.index')||Route::is('add-items.create')||Route::is('add-items.edit')? 'class=active':''}}>
+                                        <a href="{{route('add-items.index')}}">
+                                            <i class="material-icons">add-box</i>
+                                            <span>Add Items</span>
+                                        </a>
+                                    </li> --}}
+                                </ul>
+                            </li>
+                        @endrole
+                            
+                        <li>
+                            <a href="">Email Settings</a>
                         </li>
-                        <li {{Route::is('setting/ungrouped')? 'class=active': ''}}>
+                        {{-- <li {{Route::is('setting/ungrouped')? 'class=active': ''}}>
                             <a href="{{route('setting/ungrouped')}}">ungrouped</a>
                         </li>
                         <li {{Route::is('setting/ungrouped')? 'class=active': ''}}>
@@ -58,10 +87,10 @@
                         </li> 
                         <li {{Route::is('setting/ungrouped')? 'class=active': ''}}>
                             <a href="">External Users</a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </li>
-            </ul>
+            </ul> 
         </div>
         <!-- #Menu -->
         <!-- Footer -->

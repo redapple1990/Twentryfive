@@ -1,7 +1,7 @@
 @extends('index')
 
 @section('title')
-	Jewellery
+	User
 @endsection
 
 @section('extra-css')
@@ -34,16 +34,16 @@
 @section('content')
         <div class="container-fluid">
             <div class="block-header">
-                <h2>Add Items</h2>
+                <h2>User</h2>
             </div>
 
             <!-- Vertical Layout -->
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
-                        <div class="header bg-pink">
-                            <h2>Add Items</h2>
-                            <a href="{{route('add-items.create')}}" class="btn btn-info m-t-15 waves-effect">Add New</a>
+                        <div class="header">
+                            <h2>User</h2>
+                            <a href="{{route('regularusers.create')}}" class="btn btn-success btn-block m-t-15 waves-effect">Add New</a>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
                                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -63,20 +63,9 @@
                                     <thead>
                                         <tr>
                                         	<th>Id</th>
-                                            <th>name</th>
-                                            <th>Item Image</th>
-                                            <th>Net wt</th>
-                                            <th>Gross wt</th>
-                                            <th>Stone wt</th>
-                                            <th>Other Details</th>
-                                            <th>Description</th>
-                                            <th>Caret</th>
-                                            <th>Item_size</th>
-                                            <th>Purity</th>
-                                            <th>Height</th>
-                                            <th>Width</th>
-                                            <th>Discount</th>
-                                            <th>Price</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Roles</th>
                                             <th></th>
                                             <th></th>
                                         </tr>
@@ -84,58 +73,35 @@
                                     <tfoot>
                                         <tr>
                                         	<th>Id</th>
-                                            <th>name</th>
-                                            <th>Item Image</th>
-                                            <th>Net wt</th>
-                                            <th>Gross wt</th>
-                                            <th>Stone wt</th>
-                                            <th>Other Details</th>
-                                            <th>Description</th>
-                                            <th>Caret</th>
-                                            <th>Item_size</th>
-                                            <th>Purity</th>
-                                            <th>Height</th>
-                                            <th>Width</th>
-                                            <th>Discount</th>
-                                            <th>Price</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
                                             <th></th>
                                             <th></th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        @if (count($items) > 0)
-                                        	@foreach($items as $row)
-                                            <tr>                                        	
-                                            	<td>{{ $row->id }}</td>
-                                                <td>{{ $row->name }} </td>
-                                                <td>
-                                                    <img src="{{url('storage/products',$row->item_image)}}" width="60" height="60" alt="{{ $row->name }}" />
-                                                </td>
-                                                <td>{{ $row->net_wt }} </td>
-                                                <td>{{ $row->gross_wt }} </td>
-                                                <td>{{ $row->stone_wt }} </td>
-                                                <td>{{ $row->other_details }} </td>
-                                                <td>{{ $row->description }} </td>
-                                                <td>{{ $row->caret }} </td>
-                                                <td>{{ $row->item_size }} </td>
-                                                <td>{{ $row->purity }} </td>
-                                                <td>{{ $row->height }} </td>
-                                                <td>{{ $row->width }} </td>
-                                                <td>{{ $row->discount }} </td>
-                                                <td>{{ $row->price }} </td>
-                                            	<td>
-                                            		<a href="{{route('add-items.edit',$row->id)}}" class="btn btn-warning waves-effect">Edit</a>
-                                            	</td>
-                                            	<td>
-                                            		<form id="delete_form" method="POST" action="{{ route('add-items.destroy',$row->id) }}">
-    					                            	{{ csrf_field() }}
-    					                            	<input name="_method" type="hidden" value="DELETE">
-    					                                <button class="btn btn-danger waves-effect" type="submit">Delete</button>
-    					                            </form>
-                                            	</td>	                                   
-                                            </tr>
-                                            @endforeach
-                                        @endif
+                                    	@foreach($users as $row)
+                                        <tr>                                        	
+                                        	<td>{{ $row->id }}</td>
+                                        	<td>{{ $row->name }}</td>
+                                            <td>{{ $row->email }}</td>
+                                            <td>
+                                                @foreach($row->roles()->pluck('name') as $role)
+                                                    {{ $role }},
+                                                @endforeach
+                                            </td>
+                                        	<td>
+                                        		<a href="{{route('regularusers.edit',$row->id)}}" class="btn btn-warning waves-effect">Edit</a>
+                                        	</td>
+                                        	<td>
+                                        		<form id="delete_form" method="POST" action="{{ route('regularusers.destroy',$row->id) }}">
+					                            	{{ csrf_field() }}
+					                            	<input name="_method" type="hidden" value="DELETE">
+					                                <button class="btn btn-danger waves-effect" type="submit">Delete</button>
+					                            </form>
+                                        	</td>	                                   
+                                        </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

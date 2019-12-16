@@ -100,49 +100,35 @@
         <div class="modal-content">
             <form id="form_validation" method="POST" novalidate="novalidate">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="largeModalLabel">New Event</h4>
+                    <img src="" alt="">
                 </div>
                 <div class="modal-body">
-                    <div class="row form-group form-float">
-                        <div class="col-md-3">
-                            <label class="form-label">Name of Event</label>
-                        </div>
-                        <div class="col-md-9">
-                            <div class="form-line">   
-                                <input type="text" class="form-control" name="Eventname" required="" aria-required="true">
+                    <div class="">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs tab-nav-right" role="tablist">
+                            <li role="presentation" class="active w-50"><a href="#user-settings" data-toggle="tab" aria-expanded="true">User Settings</a></li>
+                            <li role="presentation" class="w-50"><a href="#permissions" data-toggle="tab" aria-expanded="false">Permissions</a></li>
+                        </ul>
+
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane animated flipInX active" id="user-settings">
+                                <b>Home Content</b>
+                                <p>
+                                    Lorem ipsum dolor sit amet, ut duo atqui exerci dicunt, ius impedit mediocritatem an. Pri ut tation electram moderatius.
+                                    Per te suavitate democritum. Duis nemore probatus ne quo, ad liber essent
+                                    aliquid pro. Et eos nusquam accumsan, vide mentitum fabellas ne est, eu munere
+                                    gubergren sadipscing mel.
+                                </p>
                             </div>
-                        </div>
-                    </div>
-                    <div class="row form-group form-float">
-                        <div class="col-md-3">
-                            <label class="form-label">Location</label>
-                        </div>
-                        <div class="col-md-9">
-                            <div class="form-line">   
-                                <input type="text" class="form-control" name="location" required="" aria-required="true">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row form-group form-float">
-                        <div class="col-md-3"><label class="form-label">Date</label></div>
-                        <div class="col-md-9">
-                            <select class="form-control" data-live-search="true" style="display: none;">
-                                <option value="">-- Please select --</option>
-                                <option value="10">10</option>
-                                <option value="20">20</option>
-                                <option value="30">30</option>
-                                <option value="40">40</option>
-                                <option value="50">50</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row form-group form-float">
-                        <div class="col-md-3">
-                            <label class="form-label">Guest List Templete</label>
-                        </div>
-                        <div class="col-md-9">
-                            <div class="form-line">   
-                                <input type="text" class="form-control" name="guestemplete" required="" aria-required="true">
+                            <div role="tabpanel" class="tab-pane animated flipInX" id="permissions">
+                                <b>Profile Content</b>
+                                <p>
+                                    Lorem ipsum dolor sit amet, ut duo atqui exerci dicunt, ius impedit mediocritatem an. Pri ut tation electram moderatius.
+                                    Per te suavitate democritum. Duis nemore probatus ne quo, ad liber essent
+                                    aliquid pro. Et eos nusquam accumsan, vide mentitum fabellas ne est, eu munere
+                                    gubergren sadipscing mel.
+                                </p>
                             </div>
                         </div>
                     </div>

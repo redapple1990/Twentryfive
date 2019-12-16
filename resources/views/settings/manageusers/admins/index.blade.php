@@ -1,7 +1,7 @@
 @extends('index')
 
 @section('title')
-	Roles
+	Form
 @endsection
 
 @section('extra-css')
@@ -34,7 +34,7 @@
 @section('content')
         <div class="container-fluid">
             <div class="block-header">
-                <h2>Roles</h2>
+                <h2>Admins</h2>
             </div>
 
             <!-- Vertical Layout -->
@@ -42,8 +42,8 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
-                            <h2>Roles</h2>
-                            <a href="{{route('roles.create')}}" class="btn btn-success btn-block m-t-15 waves-effect">Add New</a>
+                            <h2>Permission</h2>
+                            <a href="{{route('admins.create')}}" class="btn btn-success btn-block m-t-15 waves-effect">Add New</a>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
                                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -64,7 +64,6 @@
                                         <tr>
                                         	<th>Id</th>
                                             <th>Name</th>
-                                            <th>Permissions</th>
                                             <th></th>
                                             <th></th>
                                         </tr>
@@ -73,26 +72,20 @@
                                         <tr>
                                         	<th>Id</th>
                                             <th>Name</th>
-                                            <th>Permissions</th>
                                             <th></th>
                                             <th></th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                    	@foreach($roles as $row)
+                                    	@foreach($permissions as $row)
                                         <tr>                                        	
                                         	<td>{{ $row->id }}</td>
                                         	<td>{{ $row->name }}</td>
-                                            <td>
-                                                @foreach($row->permissions()->pluck('name') as $permission)
-                                                    {{ $permission }},
-                                                @endforeach
-                                            </td>
                                         	<td>
-                                        		<a href="{{route('roles.edit',$row->id)}}" class="btn btn-warning waves-effect">Edit</a>
+                                        		<a href="{{route('admins.edit',$row->id)}}" class="btn btn-warning waves-effect">Edit</a>
                                         	</td>
                                         	<td>
-                                        		<form id="delete_form" method="POST" action="{{ route('roles.destroy',$row->id) }}">
+                                        		<form id="delete_form" method="POST" action="{{ route('admins.destroy',$row->id) }}">
 					                            	{{ csrf_field() }}
 					                            	<input name="_method" type="hidden" value="DELETE">
 					                                <button class="btn btn-danger waves-effect" type="submit">Delete</button>
