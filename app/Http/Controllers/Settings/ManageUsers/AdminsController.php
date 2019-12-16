@@ -67,8 +67,7 @@ class AdminsController extends Controller
     public function edit($id)
     {
         $permission = Permission::findOrFail($id);
-
-        return view('settings.manageusers.admins', compact('permission'));
+        return view('settings.manageusers.admins.edit', compact('permission'));
     }
 
     /**

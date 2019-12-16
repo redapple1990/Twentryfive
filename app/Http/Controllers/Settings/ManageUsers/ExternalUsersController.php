@@ -43,20 +43,18 @@ class ExternalUsersController extends Controller
     }
 
     /**
-     * Store a newly created Permission in storage.
+     * Store a newly created User in storage.
      *
-     * @param  \App\Http\Requests\StorePermissionsRequest  $request
+     * @param  \App\Http\Requests\StoreUsersRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required|unique:permissions|max:20',
-        ]);
+        $user = User::create(array_merge($request->all(),['status' => 'Active']));
+        $roles = $request->input('roles') ? $request->input('roles') : [];
+        $user->assignRole($roles);
 
-        Permission::create($request->all());
-
-        return redirect()->route('permissions.index');
+        return redirect()->route('users.index');
     }
 
 
@@ -89,7 +87,7 @@ class ExternalUsersController extends Controller
         $permission = Permission::findOrFail($id);
         $permission->update($request->all());
 
-        return redirect()->route('permissions.index');
+        return redirect()->route('settings.manageusers.externalusers.index');
     }
 
 
@@ -104,7 +102,7 @@ class ExternalUsersController extends Controller
         $permission = Permission::findOrFail($id);
         $permission->delete();
 
-        return redirect()->route('permissions.index');
+        return redirect()->route('settings.manageusers.externalusers.index');
     }
 
     /**

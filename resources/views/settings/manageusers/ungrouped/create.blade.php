@@ -56,7 +56,7 @@
                             </ul>
                         </div>
                         <div class="body">
-                           <form id="form_validation" method="POST" action="{{ route('roles.store') }}">
+                           <form id="form_validation" method="POST" action="{{ route('ungrouped.store') }}">
                             {{ csrf_field() }}
                                 <div class="form-group form-float">
                                     <div class="form-line">
