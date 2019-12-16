@@ -96,11 +96,11 @@
 @endsection
 
 <div class="modal fade" id="adminedit" tabindex="-1" role="dialog" style="display: none;">
-    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
             <form id="form_validation" method="POST" novalidate="novalidate">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="largeModalLabel">New Event</h4>
+                    <img src="" alt="">
                 </div>
                 <div class="modal-body">
                     <div class="">

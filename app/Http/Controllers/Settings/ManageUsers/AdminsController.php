@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Settings\ManageUsers;
 
 use Spatie\Permission\Models\Permission;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use App\Http\Controllers\Controller;
 
-class PermissionsController extends Controller
+class AdminsController extends Controller
 {
     /**
     *
@@ -27,7 +27,7 @@ class PermissionsController extends Controller
     public function index()
     {        
         $permissions = Permission::all();
-        return view('admin.permissions.index',compact('permissions'));
+        return view('settings.manageusers.admins.index',compact('permissions'));
     }
 
     /**
@@ -37,7 +37,7 @@ class PermissionsController extends Controller
      */
     public function create()
     {
-        return view('admin.permissions.create');
+        return view('settings.manageusers.admins.create');
     }
 
     /**
@@ -68,7 +68,7 @@ class PermissionsController extends Controller
     {
         $permission = Permission::findOrFail($id);
 
-        return view('admin.permissions.edit', compact('permission'));
+        return view('settings.manageusers.admins', compact('permission'));
     }
 
     /**
@@ -87,7 +87,7 @@ class PermissionsController extends Controller
         $permission = Permission::findOrFail($id);
         $permission->update($request->all());
 
-        return redirect()->route('permissions.index');
+        return redirect()->route('settings.manageusers.admins.index');
     }
 
 

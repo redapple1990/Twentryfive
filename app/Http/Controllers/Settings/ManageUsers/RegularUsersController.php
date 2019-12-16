@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Settings\ManageUsers;
 
 use App\User;
 use Spatie\Permission\Models\Role;
@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Gate;
 use App\Http\Controllers\Controller;
 use JavaScript;
 
-class UsersController extends Controller
+class RegularUsersController extends Controller
 {
     /**
      * Display a listing of User.
@@ -19,8 +19,7 @@ class UsersController extends Controller
     public function index()
     {
         $users = User::all();
-
-        return view('admin.users.index', compact('users'));
+        return view('settings.manageusers.regularusers.index', compact('users'));
     }
 
     /**
@@ -32,7 +31,7 @@ class UsersController extends Controller
     {
         $roles = Role::get()->pluck('name', 'name');
 
-        return view('admin.users.create', compact('roles'));
+        return view('settings.manageusers.regularusers.create', compact('roles'));
     }
 
     /**
@@ -69,7 +68,7 @@ class UsersController extends Controller
             'role' => $selectedRoles
         ]);
 
-        return view('admin.users.edit', compact('user', 'roles'));
+        return view('settings.manageusers.regularusers.edit', compact('user', 'roles'));
     }
 
     /**

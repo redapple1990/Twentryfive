@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Settings\ManageUsers;
 
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Gate;
 use App\Http\Controllers\Controller;
 use JavaScript;
 
-class RolesController extends Controller
+class UngroupedController extends Controller
 {
     /**
     *
@@ -30,7 +30,7 @@ class RolesController extends Controller
     {
         $roles = Role::all();
 
-        return view('admin.roles.index', compact('roles'));
+        return view('settings.manageusers.ungrouped.index', compact('roles'));
     }
 
     /**
@@ -42,7 +42,7 @@ class RolesController extends Controller
     {
         $permissions = Permission::get()->pluck('name', 'name');
 
-        return view('admin.roles.create', compact('permissions'));
+        return view('settings.manageusers.ungrouped.create', compact('permissions'));
     }
 
     /**
@@ -84,7 +84,7 @@ class RolesController extends Controller
             'foo' => $selectedPermissions
         ]);
 
-        return view('admin.roles.edit', compact('role', 'permissions','selectedPermissions'));
+        return view('settings.manageusers.ungrouped.edit', compact('role', 'permissions','selectedPermissions'));
     }
 
     /**

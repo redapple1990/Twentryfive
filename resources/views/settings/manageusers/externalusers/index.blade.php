@@ -43,7 +43,7 @@
                     <div class="card">
                         <div class="header">
                             <h2>User</h2>
-                            <a href="{{route('users.create')}}" class="btn btn-success btn-block m-t-15 waves-effect">Add New</a>
+                            <a href="{{route('externalusers.create')}}" class="btn btn-success btn-block m-t-15 waves-effect">Add New</a>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
                                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -91,10 +91,10 @@
                                                 @endforeach
                                             </td>
                                         	<td>
-                                        		<a href="{{route('users.edit',$row->id)}}" class="btn btn-warning waves-effect">Edit</a>
+                                        		<a href="{{route('externalusers.edit',$row->id)}}" class="btn btn-warning waves-effect">Edit</a>
                                         	</td>
                                         	<td>
-                                        		<form id="delete_form" method="POST" action="{{ route('users.destroy',$row->id) }}">
+                                        		<form id="delete_form" method="POST" action="{{ route('externalusers.destroy',$row->id) }}">
 					                            	{{ csrf_field() }}
 					                            	<input name="_method" type="hidden" value="DELETE">
 					                                <button class="btn btn-danger waves-effect" type="submit">Delete</button>

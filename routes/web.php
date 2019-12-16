@@ -31,14 +31,12 @@ Route::get('/contacts/index',['as'=>'contacts/index','uses'=>'ContactsController
 
 Route::get('/guests/password',['as'=>'guests','uses'=>'GuestsController@index']);
 
-Route::get('/setting/admins',['as'=>'setting/admins','uses'=>'SettingController@admins']);
-Route::get('/setting/ungrouped',['as'=>'setting/ungrouped','uses'=>'SettingController@ungrouped']);
-
 Route::group(['middleware' => ['role:admin']], function () {
-	Route::resource('permissions', 'Admin\PermissionsController');     
-    Route::resource('roles', 'Admin\RolesController');     
-    Route::resource('users', 'Admin\UsersController'); 
-    Route::resource('add-items', 'Admin\AddItemController');  
+
+    Route::resource('settings/manageusers/admins', 'Settings\ManageUsers\AdminsController');
+    Route::resource('settings/manageusers/ungrouped', 'Settings\ManageUsers\UngroupedController'); 
+    Route::resource('settings/manageusers/regularusers', 'Settings\ManageUsers\RegularUsersController'); 
+    Route::resource('settings/manageusers/externalusers', 'Settings\ManageUsers\ExternalUsersController'); 
 });
 
 Route::resource('profile','Users\ProfileController');
