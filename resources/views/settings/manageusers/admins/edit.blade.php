@@ -227,27 +227,63 @@
                                                     <h2>Permission</h2>
                                                 </div>
                                                 <div class="body">
-                                                    <h2>Users</h2>
-                                                    <div class="d-flex align-items-center">
-                                                        <span class="m-t-10">
-                                                            <input type="checkbox" class="filled-in" id="checkbox1" style="display: none;">
-                                                            <label for="checkbox1"></label>
-                                                        </span>
-                                                        <span>Edit and Delete Users</span>
-                                                    </div>
-                                                    <div class="d-flex align-items-center">
-                                                        <span class="m-t-10">
-                                                            <input type="checkbox" class="filled-in" id="checkbox2" style="display: none;">
-                                                            <label for="checkbox2"></label>
-                                                        </span>
-                                                        <span>Add, Edit, Delete Users Groups</span>
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <h2>Users</h2>
+                                                            <div class="d-flex align-items-center">
+                                                                <span class="m-t-10">
+                                                                    <input type="checkbox" class="filled-in" id="checkbox1" style="display: none;">
+                                                                    <label for="checkbox1"></label>
+                                                                </span>
+                                                                <span>Edit and Delete Users</span>
+                                                            </div>
+                                                            <div class="d-flex align-items-center">
+                                                                <span class="m-t-10">
+                                                                    <input type="checkbox" class="filled-in" id="checkbox2" style="display: none;">
+                                                                    <label for="checkbox2"></label>
+                                                                </span>
+                                                                <span>Add, Edit, Delete Users Groups</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <h2>Events</h2>
+                                                            <div class="d-flex align-items-center">
+                                                                <span class="m-t-10">
+                                                                    <input type="checkbox" class="filled-in" id="checkbox3" style="display: none;">
+                                                                    <label for="checkbox3"></label>
+                                                                </span>
+                                                                <span>Add, Edit and Delete Events</span>
+                                                            </div>
+                                                            <div class="d-flex align-items-center">
+                                                                <span class="m-t-10">
+                                                                    <input type="checkbox" class="filled-in" id="checkbox4" style="display: none;">
+                                                                    <label for="checkbox4"></label>
+                                                                </span>
+                                                                <span>Configure Event settings</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <h2>Entries</h2>
+                                                            <div class="d-flex align-items-center">
+                                                                <span class="m-t-10">
+                                                                    <input type="checkbox" class="filled-in" id="checkbox5" style="display: none;">
+                                                                    <label for="checkbox5"></label>
+                                                                </span>
+                                                                <span>Add, Edit and Delete Entries</span>
+                                                            </div>
+                                                            <div class="d-flex align-items-center">
+                                                                <span class="m-t-10">
+                                                                    <input type="checkbox" class="filled-in" id="checkbox6" style="display: none;">
+                                                                    <label for="checkbox6"></label>
+                                                                </span>
+                                                                <span>Configure Guest Settings</span>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div class="footer">
-                                                    <a href="" class=" d-flex align-items-center">
-                                                        <i class="material-icons m-r-10">add_box</i>
-                                                        Add Field 
-                                                    </a>
+                                                <div class="footer text-center">
+                                                    <button type="button" class="btn btn-success m-l-50">Apply</button>
+                                                    <button type="button" class="btn btn-default m-l-20">Cancel</button>
                                                 </div>
                                             </form>
                                         </div>
