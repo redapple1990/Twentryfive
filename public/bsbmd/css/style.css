@@ -2813,6 +2813,10 @@ input[type=checkbox]:not(:disabled).tabbed:focus~.lever::after {
   color: #777;
 }
 
+.d-none {
+  display: none;
+}
+
 .d-flex {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
@@ -10739,13 +10743,6 @@ fieldset[disabled] .form-control {
   text-align: center;
   color: #fff;
   margin-top: -5px;
-}
-
-.login-page .card [type="checkbox"]:not(:checked),
-.login-page .card [type="checkbox"]:checked {
-  position: absolute;
-  left: -9999px;
-  opacity: 0;
 }
 
 .login-page .card .body .btn-social {

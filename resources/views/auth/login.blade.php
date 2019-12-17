@@ -29,7 +29,7 @@
     </div>
     <div class="row">
         <div class="col-xs-8 p-t-5">
-            <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }} class="filled-in chk-col-pink">
+            <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }} class="filled-in chk-col-pink d-none" id="rememberme">
             <label for="rememberme">Remember Me</label>
         </div>
         <div class="col-xs-4">
