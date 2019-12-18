@@ -98,7 +98,4 @@
 	{{Html::script('bsbmd/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js')}}
 	{{Html::script('bsbmd/js/pages/forms/basic-form-elements.js')}}
     {{Html::script('bsbmd/plugins/jquery-validation/jquery.validate.js')}}
-    {{Html::script('bsbmd/plugins/jquery-steps/jquery.steps.js')}}
-    {{Html::script('bsbmd/plugins/sweetalert/sweetalert.min.js')}}
-    {{Html::script('bsbmd/js/pages/forms/form-validation.js')}}
 @endsection
