@@ -66,12 +66,6 @@
                                     <li {{Route::is('externalusers.index')||Route::is('externalusers.create')||Route::is('externalusers.edit')? 'class=active':''}}>
                                         <a href="{{ route('externalusers.index') }}">External Users</a>
                                     </li>
-                                    {{-- <li {{Route::is('add-items.index')||Route::is('add-items.create')||Route::is('add-items.edit')? 'class=active':''}}>
-                                        <a href="{{route('add-items.index')}}">
-                                            <i class="material-icons">add-box</i>
-                                            <span>Add Items</span>
-                                        </a>
-                                    </li> --}}
                                 </ul>
                             </li>
                         @endrole
