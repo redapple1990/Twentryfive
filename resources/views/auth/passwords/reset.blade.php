@@ -51,3 +51,5 @@
     </div>
 </form>
 @endsection
+
+<!-- Email Reset Process -->

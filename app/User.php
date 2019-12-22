@@ -42,3 +42,5 @@ class User extends Authenticatable
         return $this->hasMany(Item::class, 'id');
     }
 }
+
+// user page
