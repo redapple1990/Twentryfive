@@ -44,7 +44,6 @@
             </div>
         @endif
 
-
         @if(Route::is('dashboard'))
             @include('layouts.dashboard.index')
         @endif
