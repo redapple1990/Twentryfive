@@ -27,8 +27,8 @@ class EventsController extends Controller
      */
     public function index()
     {
-        $eventsdata = DB::table('events') ->get();
-        return view('events.index', ['eventsdata' => $eventsdata]);
+        $events_data = DB::table('events') ->get();
+        return view('events.index', ['events_data' => $events_data]);
     }
 
     public function single()

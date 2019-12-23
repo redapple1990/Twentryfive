@@ -59,7 +59,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($eventsdata as $key => $data)
+                                    @foreach($events_data as $key => $data)
                                         <tr>    
                                             <td>
                                                 <input type="checkbox" checked="checked" />
