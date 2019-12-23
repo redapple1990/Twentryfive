@@ -27,5 +27,3 @@
     </div>
 </form>
 @endsection
-
-<!-- Email process here -->

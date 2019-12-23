@@ -6,6 +6,7 @@ use Spatie\Permission\Models\Permission;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use App\Http\Controllers\Controller;
+use DB;
 
 class EventsController extends Controller
 {
@@ -26,7 +27,8 @@ class EventsController extends Controller
      */
     public function index()
     {
-        return view('events.index');
+        $eventsdata = DB::table('events') ->get();
+        return view('events.index', ['eventsdata' => $eventsdata]);
     }
 
     public function single()

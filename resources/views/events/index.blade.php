@@ -40,18 +40,6 @@
                     <div class="card">
                         <div class="header">
                             <h2>List of Events</h2>
-                            <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
-                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li><a href="javascript:void(0);">Action</a></li>
-                                        <li><a href="javascript:void(0);">Another action</a></li>
-                                        <li><a href="javascript:void(0);">Something else here</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
                         </div>
                         <div class="body">                        	
                             <div class="table-responsive">
@@ -63,6 +51,7 @@
                                             </th>
                                             <th>Event</th>
                                             <th>Date</th>
+                                            <th>Location</th>
                                             <th>Approved</th>
                                             <th>Pending</th>
                                             <th>Declined</th>
@@ -70,46 +59,23 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
+                                    @foreach($eventsdata as $key => $data)
+                                        <tr>    
                                             <td>
                                                 <input type="checkbox" checked="checked" />
                                             </td>
-                                            <td>Event Sample</td>
-                                            <td>Date</td>
+                                            <td>{{ $data->name }}</td>
+                                            <td>{{ $data->date }}</td>
+                                            <td>{{ $data->location }}</td>
                                             <td>20</td>
                                             <td>2</td>
                                             <td>0</td>
                                             <td class="d-flex align-items-center">
                                                 <a href="javascript:void(0);" class="d-flex align-items-center"><i class="material-icons m-r-10">add_box</i>New Guest List Entry</a>
                                                 <a href="" class="m-l-30"><span class="bg-red font-14 inbox-level text-center p-t-8 p-b-8 p-l-20 p-r-20">Public</span></a>
-                                            </td>
+                                            </td>                
                                         </tr>
-                                        <tr>
-                                            <td><input type="checkbox" checked="checked" /></td>
-                                            <td>Event Sample</td>
-                                            <td>Date</td>
-                                            <td>20</td>
-                                            <td>2</td>
-                                            <td>0</td>
-                                            <td class="d-flex align-items-center">
-                                                <a href="javascript:void(0);" class="d-flex align-items-center"><i class="material-icons m-r-10">add_box</i>New Guest List Entry</a>
-                                                <a href="" class="m-l-30"><span class="bg-red font-14 inbox-level text-center p-t-8 p-b-8 p-l-20 p-r-20">Public</span></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <input type="checkbox" class="fill-in">
-                                            </td>
-                                            <td>Event Samples</td>
-                                            <td>Date</td>
-                                            <td>20</td>
-                                            <td>2</td>
-                                            <td>0</td>
-                                            <td class="d-flex align-items-center">
-                                                <a href="javascript:void(0);" class="d-flex align-items-center"><i class="material-icons m-r-10">add_box</i>New Guest List Entry</a>
-                                                <a href="" class="m-l-30"><span class="bg-red font-14 inbox-level text-center p-t-8 p-b-8 p-l-20 p-r-20">Public</span></a>
-                                            </td>
-                                        </tr>
+                                    @endforeach
                                     </tbody>
                                 </table>
                             </div>
