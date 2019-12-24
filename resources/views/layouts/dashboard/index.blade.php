@@ -130,7 +130,7 @@
                         <h2>Upcoming Events</h2>
                     </div>
                     <div class="body padding-0">
-                        <div class="table-responsive">
+                        <!-- <div class="table-responsive">
                             <table class="table table-hover dashboard-task-infos m-b-0">
                                 <tbody>
                                     <tr>
@@ -156,7 +156,8 @@
                                     </tr>
                                 </tbody>
                             </table>
-                        </div>
+                        </div> -->
+                        
                     </div>
                 </div>
             </div>
