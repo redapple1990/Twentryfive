@@ -31,6 +31,19 @@ class EventsController extends Controller
         return view('events.index', ['events_data' => $events_data]);
     }
 
+    public function store(Request $request)
+    {
+        $eventName = $request->Eventname;
+        $location = $request->location;
+        $date = $request->event_date.'-'.date('m').'-'.date('Y');
+        $event_date = date('Y-m-d', strtotime($date));
+        $guestemplete = $request->guestemplete;
+        
+        DB::table('events')->insert(['name' => $eventName, 'location' => $location, 'date' => $event_date, 'templete' => $guestemplete]);
+
+        return redirect()->back();
+    }
+
     public function single()
     {
         return view('events.single');

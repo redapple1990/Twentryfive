@@ -68,7 +68,8 @@
     <div class="modal fade" id="newEvent" tabindex="-1" role="dialog" style="display: none;">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <form id="form_validation" method="POST" novalidate="novalidate">
+                <form id="form_validation" action="{{ url('events/store') }}" method="POST" novalidate="novalidate">
+                {{ csrf_field() }}
                     <div class="modal-header">
                         <h4 class="modal-title" id="largeModalLabel">New Event</h4>
                     </div>
@@ -96,7 +97,7 @@
                         <div class="row form-group form-float">
                             <div class="col-md-3"><label class="form-label">Date</label></div>
                             <div class="col-md-9">
-                                <select class="form-control" data-live-search="true" style="display: none;">
+                                <select class="form-control" name="event_date" data-live-search="true" style="display: none;">
                                     <option value="">-- Please select --</option>
                                     <option value="10">10</option>
                                     <option value="20">20</option>
