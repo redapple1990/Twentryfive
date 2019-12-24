@@ -4,7 +4,7 @@
             <div class="col-xs-12 col-sm-12">
                 <div class="card">
                     <div class="header">
-                        <h2>INBOX</h2>
+                        <h2>Inbox</h2>
                     </div>
                     <div class="body padding-0">
                         <div class="table-responsive">
@@ -39,13 +39,13 @@
                                                 <span>X REQUEST FROM EXTERNAL FORM</span>
                                             </div>
                                             <div class="progress">
-                                                <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                                <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
                                                     <span class="sr-only">80% Complete (success)</span>
                                                 </div>
                                             </div>
                                         </td>
                                         <td class="p-t-30 p-b-30">
-                                            <div class="bg-blue font-14 inbox-level text-center">X EVENT</div>
+                                            <div class="bg-green font-14 inbox-level text-center">X EVENT</div>
                                         </td>
                                         <td class="text-center p-t-30 p-b-30">1 days ago</td>
                                         <td class="text-right p-t-30 p-b-30">
@@ -60,13 +60,13 @@
                                                 <span>X REQUEST FROM EXTERNAL FORM</span>
                                             </div>
                                             <div class="progress">
-                                                <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                                <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
                                                     <span class="sr-only">80% Complete (success)</span>
                                                 </div>
                                             </div>
                                         </td>
                                         <td class="p-t-30 p-b-30">
-                                            <div class="bg-orange font-14 inbox-level text-center">X EVENT</div>
+                                            <div class="bg-green font-14 inbox-level text-center">X EVENT</div>
                                         </td>
                                         <td class="text-center p-t-30 p-b-30">1 days ago</td>
                                         <td class="text-right p-t-30 p-b-30">
@@ -81,13 +81,13 @@
                                                 <span>X REQUEST FROM EXTERNAL FORM</span>
                                             </div>
                                             <div class="progress">
-                                                <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
+                                                <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
                                                     <span class="sr-only">80% Complete (success)</span>
                                                 </div>
                                             </div>
                                         </td>
                                         <td class="p-t-30 p-b-30">
-                                            <div class="bg-red font-14 inbox-level text-center">X EVENT</div>
+                                            <div class="bg-green font-14 inbox-level text-center">X EVENT</div>
                                         </td>
                                         <td class="text-center p-t-30 p-b-30">1 days ago</td>
                                         <td class="text-right p-t-30 p-b-30">
@@ -152,7 +152,6 @@
                                                 </div>
                                             </div>
                                         </div>
-
                                         <div class="panel panel-default panel-post">
                                             <div class="panel-heading">
                                                 <div class="media">
