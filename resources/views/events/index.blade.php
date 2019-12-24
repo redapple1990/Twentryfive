@@ -65,7 +65,7 @@
                                                 <input type="checkbox" checked="checked" />
                                             </td>
                                             <td>{{ $data->name }}</td>
-                                            <td>{{ $data->date }}</td>
+                                            <td>{{ $data->datetime }}</td>
                                             <td>{{ $data->location }}</td>
                                             <td>20</td>
                                             <td>2</td>

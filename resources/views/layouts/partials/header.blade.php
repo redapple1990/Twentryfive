@@ -12,12 +12,11 @@
     <!-- #END# Search Bar -->
     <!-- Top Bar -->
     <nav class="navbar">
-        <div class="container-fluid">
+        <div class="container-fluid" style = "background:darkgreen">
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand" href="index.html">
-                    <span><i class="material-icons">home</i></span>
+                <a class="navbar-brand" href="">
                     <span>@lang('app.app-name')</span>
                 </a>
             </div>
@@ -80,7 +79,7 @@
                             </div>
                             <div class="col-md-9">
                                 <div class="form-line">   
-                                    <input type="text" class="form-control" name="Eventname" required="" aria-required="true">
+                                    <input type="text" class="form-control" name="event_name" required="" aria-required="true">
                                 </div>
                             </div>
                         </div>
@@ -97,14 +96,11 @@
                         <div class="row form-group form-float">
                             <div class="col-md-3"><label class="form-label">Date</label></div>
                             <div class="col-md-9">
-                                <select class="form-control" name="event_date" data-live-search="true" style="display: none;">
-                                    <option value="">-- Please select --</option>
-                                    <option value="10">10</option>
-                                    <option value="20">20</option>
-                                    <option value="30">30</option>
-                                    <option value="40">40</option>
-                                    <option value="50">50</option>
-                                </select>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" class="datetimepicker form-control" name = "event_date" placeholder="Please choose date &amp; time..." data-dtp="dtp_WyOVl">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="row form-group form-float">
