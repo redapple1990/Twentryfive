@@ -32,7 +32,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="text-center p-t-30 p-b-30"><i class="material-icons font-30 text-info">check_circle</i></td>
+                                        <td class="text-center p-t-30 p-b-30"><i class="material-icons font-30 text-success">check_circle</i></td>
                                         <td class="p-t-30 p-b-30">
                                             <div>
                                                 <img src="images/user.png" alt="User" width="30" height="30" class="img-circle">
@@ -53,7 +53,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="text-center p-t-30 p-b-30"><i class="material-icons font-30 text-warning">check_circle</i></td>
+                                        <td class="text-center p-t-30 p-b-30"><i class="material-icons font-30 text-success">check_circle</i></td>
                                         <td class="p-t-30 p-b-30">
                                             <div>
                                                 <img src="images/user.png" alt="User" width="30" height="30" class="img-circle">
@@ -74,7 +74,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="text-center p-t-30 p-b-30"><i class="material-icons font-30 text-danger">check_circle</i></td>
+                                        <td class="text-center p-t-30 p-b-30"><i class="material-icons font-30 text-success">check_circle</i></td>
                                         <td class="p-t-30 p-b-30">
                                             <div>
                                                 <img src="images/user.png" alt="User" width="30" height="30" class="img-circle">

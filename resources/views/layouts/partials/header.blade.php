@@ -23,10 +23,10 @@
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <!-- New Guest List Entry-->
-                    <li><a href="javascript:void(0);" data-toggle="modal" data-target="#newGuestList"><i class="material-icons m-r-10">add_box</i>New Guest List Entry</a></li>
+                    <li><a href="javascript:void(0);" data-toggle="modal" data-target="#newGuestList"><i class="material-icons m-r-10">person_add</i>New Guest Entry</a></li>
                     <!-- #END# New Guest List Entry-->
                     <!-- New Evnet-->
-                    <li><a href="javascript:void(0);" data-toggle="modal" data-target="#newEvent"><i class="material-icons m-r-10">add_box</i>New Event</a></li>
+                    <li><a href="javascript:void(0);" data-toggle="modal" data-target="#newEvent"><i class="material-icons m-r-10">event</i>New Event</a></li>
                     <!-- #END# New Event -->
                     <!-- My calender-->
                     <li><a href="javascript:void(0);" class="datepicker" data-dtp="dtp_RAzlT"><i class="material-icons m-r-10">date_range</i>My Calender</a></li>
