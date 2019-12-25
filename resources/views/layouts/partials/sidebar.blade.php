@@ -96,10 +96,10 @@
         <!-- Footer -->
         <div class="legal">
             <div class="copyright">
-                &copy; 2019 <a href="javascript:void(0);">Admin dashboard</a>.
+                &copy; 2020 <a href="javascript:void(0);">Jordan Loyd</a>.
             </div>
             <div class="version">
-                <b>Version: </b> 1.0.4
+                <b>Version: </b> 1.0.0
             </div>
         </div>
         <!-- #Footer -->

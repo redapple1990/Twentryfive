@@ -3767,6 +3767,13 @@ section.content {
   background-color: #1f91f3 !important;
 }
 
+.btn-facebook,
+.btn-facebook:hover,
+.btn-facebook:active,
+.btn-facebook:focus {
+  background-color: #3b5998 !important;
+}
+
 .btn-default,
 .btn-default:hover,
 .btn-default:active,
@@ -10705,7 +10712,11 @@ fieldset[disabled] .form-control {
 /* Login Page ================================== */
 
 .login-page {
-  background-color: #00BCD4;
+  background-image: url(https://images.squarespace-cdn.com/content/5634d63ce4b0b3e71becee89/1457990263551-RAP1ULY733XND43U23IT/spotlight.jpeg?format=1500w&content-type=image%2Fjpeg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  background-size: cover;
   padding-left: 0;
   max-width: 360px;
   margin: 5% auto;

@@ -37,15 +37,10 @@
                     <!-- User image -->
                     <li>
                         <div class="user-image" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src="{{url('images',Auth::user()->profiles?Auth::user()->profiles->avatar:'user.png')}}" width="60" height="60" alt="User" />
+                            <img src="{{url('images',Auth::user()->profiles?Auth::user()->profiles->avatar:'user.png')}}" width="50" height="50" alt="User" style="margin-top": 10px;/>
                         </div>
                         <ul class="dropdown-menu pull-right">
                             <li {{ Route::is('profile.index')? 'class=active':'' }}><a href="{{ route('profile.index') }}"><i class="material-icons">person</i>Profile</a></li>
-                            <li role="seperator" class="divider"></li>
-                            <li><a href="javascript:void(0);"><i class="material-icons">group</i>Followers</a></li>
-                            <li><a href="javascript:void(0);"><i class="material-icons">shopping_cart</i>Sales</a></li>
-                            <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Likes</a></li>
-                            <li role="seperator" class="divider"></li>
                             <li>  
                                 <a href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
@@ -59,7 +54,7 @@
                         </ul>
                     </li>
                     <!-- #END# user image -->
-                    <li class="pull-right"><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="material-icons">more_vert</i></a></li>
+                    <!-- <li class="pull-right"><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="material-icons">more_vert</i></a></li> -->
                 </ul>
             </div>
         </div>
