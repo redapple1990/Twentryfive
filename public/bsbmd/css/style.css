@@ -3645,7 +3645,7 @@ section.content {
 }
 
 .dashboard-task-infos .progress {
-  height: 10px;
+  height: 5px;
   margin-bottom: 0;
   position: relative;
   top: 6px;

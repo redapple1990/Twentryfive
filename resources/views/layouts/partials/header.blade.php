@@ -23,7 +23,7 @@
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <!-- New Guest List Entry-->
-                    <li><a href="javascript:void(0);" data-toggle="modal" data-target="#newGuestList"><i class="material-icons m-r-10">person_add</i>New Guest Entry</a></li>
+                    <li><a href="javascript:void(0);" data-toggle="modal" data-target="#newGuestList"><i class="material-icons m-r-10">person_add</i>New Guest List Entry</a></li>
                     <!-- #END# New Guest List Entry-->
                     <!-- New Evnet-->
                     <li><a href="javascript:void(0);" data-toggle="modal" data-target="#newEvent"><i class="material-icons m-r-10">event</i>New Event</a></li>
@@ -37,7 +37,7 @@
                     <!-- User image -->
                     <li>
                         <div class="user-image" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src="{{url('images',Auth::user()->profiles?Auth::user()->profiles->avatar:'user.png')}}" width="50" height="50" alt="User" style="margin-top": 10px;/>
+                            <img src="{{url('images',Auth::user()->profiles?Auth::user()->profiles->avatar:'user.png')}}" width="50" height="50" alt="User" style="margin-top:10px;"/>
                         </div>
                         <ul class="dropdown-menu pull-right">
                             <li {{ Route::is('profile.index')? 'class=active':'' }}><a href="{{ route('profile.index') }}"><i class="material-icons">person</i>Profile</a></li>
@@ -176,16 +176,12 @@
                                 <label class="form-label">Credential Type</label>
                             </div>
                             <div class="col-md-9">
-                                <div class="form-group">
-                                    <input type="radio" name="credential" id="AAA" class="with-gap">
-                                    <label for="AAA">AAA</label>
-        
-                                    <input type="radio" name="credential" id="GA" class="with-gap">
-                                    <label for="GA" class="m-l-20">GA</label>
-
-                                    <input type="radio" name="credential" id="VIP" class="with-gap">
-                                    <label for="VIP" class="m-l-20">VIP</label>
-                                </div>
+                                <select class="form-control" data-live-search="true" style="display: none;">
+                                    <option value="">-- Please select --</option>
+                                    <option value="AAA">AAA</option>
+                                    <option value="GA">GA</option>
+                                    <option value="VIP">VIP</option>
+                                </select>
                             </div>
                         </div>
                         <div class="row form-group form-float">
