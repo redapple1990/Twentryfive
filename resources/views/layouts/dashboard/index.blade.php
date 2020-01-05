@@ -11,22 +11,25 @@
                             <table class="table table-hover dashboard-task-infos m-b-0">
                                 <tbody>
                                 @foreach($events_data as $key => $data)
-                                    <tr>
+                                    <tr class="p-t-15 p-b-15">
+                                        <td style="vertical-align: middle;">
+                                            <input class="p-t-15 p-b-15" type="checkbox" checked="checked" />
+                                        </td>
                                         <td class="p-t-15 p-b-15">
                                             <div>
                                                 <img src="images/user.png" alt="User" width="30" height="30" class="img-circle">
                                                 <span>Jordan Loyed</span>
                                             </div>
+                                        </td>
+                                        <td class="text-left p-t-15 p-b-15" style="vertical-align: middle;">
+                                            <div>{{ $data->name }}</div>
                                             <div class="progress">
                                                 <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
                                                     <span class="sr-only">80% Complete (success)</span>
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="p-t-15 p-b-15">
-                                            <div class="bg-green font-14 inbox-level text-center">{{ $data->name }}</div>
-                                        </td>
-                                        <td class="text-center p-t-15 p-b-15 p-r-0 p-l-0">1 days ago</td>
+                                        <td class="text-center p-t-15 p-b-15" style="vertical-align: middle;">1 days ago</td>
                                         <td class="text-right p-t-15 p-b-15 p-l-0, p-r-0">
                                             <i class="material-icons">keyboard_arrow_right</i>
                                         </td>
