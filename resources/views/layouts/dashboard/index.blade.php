@@ -8,9 +8,10 @@
                     </div>
                     <div class="body padding-0">
                         <div class="table-responsive">
+                            @php $guestlists = Helper::getGuestList(); @endphp
                             <table class="table table-hover dashboard-task-infos m-b-0">
                                 <tbody>
-                                @foreach($events_data as $key => $data)
+                                @foreach($guestlists as $key => $data)
                                     <tr class="p-t-15 p-b-15">
                                         <td style="vertical-align: middle;">
                                             <input class="p-t-15 p-b-15" type="checkbox" checked="checked" />
@@ -18,16 +19,32 @@
                                         <td class="p-t-15 p-b-15">
                                             <div>
                                                 <img src="images/user.png" alt="User" width="30" height="30" class="img-circle">
-                                                <span>Jordan Loyed</span>
+                                                <span>{{$data->guest_name}}</span>
                                             </div>
                                         </td>
                                         <td class="text-left p-t-15 p-b-15" style="vertical-align: middle;">
-                                            <div>{{ $data->name }}</div>
+                                            <div>{{ $data->event_name }}</div>
+                                            @if($data->status == 'approved')
                                             <div class="progress">
                                                 <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
                                                     <span class="sr-only">80% Complete (success)</span>
                                                 </div>
                                             </div>
+                                            @endif
+                                            @if($data->status == 'pending')
+                                            <div class="progress">
+                                                <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                                    <span class="sr-only">80% Complete (success)</span>
+                                                </div>
+                                            </div>
+                                            @endif
+                                            @if($data->status == 'declined')
+                                            <div class="progress">
+                                                <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                                    <span class="sr-only">80% Complete (success)</span>
+                                                </div>
+                                            </div>
+                                            @endif
                                         </td>
                                         <td class="text-center p-t-15 p-b-15" style="vertical-align: middle;">1 days ago</td>
                                         <td class="text-right p-t-15 p-b-15 p-l-0, p-r-0">
