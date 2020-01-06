@@ -120,7 +120,8 @@
     <div class="modal fade" id="newGuestList" tabindex="-1" role="dialog" style="display: none;">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <form id="form_validation" method="POST" novalidate="novalidate">
+                <form id="form_validation" method="POST" action="{{ url('guest/store') }}" novalidate="novalidate">
+                    {{ csrf_field() }}
                     <div class="modal-header">
                         <h4 class="modal-title" id="largeModalLabel">New Guest List Entry</h4>
                     </div>
@@ -128,13 +129,12 @@
                         <div class="row form-group form-float">
                             <div class="col-md-3"><label class="form-label">Event</label></div>
                             <div class="col-md-9">
-                                <select class="form-control bootstrap-select" data-live-search="true" style="display: none;">
+                                @php $events = Helper::getEvents(); @endphp
+                                <select class="form-control bootstrap-select" name="eventname" data-live-search="true" style="display: none;">
                                     <option value="">-- Please select --</option>
-                                    <option value="10">10</option>
-                                    <option value="20">20</option>
-                                    <option value="30">30</option>
-                                    <option value="40">40</option>
-                                    <option value="50">50</option>
+                                    @foreach($events as $key => $val)
+                                        <option value="{{ $val->name }}">{{ $val->name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -150,25 +150,24 @@
                         </div>
                         <div class="row form-group form-float">
                             <div class="col-md-3">
-                                <label class="form-label">Name of Tickets</label>
+                                <label class="form-label">Number of Tickets</label>
                             </div>
                             <div class="col-md-9">
                                 <div class="form-line">   
-                                    <input type="text" class="form-control" name="ticketName" required="" aria-required="true">
+                                    <input type="text" class="form-control" name="ticketnumber" required="" aria-required="true">
                                 </div>
                             </div>
                         </div>
                         <div class="row form-group form-float">
                             <div class="col-md-3"><label class="form-label">Affliation</label></div>
                             <div class="col-md-9">
-                                <select class="form-control" data-live-search="true" style="display: none;">
+                                @php $users = Helper::getUsers(); @endphp
+                                <select class="form-control" data-live-search="true" name = "affliation" style="display: none;">
                                     <option value="">-- Please select --</option>
-                                    <option value="10">10</option>
-                                    <option value="20">20</option>
-                                    <option value="30">30</option>
-                                    <option value="40">40</option>
-                                    <option value="50">50</option>
-                                </select>
+                                    @foreach($users as $key => $val)
+                                        <option value="{{ $val->name }}">{{ $val->name }}</option>
+                                    @endforeach
+                                </select>                                                                                                                                                                                                                                                                                                        
                             </div>
                         </div>
                         <div class="row form-group form-float">
@@ -176,7 +175,7 @@
                                 <label class="form-label">Credential Type</label>
                             </div>
                             <div class="col-md-9">
-                                <select class="form-control" data-live-search="true" style="display: none;">
+                                <select class="form-control" name="type" data-live-search="true" style="display: none;">
                                     <option value="">-- Please select --</option>
                                     <option value="AAA">AAA</option>
                                     <option value="GA">GA</option>
@@ -187,10 +186,10 @@
                         <div class="row form-group form-float">
                             <div class="col-md-3"><label class="form-label">Status</label></div>
                             <div class="col-md-9">
-                                <select class="form-control" data-live-search="true" style="display: none;">
-                                    <option value="">Approved</option>
-                                    <option value="10">Pending</option>
-                                    <option value="20">Declined</option>
+                                <select class="form-control" data-live-search="true" name="status" style="display: none;">
+                                    <option value="approved">Approved</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="declined">Declined</option>
                                 </select>
                             </div>
                         </div>
