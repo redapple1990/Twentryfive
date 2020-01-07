@@ -46,9 +46,6 @@
                                 <table class="table table-hover dataTable js-check-example">
                                     <thead>
                                         <tr>
-                                        	<th class="align-middle" width="3%">
-                                                <input type="checkbox" name="event-check" class="filled-in chk-col-pink">
-                                            </th>
                                             <th>Event</th>
                                             <th>Date</th>
                                             <th>Location</th>
@@ -61,18 +58,29 @@
                                     </thead>
                                     <tbody>
                                     @foreach($events_data as $key => $data)
-                                        <tr>    
-                                            <td>
-                                                <input type="checkbox" checked="checked" />
-                                            </td>
+                                        <tr>
                                             <td>{{ $data->name }}</td>
                                             <td>{{ $data->datetime }}</td>
                                             <td>{{ $data->location }}</td>
-                                            <td>20</td>
-                                            <td>2</td>
-                                            <td>0</td>
-                                            <td>
-                                                <a href=""><span class="bg-red font-14 inbox-level text-center p-t-8 p-b-8 p-l-20 p-r-20">Public</span></a>
+                                            @php $app_num = Helper::getApprovedForEvent($data->id); @endphp
+                                            <td>{{$app_num}}</td>
+                                            @php $app_num = Helper::getPendingForEvent($data->id); @endphp
+                                            <td>{{$app_num}}</td>
+                                            @php $app_num = Helper::getDeclinedForEvent($data->id); @endphp
+                                            <td>{{$app_num}}</td>
+                                            <td class="justify-content-between align-items-center">
+                                                <span>Public</span>
+                                                <ul style="list-style-type: none;" class="padding-0 margin-0">
+                                                    <li class="dropdown">
+                                                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                            <i class="material-icons">keyboard_arrow_down</i>
+                                                        </a>
+                                                        <ul class="dropdown-menu pull-right">
+                                                            <li><a href="javascript:void(0);">Public</a></li>
+                                                            <li><a href="javascript:void(0);">Private</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
                                             </td>
                                             <td>
                                                <a href="{{ route('events/event', ['event' => $data->id]) }}"><span>More...</span></a>

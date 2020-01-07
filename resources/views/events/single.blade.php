@@ -58,80 +58,35 @@
                                 <table class="table table-bordered table-hover dataTable js-check-example">
                                     <thead>
                                         <tr>
-                                        	<th width="3%">
-                                                <input type="checkbox" checked="checked"/>
-                                            </th>
-                                            <th>{{Session::get('firstName')}}</th>
-                                            <th>LastName</th>
+                                            <th>Guest Name</th>
+                                            <th>Type</th>
                                             <th>Status</th>
-                                            <th>UserName</th>
+                                            <th>Requester</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    @foreach($detail_data as $key => $data)
                                         <tr>
-                                            <td>
-                                                <input type="checkbox" checked="checked" />
-                                            </td>
-                                            <td>Event Sample</td>
-                                            <td>Date</td>
+                                            <td>{{$data->guest_name}}</td>
+                                            <td>{{$data->type}}</td>
                                             <td class="d-flex justify-content-between align-items-center">
-                                                <span>On</span>
+                                                <span>{{$data->status}}</span>
                                                 <ul style="list-style-type: none;" class="padding-0 margin-0">
                                                     <li class="dropdown">
                                                         <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                                             <i class="material-icons">keyboard_arrow_down</i>
                                                         </a>
                                                         <ul class="dropdown-menu pull-right">
-                                                            <li><a href="javascript:void(0);">ON</a></li>
-                                                            <li><a href="javascript:void(0);">Off</a></li>
+                                                            <li><a href="javascript:void(0);">Approved</a></li>
+                                                            <li><a href="javascript:void(0);">Pending</a></li>
+                                                            <li><a href="javascript:void(0);">Declined</a></li>
                                                         </ul>
                                                     </li>
                                                 </ul>
                                             </td>
-                                            <td>2</td>
+                                            <td>{{$data->affliation}}</td>
                                         </tr>
-                                        <tr>
-                                            <td><input type="checkbox" checked="checked" /></td>
-                                            <td>Event Sample</td>
-                                            <td>Date</td>
-                                            <td class="d-flex justify-content-between align-items-center">
-                                                <span>OFF</span>
-                                                <ul style="list-style-type: none;" class="padding-0 margin-0">
-                                                    <li class="dropdown">
-                                                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                                            <i class="material-icons">keyboard_arrow_down</i>
-                                                        </a>
-                                                        <ul class="dropdown-menu pull-right">
-                                                            <li><a href="javascript:void(0);">ON</a></li>
-                                                            <li><a href="javascript:void(0);">Off</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                            <td>2</td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <input type="checkbox" class="fill-in">
-                                            </td>
-                                            <td>Event Samples</td>
-                                            <td>Date</td>
-                                            <td class="d-flex justify-content-between align-items-center">
-                                                <span>On</span>
-                                                <ul style="list-style-type: none;" class="padding-0 margin-0">
-                                                    <li class="dropdown">
-                                                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                                            <i class="material-icons">keyboard_arrow_down</i>
-                                                        </a>
-                                                        <ul class="dropdown-menu pull-right">
-                                                            <li><a href="javascript:void(0);">ON</a></li>
-                                                            <li><a href="javascript:void(0);">Off</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                            <td>2</td>
-                                        </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

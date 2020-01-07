@@ -32,5 +32,23 @@ class Helper
         $event_name = Events::where('id', $event_id)->first()->name;
         return  $event_name;
     }
+
+    public static function getApprovedForEvent($event_id)
+    {
+        $event_count = GuestList::where([['event_name', '=', $event_id],['status', '=', 'approved']])->count();
+        return  $event_count;
+    }
+
+    public static function getPendingForEvent($event_id)
+    {
+        $event_count = GuestList::where([['event_name', '=', $event_id],['status', '=', 'pending']])->count();
+        return  $event_count;
+    }
+
+    public static function getDeclinedForEvent($event_id)
+    {
+        $event_count = GuestList::where([['event_name', '=', $event_id],['status', '=', 'declined']])->count();
+        return  $event_count;
+    }
 }
 ?>
