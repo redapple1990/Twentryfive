@@ -23,7 +23,8 @@
                                             </div>
                                         </td>
                                         <td class="text-left p-t-15 p-b-15" style="vertical-align: middle;">
-                                            <div>{{ $data->event_name }}</div>
+                                            @php $event_ddd = Helper::getEventNameForID($data->event_name); @endphp
+                                            <div>{{ $event_ddd }}</div>
                                             @if($data->status == 'approved')
                                             <div class="progress">
                                                 <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
@@ -46,7 +47,8 @@
                                             </div>
                                             @endif
                                         </td>
-                                        <td class="text-center p-t-15 p-b-15" style="vertical-align: middle;">1 days ago</td>
+                                        @php $dateinfo = $data->created_at->format('M d, Y');@endphp
+                                        <td class="text-center p-t-15 p-b-15" style="vertical-align: middle;">{{$dateinfo}}</td>
                                         <td class="text-right p-t-15 p-b-15 p-l-0, p-r-0">
                                             <i class="material-icons">keyboard_arrow_right</i>
                                         </td>

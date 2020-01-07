@@ -26,5 +26,11 @@ class Helper
         $guestlist = GuestList::all();
         return  $guestlist;
     }
+
+    public static function getEventNameForID($event_id)
+    {
+        $event_name = Events::where('id', $event_id)->first()->name;
+        return  $event_name;
+    }
 }
 ?>

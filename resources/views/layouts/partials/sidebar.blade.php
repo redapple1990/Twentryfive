@@ -12,21 +12,12 @@
                     </a>
                 </li>
 
-                <li>
-                    <a href="javascript:void(0);" class="menu-toggle">
+                <li {{Route::is('events/index')? 'class=active':''}}>
+                    <a href="{{route('events/index')}}">
                         <i class="material-icons">event</i>
                         <span>Events</span>
                     </a>
-                    <ul class="ml-menu">
-                        <li {{Route::is('events/index')? 'class=active': ''}}>
-                            <a href="{{route('events/index')}}">List of Events</a>
-                        </li>
-                        <li {{Route::is('events/single')? 'class=active': ''}}>
-                            <a href="{{route('events/single')}}">Single of Events</a>
-                        </li> 
-                    </ul>
                 </li>
-
                 <li>
                     <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">people</i>

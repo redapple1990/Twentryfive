@@ -43,7 +43,7 @@
                         </div>
                         <div class="body">                        	
                             <div class="table-responsive">
-                                <table class="table table-bordered table-hover dataTable js-check-example">
+                                <table class="table table-hover dataTable js-check-example">
                                     <thead>
                                         <tr>
                                         	<th class="align-middle" width="3%">
@@ -55,7 +55,8 @@
                                             <th>Approved</th>
                                             <th>Pending</th>
                                             <th>Declined</th>
-                                            <th>status</th>
+                                            <th>Status</th>
+                                            <th>Detail</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -70,9 +71,11 @@
                                             <td>20</td>
                                             <td>2</td>
                                             <td>0</td>
-                                            <td class="d-flex align-items-center">
-                                                <a href="javascript:void(0);" class="d-flex align-items-center"><i class="material-icons m-r-10">add_box</i>New Guest List Entry</a>
-                                                <a href="" class="m-l-30"><span class="bg-red font-14 inbox-level text-center p-t-8 p-b-8 p-l-20 p-r-20">Public</span></a>
+                                            <td>
+                                                <a href=""><span class="bg-red font-14 inbox-level text-center p-t-8 p-b-8 p-l-20 p-r-20">Public</span></a>
+                                            </td>
+                                            <td>
+                                               <a href="{{ route('events/event', ['event' => $data->id]) }}"><span>More...</span></a>
                                             </td>                
                                         </tr>
                                     @endforeach

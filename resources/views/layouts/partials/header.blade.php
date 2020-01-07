@@ -133,7 +133,7 @@
                                 <select class="form-control bootstrap-select" name="eventname" data-live-search="true" style="display: none;">
                                     <option value="">-- Please select --</option>
                                     @foreach($events as $key => $val)
-                                        <option value="{{ $val->name }}">{{ $val->name }}</option>
+                                        <option value="{{ $val->id }}">{{ $val->name }}</option>
                                     @endforeach
                                 </select>
                             </div>

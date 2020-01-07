@@ -39,7 +39,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
-                            <h2>Single of Events</h2>
+                            <h2>{{ $event_data->name }}</h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
                                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -61,7 +61,7 @@
                                         	<th width="3%">
                                                 <input type="checkbox" checked="checked"/>
                                             </th>
-                                            <th>FirstName</th>
+                                            <th>{{Session::get('firstName')}}</th>
                                             <th>LastName</th>
                                             <th>Status</th>
                                             <th>UserName</th>
