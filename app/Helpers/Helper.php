@@ -6,6 +6,7 @@ use DB;
 use App\Events;
 use App\User;
 use App\GuestList;
+use App\Guests;
 
 class Helper
 {
@@ -25,6 +26,12 @@ class Helper
     {
         $guestlist = GuestList::all();
         return  $guestlist;
+    }
+
+    public static function getGuests()
+    {
+        $guests = Guests::all();
+        return  $guests;
     }
 
     public static function getEventNameForID($event_id)

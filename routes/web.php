@@ -20,9 +20,9 @@ Auth::routes();
 Route::get('/home',['as'=>'dashboard','uses'=>'HomeController@index']);
 Route::get('/events/index',['as'=>'events/index','uses'=>'EventsController@index']);
 Route::get('/events/{event}',['as'=>'events/event','uses'=>'EventsController@single']);
-// Route::post('/events/single',['as'=>'events/single','uses'=>'EventsController@singlePost']);
 Route::get('/contacts/index',['as'=>'contacts/index','uses'=>'ContactsController@index']);
 Route::post('events/store',['as'=>'events/store','uses'=>'EventsController@newEventStore']);
+Route::post('contacts/store',['as'=>'contacts/store','uses'=>'ContactsController@newContactStore']);
 Route::post('guest/store',['as'=>'guest/store','uses'=>'HomeController@newGuestStore']);
 
 Route::get('/guests/password',['as'=>'guests','uses'=>'GuestsController@index']);

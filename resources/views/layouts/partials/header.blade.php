@@ -143,9 +143,13 @@
                                 <label class="form-label">Name of Guest</label>
                             </div>
                             <div class="col-md-9">
-                                <div class="form-line">   
-                                    <input type="text" class="form-control" name="guestname" required="" aria-required="true">
-                                </div>
+                                @php $events = Helper::getGuests(); @endphp
+                                <select class="form-control bootstrap-select" name="guestname" data-live-search="true" style="display: none;">
+                                    <option value="">-- Please select --</option>
+                                    @foreach($events as $key => $val)
+                                        <option value="{{ $val->name }}">{{ $val->name }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
                         <div class="row form-group form-float">

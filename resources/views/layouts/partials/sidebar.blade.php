@@ -18,20 +18,20 @@
                         <span>Events</span>
                     </a>
                 </li>
-                <li>
-                    <a href="javascript:void(0);" class="menu-toggle">
+                <li {{Route::is('contacts/index')? 'class=active': ''}}>
+                    <a href="{{route('contacts/index')}}">
                         <i class="material-icons">people</i>
                         <span>Contacts</span>
                     </a>
-                    <ul class="ml-menu">
+                </li>
+                <!-- <ul class="ml-menu">
                         <li {{Route::is('contacts/index')? 'class=active': ''}}>
                             <a href="{{route('contacts/index')}}">Contacts Detail</a>
                         </li>
                         {{-- <li {{Route::is('single')? 'class=active': ''}}>
                             <a href="{{route('single')}}">Single of Events</a>
                         </li>  --}}
-                    </ul>
-                </li>
+                    </ul> -->
                 <li>
                     <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">settings</i>

@@ -38,46 +38,35 @@
                         <div class="header d-flex justify-content-between align-items-center">
                             <h2>Contacts</h2>
                             <div class="pull-right">
-                                <a href="javascript:void(0);" class="d-flex align-items-center">
-                                    <i class="material-icons font-30 m-r-10">add_box</i>
-                                    Add Contacts
-                                </a>
+                                <a href="javascript:void(0);" data-toggle="modal" data-target="#newContact" style="height: 100%;/* border: 1px solid red; */padding: 7px 10px;background: #2b982b;color: white;border-radius: 50px;">Add Contacts</a>
                             </div>
                         </div>
                         <div class="body">                        	
                             <div class="table-responsive">
-                                <table class="table table-bordered table-hover dataTable js-basic-example">
+                                <table class="table table-hover dataTable js-basic-example">
                                     <thead>
                                         <tr>
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>Phone</th>
                                             <th>Created Date</th>
+                                            <th>Detail</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    @foreach($guests_data as $key => $data)
                                         <tr>
+                                            <td>{{ $data->name }}</td>
+                                            <td>{{ $data->email }}</td>
+                                            <td>{{ $data->phone }}</td>
+                                            <td>{{ $data->created_at }}</td>
                                             <td>
                                                 <a href="javascript:void(0);" class="js-user-right-sidebar" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
-                                                    admin
+                                                    More...
                                                 </a>
                                             </td>
-                                            <td>admin@admin.com</td>
-                                            <td>1234456789</td>
-                                            <td>2019-11-10</td>
                                         </tr>
-                                        <tr>
-                                            <td>User</td>
-                                            <td>User@user.com</td>
-                                            <td>1234456789</td>
-                                            <td>2019-11-10</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Justin</td>
-                                            <td>justin@justin.com</td>
-                                            <td>1234456789</td>
-                                            <td>2019-11-10</td>
-                                        </tr>
+                                    @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -88,6 +77,56 @@
             <!-- #END# Vertical Layout -->
            
         </div>
+
+        <div class="modal fade" id="newContact" tabindex="-1" role="dialog" style="display: none;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form id="form_validation" action="{{ url('contacts/store') }}" method="POST" novalidate="novalidate">
+                {{ csrf_field() }}
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="largeModalLabel">New Contact</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row form-group form-float">
+                            <div class="col-md-3">
+                                <label class="form-label">Name</label>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="form-line">   
+                                    <input type="text" class="form-control" name="guest_name" required="" aria-required="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group form-float">
+                            <div class="col-md-3">
+                                <label class="form-label">Email</label>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="form-line">   
+                                    <input type="text" class="form-control" name="guest_email" required="" aria-required="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group form-float">
+                            <div class="col-md-3">
+                                <label class="form-label">Phone</label>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="form-line">   
+                                    <input type="text" class="form-control" name="guest_phone" required="" aria-required="true">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-link waves-effect">Submit</button>
+                        <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
 @endsection
 
 @section('extra-script')
