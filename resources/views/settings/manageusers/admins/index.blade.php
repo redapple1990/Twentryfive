@@ -34,55 +34,44 @@
 @section('content')
         <div class="container-fluid">
             <div class="block-header">
-                <h2>Admins</h2>
+                <h2>User Settings</h2>
             </div>
 
             <!-- Vertical Layout -->
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
-                        <div class="header">
-                            <h2>Permission</h2>
-                            <a href="{{route('admins.create')}}" class="btn btn-success btn-block m-t-15 waves-effect">Add New</a>
-                            <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
-                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li><a href="javascript:void(0);">Action</a></li>
-                                        <li><a href="javascript:void(0);">Another action</a></li>
-                                        <li><a href="javascript:void(0);">Something else here</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
+                        <div class="header d-flex justify-content-between align-items-center">
+                            <h2>Permissions</h2>
+                            <div class="pull-right">
+                                <a href="{{route('admins.create')}}" class="btn btn-success btn-block waves-effect">Add New</a>
+                            </div>
                         </div>
                         <div class="body">                        	
                             <div class="table-responsive">
-                                <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                                <table class="table table-bordered table-striped table-hover dataTable js-basic-example">
                                     <thead>
                                         <tr>
-                                        	<th>Id</th>
-                                            <th>Name</th>
-                                            <th></th>
-                                            <th></th>
+                                        	<th>Name</th>
+                                            <th>Edit Users</th>
+                                            <th>Edit Events</th>
+                                            <th>Edit Guest Lists</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                        	<th>Id</th>
-                                            <th>Name</th>
-                                            <th></th>
-                                            <th></th>
-                                        </tr>
-                                    </tfoot>
                                     <tbody>
-                                    	@foreach($permissions as $row)
+                                    	@foreach($roles as $row)
                                         <tr>                                        	
-                                        	<td>{{ $row->id }}</td>
-                                        	<td>{{ $row->name }}</td>
+                                            <td>{{ $row->name }}</td>
+                                            @php $value = 'Yes'; if ($row->users == 0) $value = 'No'; @endphp
+                                            <td>{{ $value }}</td>
+                                            @php $value = 'Yes'; if ($row->events == 0) $value = 'No'; @endphp
+                                            <td>{{ $value }}</td>
+                                            @php $value = 'Yes'; if ($row->entries == 0) $value = 'No'; @endphp
+                                            <td>{{ $value }}</td>
                                         	<td>
-                                        		<a href="{{route('admins.edit',$row->id)}}" class="btn btn-warning waves-effect">Edit</a>
+                                        		<a href="{{route('ungrouped.edit',$row->id)}}" class="btn btn-warning waves-effect">Edit</a>
                                         	</td>
                                         	<td>
                                         		<form id="delete_form" method="POST" action="{{ route('admins.destroy',$row->id) }}">

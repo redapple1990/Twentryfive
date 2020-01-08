@@ -28,9 +28,9 @@ class UngroupedController extends Controller
      */
     public function index()
     {
-        $roles = Role::all();
+        $permissions = Permission::all();
 
-        return view('settings.manageusers.ungrouped.index', compact('roles'));
+        return view('settings.manageusers.ungrouped.index', compact('permissions'));
     }
 
     /**
@@ -40,9 +40,8 @@ class UngroupedController extends Controller
      */
     public function create()
     {
-        $permissions = Permission::get()->pluck('name', 'name');
-
-        return view('settings.manageusers.ungrouped.create', compact('permissions'));
+        //$permissions = Permission::get()->pluck('name', 'name');
+        return view('settings.manageusers.ungrouped.create');
     }
 
     /**
@@ -53,18 +52,9 @@ class UngroupedController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required|unique:roles|max:20',
-            'permission' => 'required',
-        ]);
-
-        $role = Role::create($request->except('permission'));
-        $permissions = $request->input('permission') ? $request->input('permission') : [];
-        $role->givePermissionTo($permissions);
-
+        Permission::create($request->all());
         return redirect()->route('ungrouped.index');
     }
-
 
     /**
      * Show the form for editing Role.
@@ -118,10 +108,10 @@ class UngroupedController extends Controller
      */
     public function destroy($id)
     {
-        $role = Role::findOrFail($id);
-        $role->delete();
+        $permission = Permission::findOrFail($id);
+        $permission->delete();
 
-        return redirect()->route('settings.manageusers.ungrouped.index');
+        return redirect()->back();
     }
 
     /**

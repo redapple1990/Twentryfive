@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Settings\ManageUsers;
 
+use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use App\Http\Controllers\Controller;
+
 
 class AdminsController extends Controller
 {
@@ -26,8 +28,8 @@ class AdminsController extends Controller
      */
     public function index()
     {        
-        $permissions = Permission::all();
-        return view('settings.manageusers.admins.index',compact('permissions'));
+        $roles = Role::all();
+        return view('settings.manageusers.admins.index',compact('roles'));
     }
 
     /**

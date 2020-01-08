@@ -34,63 +34,36 @@
 @section('content')
         <div class="container-fluid">
             <div class="block-header">
-                <h2>Roles</h2>
+                <h2>Guest List Settings</h2>
             </div>
 
             <!-- Vertical Layout -->
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
-                        <div class="header">
-                            <h2>Roles</h2>
-                            <a href="{{route('ungrouped.create')}}" class="btn btn-success btn-block m-t-15 waves-effect">Add New</a>
-                            <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
-                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li><a href="javascript:void(0);">Action</a></li>
-                                        <li><a href="javascript:void(0);">Another action</a></li>
-                                        <li><a href="javascript:void(0);">Something else here</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
+                        <div class="header d-flex justify-content-between align-items-center">
+                            <h2>Guest List Pass Types</h2>
+                            <div class="pull-right">
+                                <a href="{{route('ungrouped.create')}}" class="btn btn-success btn-block waves-effect">Add New</a>
+                            </div>
                         </div>
                         <div class="body">                        	
                             <div class="table-responsive">
-                                <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                                <table class="table table-bordered table-hover dataTable js-basic-example">
                                     <thead>
                                         <tr>
-                                        	<th>Id</th>
-                                            <th>Name</th>
-                                            <th>Permissions</th>
-                                            <th></th>
-                                            <th></th>
+                                        	<th>Abbreviation</th>
+                                            <th>Description</th>
+                                            <th>Credential Material</th>
+                                            <th>Delete</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                        	<th>Id</th>
-                                            <th>Name</th>
-                                            <th>Permissions</th>
-                                            <th></th>
-                                            <th></th>
-                                        </tr>
-                                    </tfoot>
                                     <tbody>
-                                    	@foreach($roles as $row)
+                                    	@foreach($permissions as $row)
                                         <tr>                                        	
-                                        	<td>{{ $row->id }}</td>
                                         	<td>{{ $row->name }}</td>
-                                            <td>
-                                                @foreach($row->permissions()->pluck('name') as $permission)
-                                                    {{ $permission }},
-                                                @endforeach
-                                            </td>
-                                        	<td>
-                                        		<a href="{{route('ungrouped.edit',$row->id)}}" class="btn btn-warning waves-effect">Edit</a>
-                                        	</td>
+                                        	<td>{{ $row->guard_name }}</td>
+                                            <td>{{ $row->material }}</td>
                                         	<td>
                                         		<form id="delete_form" method="POST" action="{{ route('ungrouped.destroy',$row->id) }}">
 					                            	{{ csrf_field() }}
