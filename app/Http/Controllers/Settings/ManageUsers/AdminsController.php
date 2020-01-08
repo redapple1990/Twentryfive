@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Settings\ManageUsers;
 
 use Spatie\Permission\Models\Role;
+use App\User;
 use Spatie\Permission\Models\Permission;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
@@ -29,7 +30,8 @@ class AdminsController extends Controller
     public function index()
     {        
         $roles = Role::all();
-        return view('settings.manageusers.admins.index',compact('roles'));
+        $users = User::all();
+        return view('settings.manageusers.admins.index',compact('roles','users'));
     }
 
     /**
@@ -90,7 +92,6 @@ class AdminsController extends Controller
 
         return redirect()->route('settings.manageusers.admins.index');
     }
-
 
     /**
      * Remove Permission from storage.

@@ -90,7 +90,51 @@
                 </div>
             </div>
             <!-- #END# Vertical Layout -->
-           
+            
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header d-flex justify-content-between align-items-center">
+                            <h2>Users</h2>
+                            <div class="pull-right">
+                                <a href="{{route('admins.create')}}" class="btn btn-success btn-block m-t-15 waves-effect">Add New</a>
+                                </div>
+                        </div>
+                        <div class="body">                        	
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped table-hover dataTable js-basic-example">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($users as $row)
+                                        <tr>
+                                        	<td>{{ $row->name }}</td>
+                                        	<td>
+                                        		<a href="" class="btn btn-warning waves-effect">Edit</a>
+                                        	</td>
+                                        	<td>
+                                        		<form id="delete_form" method="POST" action="">
+					                            	{{ csrf_field() }}
+					                            	<input name="_method" type="hidden" value="DELETE">
+					                                <button class="btn btn-danger waves-effect" type="submit">Delete</button>
+					                            </form>
+                                        	</td>	                                   
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #END# Vertical Layout -->
+            
         </div>
 @endsection
 

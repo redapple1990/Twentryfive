@@ -57,9 +57,7 @@ class EventsController extends Controller
     public function single($id)
     {
         $event_data = DB::table('events')->where('id', $id)->first();
-        $detail_data = DB::table('guest_lists')->where('event_name', $id)->get();
-        //var_dump($detail_data);exit;
-        
+        $detail_data = DB::table('guest_lists')->where('event_name', $id)->get();        
         return view('events.single', ['event_data' => $event_data], ['detail_data' => $detail_data]);
     }
 }

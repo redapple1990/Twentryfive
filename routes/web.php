@@ -30,9 +30,7 @@ Route::get('/guests/password',['as'=>'guests','uses'=>'GuestsController@index'])
 Route::group(['middleware' => ['role:admin']], function () {
 
     Route::resource('settings/manageusers/admins', 'Settings\ManageUsers\AdminsController');
-    Route::resource('settings/manageusers/ungrouped', 'Settings\ManageUsers\UngroupedController'); 
-    Route::resource('settings/manageusers/regularusers', 'Settings\ManageUsers\RegularUsersController'); 
-    Route::resource('settings/manageusers/externalusers', 'Settings\ManageUsers\ExternalUsersController'); 
+    Route::resource('settings/manageusers/ungrouped', 'Settings\ManageUsers\UngroupedController');
 });
 
 Route::resource('profile','Users\ProfileController');

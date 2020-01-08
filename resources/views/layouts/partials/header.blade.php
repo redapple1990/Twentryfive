@@ -179,11 +179,12 @@
                                 <label class="form-label">Credential Type</label>
                             </div>
                             <div class="col-md-9">
+                                @php $permissions = Helper::getPermissions(); @endphp
                                 <select class="form-control" name="type" data-live-search="true" style="display: none;">
                                     <option value="">-- Please select --</option>
-                                    <option value="AAA">AAA</option>
-                                    <option value="GA">GA</option>
-                                    <option value="VIP">VIP</option>
+                                    @foreach($permissions as $key => $val)
+                                        <option value="{{ $val->name }}">{{ $val->name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>

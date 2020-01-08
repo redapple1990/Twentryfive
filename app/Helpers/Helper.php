@@ -7,6 +7,7 @@ use App\Events;
 use App\User;
 use App\GuestList;
 use App\Guests;
+use Spatie\Permission\Models\Permission;
 
 class Helper
 {
@@ -32,6 +33,12 @@ class Helper
     {
         $guests = Guests::all();
         return  $guests;
+    }
+
+    public static function getPermissions()
+    {
+        $permissions = Permission::all();
+        return  $permissions;
     }
 
     public static function getEventNameForID($event_id)

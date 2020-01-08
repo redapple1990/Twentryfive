@@ -64,17 +64,8 @@ class UngroupedController extends Controller
      */
     public function edit($id)
     {
-        $permissions = Permission::get()->pluck('name', 'name');
-
         $role = Role::findOrFail($id);
-
-        $selectedPermissions = $role->permissions()->pluck('name');
-
-        JavaScript::put([
-            'foo' => $selectedPermissions
-        ]);
-
-        return view('settings.manageusers.ungrouped.edit', compact('role', 'permissions','selectedPermissions'));
+        return view('settings.manageusers.ungrouped.edit', compact('role'));
     }
 
     /**
@@ -86,17 +77,18 @@ class UngroupedController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'name' => 'required|unique:roles|max:20',
-            'permission' => 'required',
-        ]);
-
         $role = Role::findOrFail($id);
-        $role->update($request->except('permission'));
-        $permissions = $request->input('permission') ? $request->input('permission') : [];
-        $role->syncPermissions($permissions);
-
-        return redirect()->route('settings.manageusers.ungrouped.index');
+        // var_dump($request->events);exit;
+        // $role->update($request->except('permission'));
+        // $permissions = $request->input('permission') ? $request->input('permission') : [];
+        // $role->syncPermissions($permissions);
+        $role->update(['name' => $request->name]);
+        $role->update(['users' => $request->users]);
+        $role->update(['events' => $request->events]);
+        $role->update(['entries' => $request->entries]);
+        
+        $roles = Role::all();
+        return view('settings.manageusers.admins.index',compact('roles'));
     }
 
 
