@@ -12,7 +12,7 @@
     <!-- #END# Search Bar -->
     <!-- Top Bar -->
     <nav class="navbar">
-        <div class="container-fluid" style = "background:darkgreen">
+        <div class="container-fluid" style = "background:darkcyan">
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a>
@@ -23,13 +23,13 @@
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <!-- New Guest List Entry-->
-                    <li><a href="javascript:void(0);" data-toggle="modal" data-target="#newGuestList"><i class="material-icons m-r-10">person_add</i>New Guest List Entry</a></li>
+                    <li><a href="javascript:void(0);" data-toggle="modal" data-target="#newGuestList"><i class="material-icons m-r-10">person_add</i></a></li>
                     <!-- #END# New Guest List Entry-->
                     <!-- New Evnet-->
-                    <li><a href="javascript:void(0);" data-toggle="modal" data-target="#newEvent"><i class="material-icons m-r-10">event</i>New Event</a></li>
+                    <li><a href="javascript:void(0);" data-toggle="modal" data-target="#newEvent"><i class="material-icons m-r-10">event</i></a></li>
                     <!-- #END# New Event -->
                     <!-- My calender-->
-                    <li><a href="javascript:void(0);" class="datepicker" data-dtp="dtp_RAzlT"><i class="material-icons m-r-10">date_range</i>My Calender</a></li>
+                    <li><a href="javascript:void(0);" class="datepicker" data-dtp="dtp_RAzlT"><i class="material-icons m-r-10">date_range</i></a></li>
                     <!-- #END# My Calender-->
                     <!-- Call Search -->
                     <li><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li>

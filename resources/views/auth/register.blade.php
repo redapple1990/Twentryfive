@@ -3,7 +3,7 @@
 @section('content')
 <form id="sign_in" role="form" method="POST" action="{{ route('register') }}">
     {{ csrf_field() }}
-    <div class="msg">Register</div>
+    <div class="msg"></div>
     <div class="input-group">
         <span class="input-group-addon">
             <i class="material-icons">person</i>
@@ -46,12 +46,12 @@
         </div>
     </div>
     <div class="form-group">
-        <input type="checkbox" name="terms" id="terms" class="filled-in chk-col-pink">
-        <label for="terms">I read and agree to the <a href="javascript:void(0);">terms of usage</a>.</label>
+        <input type="checkbox" name="terms" id="terms" class="filled-in chk-col-black d-none">
+        <label for="terms">I read and agree to the <a href="https://www.facebook.com/jordanloyd">terms of usage</a>.</label>
     </div>
     <div class="row">
         <div class="col-xs-12">
-            <button class="btn btn-block btn-success btn-lg bg-pink waves-effect" type="submit">Register</button>
+            <button class="btn btn-block btn-primary btn-lg bg-pink waves-effect" type="submit">Register</button>
         </div>
     </div>
     <div class="m-t-25 m-b--5 align-center">

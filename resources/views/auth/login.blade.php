@@ -4,13 +4,13 @@
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <form id="sign_in" role="form" method="POST" action="{{ route('login') }}">
     {{ csrf_field() }}
-    <div class="msg">LOGIN</div>
+    <p class="msg"></p>
     <div class="input-group">
         <span class="input-group-addon">
-        <i class="material-icons">person</i>
+            <i class="material-icons">email</i>
         </span>
         <div class="form-line {{ $errors->has('email') ? ' error' : '' }}">
-            <input type="text" class="form-control" name="email" value="{{old('email')}}" placeholder="Username" required autofocus>
+            <input type="text" class="form-control" name="email" value="{{old('email')}}" placeholder="Email" required autofocus>
         </div>
         @if ($errors->has('email'))
         <label id="name-error" class="error" for="email">{{ $errors->first('email') }}</label>
@@ -18,10 +18,10 @@
     </div>
     <div class="input-group">
         <span class="input-group-addon">
-        <i class="material-icons">lock</i>
+            <i class="material-icons">lock</i>
         </span>
         <div class="form-line {{ $errors->has('password') ? ' error' : '' }}">
-            <input type="password" class="form-control" name="password" placeholder="Password" required>
+            <input type="password" class="form-control" name="password" value="{{old('password')}}" placeholder="Password" required>
         </div>
         @if ($errors->has('password'))
         <label id="name-error" class="error" for="name">{{ $errors->first('password') }}</label>
@@ -29,22 +29,22 @@
     </div>
     <div class="row">
         <div class="col-xs-8 p-t-5">
-            <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }} class="filled-in chk-col-pink d-none" id="rememberme">
+            <input type="checkbox" name="remember" class="filled-in chk-col-black d-none" id="rememberme">
             <label for="rememberme">Remember Me</label>
         </div>
         <div class="col-xs-4">
-            <button class="btn btn-success bg-pink waves-effect" type="submit">Sign In</button>
+            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
         </div>
     </div>
     <div class="row text-center">
-        <div class="col-sm-12 m-b-30 m-t-30">
+        <div class="m-b-20 m-t-20">
             <button class="btn btn-primary btn-lg waves-effect btn-social">
-                <i class="fa fa-facebook-f m-r-30"></i>Sign in with Facebook
+                <i class="fa fa-facebook-f m-r-20"></i>Sign in with Facebook
             </button>
         </div>
-        <div class="col-sm-12 m-b-30">
+        <div class="m-b-20">
             <button class="btn btn-danger btn-lg waves-effect btn-social">
-                <i class="fa fa-google m-r-30"></i>Sign in with Google
+                <i class="fa fa-google m-r-20"></i>Sign in with Google
             </button>
         </div>
     </div>
@@ -57,8 +57,8 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-12 text-center m-t-20">
-            <a href="{{ route('guests')}}" class="btn btn-success btn-lg waves-effect text-white">Continue as Guest</a>
+        <div class="col-sm-12 text-center m-t-15">
+            <a href="{{ route('guests')}}" class="btn btn-block btn-primary btn-lg bg-pink waves-effect">Continue as Guest</a>
         </div>
     </div>
 </form>
