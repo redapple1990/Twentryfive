@@ -4,7 +4,6 @@
         <!-- Menu -->
         <div class="menu">
             <ul class="list">
-                <li class="header">ARTIST/ACT</li>
                 <li {{Route::is('dashboard')? 'class=active':''}}>
                     <a href="{{route('dashboard')}}">
                         <i class="material-icons">dashboard</i>
