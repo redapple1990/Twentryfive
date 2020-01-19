@@ -47,7 +47,7 @@
             font-family: 'Material Icons';
             font-size: 24px;
             position: absolute;
-            top: 18px;
+            top: 13px;
             left: 20px;
             margin-right: 10px;
             @include transform(scale(0));
@@ -87,6 +87,8 @@
     .navbar-brand {
         display: flex;
         align-items: center;
+        height: 40px;
+        padding: 10px 15px;
     }
 }
 
@@ -96,12 +98,12 @@
             display: flex;
             align-items: center;
             padding: 7px 7px 2px 7px;
-            margin-top: 17px;
+            margin-top: 12px;
             margin-left: 5px;
         }
         .user-image img {
-            padding: 7px 7px 2px 7px;
-            margin-top: 4px;
+            padding: 4px 4px 4px 4px;
+            margin-top: 5px;
             margin-left: 5px;
             border-radius: 50%;
         }

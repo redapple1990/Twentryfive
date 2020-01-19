@@ -510,7 +510,7 @@ input[type=checkbox]:not(:disabled).tabbed:focus~.lever::after {
   font-family: 'Material Icons';
   font-size: 24px;
   position: absolute;
-  top: 18px;
+  top: 13px;
   left: 20px;
   margin-right: 10px;
   -webkit-transform: scale(0);
@@ -561,6 +561,8 @@ input[type=checkbox]:not(:disabled).tabbed:focus~.lever::after {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: 40px;
+  padding: 10px 15px;
 }
 
 .navbar-nav > li > a {
@@ -571,13 +573,13 @@ input[type=checkbox]:not(:disabled).tabbed:focus~.lever::after {
       -ms-flex-align: center;
           align-items: center;
   padding: 7px 7px 2px 7px;
-  margin-top: 17px;
+  margin-top: 12px;
   margin-left: 5px;
 }
 
 .navbar-nav > li .user-image img {
-  padding: 7px 7px 2px 7px;
-  margin-top: 4px;
+  padding: 4px 4px 4px 4px;
+  margin-top: 5px;
   margin-left: 5px;
   border-radius: 50%;
 }
@@ -3611,7 +3613,7 @@ a {
 }
 
 section.content {
-  margin: 100px 15px 0 315px;
+  margin: 100px 15px 0 265px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
@@ -9455,7 +9457,7 @@ fieldset[disabled] .form-control {
   font-family: 'Material Icons';
   font-size: 24px;
   position: absolute;
-  top: 18px;
+  top: 13px;
   left: 20px;
   margin-right: 10px;
   -webkit-transform: scale(0);
@@ -9506,6 +9508,8 @@ fieldset[disabled] .form-control {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: 40px;
+  padding: 10px 15px;
 }
 
 .navbar-nav > li > a {
@@ -9516,13 +9520,13 @@ fieldset[disabled] .form-control {
       -ms-flex-align: center;
           align-items: center;
   padding: 7px 7px 2px 7px;
-  margin-top: 17px;
+  margin-top: 12px;
   margin-left: 5px;
 }
 
 .navbar-nav > li .user-image img {
-  padding: 7px 7px 2px 7px;
-  margin-top: 4px;
+  padding: 4px 4px 4px 4px;
+  margin-top: 5px;
   margin-left: 5px;
   border-radius: 50%;
 }
@@ -10397,13 +10401,13 @@ fieldset[disabled] .form-control {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   font-family: "Roboto", sans-serif;
-  background: #fdfdfd;
-  width: 300px;
+  background: #343a40;
+  width: 250px;
   overflow: hidden;
   display: inline-block;
-  height: calc(100vh - 70px);
+  height: calc(100vh - 60px);
   position: fixed;
-  top: 70px;
+  top: 60px;
   left: 0;
   -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   -ms-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
@@ -10502,7 +10506,6 @@ fieldset[disabled] .form-control {
 .sidebar .menu {
   position: relative;
   overflow-y: auto;
-  height: 90vh;
 }
 
 .sidebar .menu .list {
@@ -10522,7 +10525,7 @@ fieldset[disabled] .form-control {
 }
 
 .sidebar .menu .list i.material-icons {
-  margin-top: 4px;
+  align-self: center;
 }
 
 .sidebar .menu .list .menu-toggle:after,
@@ -10560,7 +10563,7 @@ fieldset[disabled] .form-control {
 }
 
 .sidebar .menu .list a {
-  color: #747474;
+  color: #EBECEC;
   position: relative;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -10584,9 +10587,9 @@ fieldset[disabled] .form-control {
 
 .sidebar .menu .list a span {
   margin: 7px 0 7px 12px;
-  color: #333;
+  color: #EBECEC;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 18px;
   overflow: hidden;
 }
 
@@ -10606,6 +10609,7 @@ fieldset[disabled] .form-control {
   padding-left: 55px;
   padding-top: 7px;
   padding-bottom: 7px;
+  font-size: 16px;
 }
 
 .sidebar .menu .list .ml-menu li.active a.toggled:not(.menu-toggle) {
@@ -10966,7 +10970,7 @@ fieldset[disabled] .form-control {
 
 .search-bar .search-icon {
   position: absolute;
-  top: 20px;
+  top: 14px;
   left: 14px;
 }
 
@@ -10979,7 +10983,7 @@ fieldset[disabled] .form-control {
   position: absolute;
   cursor: pointer;
   font-size: 30px;
-  top: 16px;
+  top: 11px;
   right: 18px;
 }
 
@@ -10997,7 +11001,7 @@ fieldset[disabled] .form-control {
 .search-bar input[type="text"] {
   width: 100%;
   font-size: 16px;
-  padding: 25px 60px 23px 56px;
+  padding: 19px 60px 19px 56px;
   border: none;
 }
 

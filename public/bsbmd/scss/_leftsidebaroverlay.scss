@@ -20,13 +20,13 @@
 .sidebar {
     @include transition(all .5s);
     font-family: $sidebar-font-family;
-    background: #fdfdfd;
+    background: #343a40;
     width: 300px;
     overflow: hidden;
     display: inline-block;
     height: calc(100vh - 70px);
     position: fixed;
-    top: 70px;
+    top: 60px;
     left: 0;
     @include box-shadow(2px 2px 5px rgba(0, 0, 0, 0.1));
     z-index: 11 !important;
@@ -146,7 +146,7 @@
                 }
             }
             a {
-                color: #747474;
+                color: #EBECEC;
                 position: relative;
                 display: inline-flex;
                 vertical-align: middle;
@@ -164,9 +164,9 @@
                 }
                 span {
                     margin: 7px 0 7px 12px;
-                    color: #333;
+                    color: #EBECEC;
                     font-weight: bold;
-                    font-size: 14px;
+                    font-size: 18px;
                     overflow: hidden;
                 }
             }

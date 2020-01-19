@@ -37,7 +37,7 @@
                     <!-- User image -->
                     <li>
                         <div class="user-image" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src="{{url('images',Auth::user()->profiles?Auth::user()->profiles->avatar:'user.png')}}" width="50" height="50" alt="User" style="margin-top:10px;"/>
+                            <img src="{{url('images',Auth::user()->profiles?Auth::user()->profiles->avatar:'user.png')}}" width="50" height="50" alt="User"/>
                         </div>
                         <ul class="dropdown-menu pull-right">
                             <li {{ Route::is('profile.index')? 'class=active':'' }}><a href="{{ route('profile.index') }}"><i class="material-icons">person</i>Profile</a></li>

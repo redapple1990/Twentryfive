@@ -42,7 +42,7 @@
             </ul> 
         </div>
         <!-- #Menu -->
-        <!-- Footer -->
+        {{-- <!-- Footer -->
         <div class="legal">
             <div class="copyright">
                 &copy; 2020 <a href="javascript:void(0);">Jordan Loyd</a>.
@@ -51,7 +51,7 @@
                 <b>Version: </b> 1.0.0
             </div>
         </div>
-        <!-- #Footer -->
+        <!-- #Footer --> --}}
     </aside>
     <!-- #END# Left Sidebar -->
     <aside id="userightsidebar" class="right-sidebar" style="overflow: scroll;">
