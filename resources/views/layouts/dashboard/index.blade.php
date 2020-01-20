@@ -7,50 +7,41 @@
                         <h2>Inbox</h2>
                     </div>
                     <div class="body padding-0">
-                        <div class="table-responsive">
+                        <div class="">
                             @php $guestlists = Helper::getGuestList(); @endphp
                             <table class="table table-hover dashboard-task-infos m-b-0">
                                 <tbody>
                                 @foreach($guestlists as $key => $data)
-                                    <tr class="p-t-15 p-b-15">
-                                        <td style="vertical-align: middle;">
-                                            <input class="p-t-15 p-b-15" type="checkbox" checked="checked" />
-                                        </td>
-                                        <td class="p-t-15 p-b-15">
-                                            <div>
-                                                <img src="images/user.png" alt="User" width="30" height="30" class="img-circle">
-                                                <span>{{$data->guest_name}}</span>
+                                    <tr class="">
+                                        <td>
+                                            <div style="text-align: center;">
+                                                <img src="images/user.png" alt="User" width="50" height="50" class="img-circle">
+                                                <div style="font-weight: bold;padding-top: 5px;">{{$data->guest_name}}</div>
                                             </div>
                                         </td>
-                                        <td class="text-left p-t-15 p-b-15" style="vertical-align: middle;">
+                                        <td>
                                             @php $event_ddd = Helper::getEventNameForID($data->event_name); @endphp
-                                            <div>{{ $event_ddd }}</div>
+                                            <div style = "font-size: 16px;">{{ $event_ddd }}</div>
                                             @if($data->status == 'approved')
                                             <div class="progress">
-                                                <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                                    <span class="sr-only">80% Complete (success)</span>
+                                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
                                                 </div>
                                             </div>
                                             @endif
                                             @if($data->status == 'pending')
                                             <div class="progress">
-                                                <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                                    <span class="sr-only">80% Complete (success)</span>
+                                                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
                                                 </div>
                                             </div>
                                             @endif
                                             @if($data->status == 'declined')
                                             <div class="progress">
-                                                <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                                    <span class="sr-only">80% Complete (success)</span>
+                                                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
                                                 </div>
                                             </div>
                                             @endif
-                                        </td>
-                                        @php $dateinfo = $data->created_at->format('M d, Y');@endphp
-                                        <td class="text-center p-t-15 p-b-15" style="vertical-align: middle;">{{$dateinfo}}</td>
-                                        <td class="text-right p-t-15 p-b-15 p-l-0, p-r-0">
-                                            <i class="material-icons">keyboard_arrow_right</i>
+                                            @php $dateinfo = $data->created_at->format('M d, Y');@endphp
+                                            <div class="text-left p-t-10" style = "font-style: italic">{{$dateinfo}}</div>
                                         </td>
                                     </tr>
                                 @endforeach
