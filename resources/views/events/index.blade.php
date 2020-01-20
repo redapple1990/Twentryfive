@@ -43,7 +43,7 @@
                         </div>
                         <div class="body">                        	
                             <div class="table-responsive">
-                                <table class="table table-hover dataTable js-check-example">
+                                <table class="table table-bordered table-striped table-hover dataTable js-basic-example" role="grid">
                                     <thead>
                                         <tr>
                                             <th>Event</th>
@@ -52,8 +52,8 @@
                                             <th>Approved</th>
                                             <th>Pending</th>
                                             <th>Declined</th>
-                                            <th>Status</th>
-                                            <th>Detail</th>
+                                            <th>Public</th>
+                                            <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -68,7 +68,7 @@
                                             <td>{{$app_num}}</td>
                                             @php $app_num = Helper::getDeclinedForEvent($data->id); @endphp
                                             <td>{{$app_num}}</td>
-                                            <td class="justify-content-between align-items-center">
+                                            {{-- <td class="justify-content-between align-items-center">
                                                 <span>Public</span>
                                                 <ul style="list-style-type: none;" class="padding-0 margin-0">
                                                     <li class="dropdown">
@@ -81,9 +81,16 @@
                                                         </ul>
                                                     </li>
                                                 </ul>
+                                            </td> --}}
+                                            <td class="text-center py-0 align-middle">
+                                                {{-- <div class="col-xs-8 p-t-5"> --}}
+                                                    <input type="checkbox" id="remember_me" class="filled-in">
                                             </td>
-                                            <td>
-                                               <a href="{{ route('events/event', ['event' => $data->id]) }}"><span>More...</span></a>
+                                            <td class="text-center py-0 align-middle">
+                                                <div class="btn-group btn-group-sm" role="group">
+                                                    <a href="{{ route('events/event', ['event' => $data->id]) }}" class="btn btn-primary"><i class="material-icons">remove_red_eye</i></a>
+                                                    <a href="#" class="btn btn-danger"><i class="material-icons">delete</i></a>
+                                                </div>
                                             </td>                
                                         </tr>
                                     @endforeach

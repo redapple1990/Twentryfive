@@ -38,19 +38,19 @@
                         <div class="header d-flex justify-content-between align-items-center">
                             <h2>Contacts</h2>
                             <div class="pull-right">
-                                <a href="javascript:void(0);" data-toggle="modal" data-target="#newContact" style="height: 100%;/* border: 1px solid red; */padding: 7px 10px;background: #2b982b;color: white;border-radius: 50px;">Add Contacts</a>
+                                <a href="javascript:void(0);" data-toggle="modal" data-target="#newContact" style="height: 100%;/* border: 1px solid red; */padding: 7px 10px;background: #1f91f3;color: white;border-radius: 4px;">Add Contacts</a>
                             </div>
                         </div>
                         <div class="body">                        	
                             <div class="table-responsive">
-                                <table class="table table-hover dataTable js-basic-example">
+                                <table class="table table-bordered table-striped table-hover dataTable js-basic-example" role="grid">
                                     <thead>
                                         <tr>
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>Phone</th>
                                             <th>Created Date</th>
-                                            <th>Detail</th>
+                                            <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -60,10 +60,7 @@
                                             <td>{{ $data->email }}</td>
                                             <td>{{ $data->phone }}</td>
                                             <td>{{ $data->created_at }}</td>
-                                            <td>
-                                                {{-- <a href="javascript:void(0);" class="js-user-right-sidebar" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
-                                                    More...
-                                                </a> --}}
+                                            <td class="text-center py-0 align-middle">
                                                 <div class="btn-group btn-group-sm">
                                                     <a href="#" class="btn btn-primary"><i class="material-icons">remove_red_eye</i></a>
                                                     <a href="#" class="btn btn-danger"><i class="material-icons">delete</i></a>
