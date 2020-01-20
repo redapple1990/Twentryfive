@@ -31,7 +31,10 @@ class HomeController extends Controller
 
     public function newGuestStore(Request $request)
     {
-        GuestList::create(['event_name' => $request->eventname, 'guest_name' => $request->guestname, 'no_of_ticket' => $request->ticketnumber, 'affliation' => $request->affliation, 'type' => $request->type, 'status' => $request->status]);
+        if($request->eventname != null && $request->guestname != null && $request->ticketnumber != null && $request->affliation != null && $request->type != null && $request->status != null)
+        {
+            GuestList::create(['event_name' => $request->eventname, 'guest_name' => $request->guestname, 'no_of_ticket' => $request->ticketnumber, 'affliation' => $request->affliation, 'type' => $request->type, 'status' => $request->status]);
+        }        
 
         return redirect()->back();
     }

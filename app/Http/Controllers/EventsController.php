@@ -34,23 +34,26 @@ class EventsController extends Controller
 
     public function newEventStore(Request $request)
     {
-        $name = $request->event_name;
-        $location = $request->location;
+        if($request->event_name != null && $request->location != null && $request->event_date != null && $request->guestemplete != null)
+        {
+            $name = $request->event_name;
+            $location = $request->location;
 
-        $str = $request->event_date;
-        $a = explode(" ",$str);
-        $day = $a[1];
-        $month = date('m',strtotime($a[2]));
-        $year = $a[3];
-        $time = explode(":",$a[5]);
-        $hour = $time[0];
-        $min = $time[1];
-        $date = date("Y-m-d H:i:s",mktime($hour,$min,0,$month,$day,$year));
+            $str = $request->event_date;
+            $a = explode(" ",$str);
+            $day = $a[1];
+            $month = date('m',strtotime($a[2]));
+            $year = $a[3];
+            $time = explode(":",$a[5]);
+            $hour = $time[0];
+            $min = $time[1];
+            $date = date("Y-m-d H:i:s",mktime($hour,$min,0,$month,$day,$year));
 
-        $guestemplete = $request->guestemplete;
+            $guestemplete = $request->guestemplete;
 
-        Events::create(['name' => $name, 'location' => $location, 'datetime' => $date, 'templete' => $guestemplete]);
-
+            Events::create(['name' => $name, 'location' => $location, 'datetime' => $date, 'templete' => $guestemplete]);
+        }
+        
         return redirect()->back();
     }
 

@@ -23,7 +23,7 @@
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <!-- New Guest List Entry-->
-                    <li><a href="javascript:void(0);" data-toggle="modal" data-target="#newGuestList"><i class="material-icons m-r-10">person_add</i></a></li>
+                    <li><a href="javascript:void(0);" data-toggle="modal" data-target="#newGuestList"><i class="material-icons m-r-10">playlist_add</i></a></li>
                     <!-- #END# New Guest List Entry-->
                     <!-- New Evnet-->
                     <li><a href="javascript:void(0);" data-toggle="modal" data-target="#newEvent"><i class="material-icons m-r-10">event</i></a></li>
@@ -54,18 +54,17 @@
                         </ul>
                     </li>
                     <!-- #END# user image -->
-                    <!-- <li class="pull-right"><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="material-icons">more_vert</i></a></li> -->
                 </ul>
             </div>
         </div>
     </nav>
     <div class="modal fade" id="newEvent" tabindex="-1" role="dialog" style="display: none;">
         <div class="modal-dialog" role="document">
-            <div class="modal-content">
+            <div class="modal-content" style="background-color: #343A40;">
                 <form id="form_validation" action="{{ url('events/store') }}" method="POST" novalidate="novalidate">
                 {{ csrf_field() }}
                     <div class="modal-header">
-                        <h4 class="modal-title" id="largeModalLabel">New Event</h4>
+                        <h4 class="modal-title" id="largeModalLabel" style="color: white;">NEW EVENT</h4>
                     </div>
                     <div class="modal-body">
                         <div class="row form-group form-float">
@@ -110,8 +109,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-link waves-effect">Submit</button>
-                        <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
+                        <button type="submit" class="btn btn-primary waves-effect">Submit</button>
                     </div>
                 </form>
             </div>
@@ -119,11 +117,11 @@
     </div>
     <div class="modal fade" id="newGuestList" tabindex="-1" role="dialog" style="display: none;">
         <div class="modal-dialog" role="document">
-            <div class="modal-content">
+            <div class="modal-content" style="background-color: #343A40;">
                 <form id="form_validation" method="POST" action="{{ url('guest/store') }}" novalidate="novalidate">
                     {{ csrf_field() }}
                     <div class="modal-header">
-                        <h4 class="modal-title" id="largeModalLabel">New Guest List Entry</h4>
+                        <h4 class="modal-title" id="largeModalLabel" style="color: white;">NEW GUEST LIST ENTRY</h4>
                     </div>
                     <div class="modal-body">
                         <div class="row form-group form-float">
@@ -200,8 +198,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-link waves-effect">Submit</button>
-                        <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
+                        <button type="submit" class="btn btn-primary waves-effect">Submit</button>
                     </div>
                 </form>
             </div>
