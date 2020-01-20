@@ -77,57 +77,7 @@
             </div>
             <!-- #END# Vertical Layout -->
            
-        </div>
-
-        <div class="modal fade" id="newContact" tabindex="-1" role="dialog" style="display: none;">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <form id="form_validation" action="{{ url('contacts/store') }}" method="POST" novalidate="novalidate">
-                {{ csrf_field() }}
-                    <div class="modal-header">
-                        <h4 class="modal-title" id="largeModalLabel">New Contact</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row form-group form-float">
-                            <div class="col-md-3">
-                                <label class="form-label">Name</label>
-                            </div>
-                            <div class="col-md-9">
-                                <div class="form-line">   
-                                    <input type="text" class="form-control" name="guest_name" required="" aria-required="true">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row form-group form-float">
-                            <div class="col-md-3">
-                                <label class="form-label">Email</label>
-                            </div>
-                            <div class="col-md-9">
-                                <div class="form-line">   
-                                    <input type="text" class="form-control" name="guest_email" required="" aria-required="true">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row form-group form-float">
-                            <div class="col-md-3">
-                                <label class="form-label">Phone</label>
-                            </div>
-                            <div class="col-md-9">
-                                <div class="form-line">   
-                                    <input type="text" class="form-control" name="guest_phone" required="" aria-required="true">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-link waves-effect">Submit</button>
-                        <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    
+        </div>    
 @endsection
 
 @section('extra-script')

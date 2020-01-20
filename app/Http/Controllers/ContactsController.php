@@ -39,12 +39,15 @@ class ContactsController extends Controller
 
     public function newContactStore(Request $request)
     {
-        $name = $request->guest_name;
-        $email = $request->guest_email;
-        $phone = $request->guest_phone;
+        if($request->event_nguest_nameame != null && $request->guest_email != null && $request->guest_phone != null)
+        {
+            $name = $request->guest_name;
+            $email = $request->guest_email;
+            $phone = $request->guest_phone;
 
-        Guests::create(['name' => $name, 'email' => $email, 'phone' => $phone]);
-
+            Guests::create(['name' => $name, 'email' => $email, 'phone' => $phone]);
+        }
+        
         return redirect()->back();
     }
 }

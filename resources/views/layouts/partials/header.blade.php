@@ -25,6 +25,7 @@
                     <!-- New Guest List Entry-->
                     <li><a href="javascript:void(0);" data-toggle="modal" data-target="#newGuestList"><i class="material-icons m-r-10">playlist_add</i></a></li>
                     <!-- #END# New Guest List Entry-->
+                    <li><a href="javascript:void(0);" data-toggle="modal" data-target="#newContact"><i class="material-icons m-r-10">person_add</i></a></li>
                     <!-- New Evnet-->
                     <li><a href="javascript:void(0);" data-toggle="modal" data-target="#newEvent"><i class="material-icons m-r-10">event</i></a></li>
                     <!-- #END# New Event -->
@@ -194,6 +195,54 @@
                                     <option value="pending">Pending</option>
                                     <option value="declined">Declined</option>
                                 </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary waves-effect">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="newContact" tabindex="-1" role="dialog" style="display: none;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" style="background-color: #343A40;">
+                <form id="form_validation" action="{{ url('contacts/store') }}" method="POST" novalidate="novalidate">
+                {{ csrf_field() }}
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="largeModalLabel" style="color: white;">NEW CONTACT</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row form-group form-float">
+                            <div class="col-md-3">
+                                <label class="form-label">Name</label>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="form-line">   
+                                    <input type="text" class="form-control" name="guest_name" required="" aria-required="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group form-float">
+                            <div class="col-md-3">
+                                <label class="form-label">Email</label>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="form-line">   
+                                    <input type="text" class="form-control" name="guest_email" required="" aria-required="true">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group form-float">
+                            <div class="col-md-3">
+                                <label class="form-label">Phone</label>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="form-line">   
+                                    <input type="text" class="form-control" name="guest_phone" required="" aria-required="true">
+                                </div>
                             </div>
                         </div>
                     </div>
