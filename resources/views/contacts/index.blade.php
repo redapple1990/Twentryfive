@@ -61,9 +61,13 @@
                                             <td>{{ $data->phone }}</td>
                                             <td>{{ $data->created_at }}</td>
                                             <td>
-                                                <a href="javascript:void(0);" class="js-user-right-sidebar" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
+                                                {{-- <a href="javascript:void(0);" class="js-user-right-sidebar" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
                                                     More...
-                                                </a>
+                                                </a> --}}
+                                                <div class="btn-group btn-group-sm">
+                                                    <a href="#" class="btn btn-primary"><i class="material-icons">remove_red_eye</i></a>
+                                                    <a href="#" class="btn btn-danger"><i class="material-icons">delete</i></a>
+                                                </div>
                                             </td>
                                         </tr>
                                     @endforeach

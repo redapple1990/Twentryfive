@@ -12,7 +12,6 @@
                             <table class="table table-hover dashboard-task-infos m-b-0">
                                 <tbody>
                                 @foreach($guestlists as $key => $data)
-                                    <tr class="">
                                         <td>
                                             <div style="text-align: center;">
                                                 <img src="images/user.png" alt="User" width="50" height="50" class="img-circle">

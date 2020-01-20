@@ -10613,18 +10613,19 @@ fieldset[disabled] .form-control {
 }
 
 .sidebar .menu .list .ml-menu li.active a.toggled:not(.menu-toggle) {
-  font-weight: 600;
-  margin-left: 5px;
+  font-weight: normal;
 }
 
 .sidebar .menu .list .ml-menu li.active a.toggled:not(.menu-toggle):before {
-  content: '\E315';
+  content: '\25B6';
   font-family: 'Material Icons';
   position: relative;
   font-size: 21px;
+  color: #4169e1;
   height: 20px;
-  top: -5px;
+  top: -8px;
   right: 0px;
+  margin-right: 5px;
 }
 
 .sidebar .menu .list .ml-menu li .ml-menu li a {
