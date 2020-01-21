@@ -37,9 +37,6 @@
                     <div class="card">
                         <div class="header d-flex justify-content-between align-items-center">
                             <h2>Contacts</h2>
-                            <div class="pull-right">
-                                <a href="javascript:void(0);" data-toggle="modal" data-target="#newContact" style="height: 100%;/* border: 1px solid red; */padding: 7px 10px;background: #1f91f3;color: white;border-radius: 4px;">Add Contacts</a>
-                            </div>
                         </div>
                         <div class="body">                        	
                             <div class="table-responsive">

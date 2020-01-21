@@ -25,7 +25,7 @@ class Helper
 
     public static function getGuestList()
     {
-        $guestlist = GuestList::all();
+        $guestlist = GuestList::orderBy('created_at', 'DESC')->get();
         return  $guestlist;
     }
 
