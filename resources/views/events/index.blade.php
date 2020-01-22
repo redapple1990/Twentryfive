@@ -91,7 +91,7 @@
                                                     <a href="{{ route('events/event', ['event' => $data->id]) }}" class="btn btn-primary"><i class="material-icons">remove_red_eye</i></a>
                                                     <a href="#" class="btn btn-danger"><i class="material-icons">delete</i></a>
                                                 </div>
-                                            </td>                
+                                            </td>
                                         </tr>
                                     @endforeach
                                     </tbody>

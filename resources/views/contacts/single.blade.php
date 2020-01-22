@@ -33,111 +33,153 @@
 
 @section('content')
         <div class="container-fluid">
-
-            <!-- Vertical Layout -->
             <div class="row clearfix">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="card">
-                        <div class="header">
-                            <h2>Single of Events</h2>
-                            <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
-                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li><a href="javascript:void(0);">Action</a></li>
-                                        <li><a href="javascript:void(0);">Another action</a></li>
-                                        <li><a href="javascript:void(0);">Something else here</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
+                <div class="card margin-0 masked-input">
+            <form id="form_validation" method="POST" novalidate="novalidate">
+                <div class="header">
+                    <div class="row d-flex align-items-center">
+                        <div class="col-md-3">
+                            <label class="form-label">Photo</label>
                         </div>
-                        <div class="body">                        	
-                            <div class="table-responsive">
-                                <table class="table table-bordered table-hover dataTable js-basic-example">
-                                    <thead>
-                                        <tr>
-                                        	<th width="3%">
-                                                <input type="checkbox" checked="checked"/>
-                                            </th>
-                                            <th>FirstName</th>
-                                            <th>LastName</th>
-                                            <th>Status</th>
-                                            <th>UserName</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <input type="checkbox" checked="checked" />
-                                            </td>
-                                            <td>Event Sample</td>
-                                            <td>Date</td>
-                                            <td class="d-flex justify-content-between align-items-center">
-                                                <span>On</span>
-                                                <ul style="list-style-type: none;" class="padding-0 margin-0">
-                                                    <li class="dropdown">
-                                                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                                            <i class="material-icons">keyboard_arrow_down</i>
-                                                        </a>
-                                                        <ul class="dropdown-menu pull-right">
-                                                            <li><a href="javascript:void(0);">ON</a></li>
-                                                            <li><a href="javascript:void(0);">Off</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                            <td>2</td>
-                                        </tr>
-                                        <tr>
-                                            <td><input type="checkbox" checked="checked" /></td>
-                                            <td>Event Sample</td>
-                                            <td>Date</td>
-                                            <td class="d-flex justify-content-between align-items-center">
-                                                <span>OFF</span>
-                                                <ul style="list-style-type: none;" class="padding-0 margin-0">
-                                                    <li class="dropdown">
-                                                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                                            <i class="material-icons">keyboard_arrow_down</i>
-                                                        </a>
-                                                        <ul class="dropdown-menu pull-right">
-                                                            <li><a href="javascript:void(0);">ON</a></li>
-                                                            <li><a href="javascript:void(0);">Off</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                            <td>2</td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <input type="checkbox" class="fill-in">
-                                            </td>
-                                            <td>Event Samples</td>
-                                            <td>Date</td>
-                                            <td class="d-flex justify-content-between align-items-center">
-                                                <span>On</span>
-                                                <ul style="list-style-type: none;" class="padding-0 margin-0">
-                                                    <li class="dropdown">
-                                                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                                            <i class="material-icons">keyboard_arrow_down</i>
-                                                        </a>
-                                                        <ul class="dropdown-menu pull-right">
-                                                            <li><a href="javascript:void(0);">ON</a></li>
-                                                            <li><a href="javascript:void(0);">Off</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </td>
-                                            <td>2</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                        <div class="col-md-9">
+                            <img src="../images/user.png" width="60" height="60" alt="User" class="img-circle">
+                            <button type="button" class="btn btn-danger m-l-50">Remove</button>
+                            <button type="button" class="btn btn-success m-l-20">Update</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="body">
+                    <div class="row form-group form-float">
+                        <div class="col-md-3">
+                            <label class="form-label">First Name</label>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="form-line">   
+                                <input type="text" class="form-control" name="Eventname" required="" aria-required="true">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group form-float">
+                        <div class="col-md-3">
+                            <label class="form-label">Last Name</label>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="form-line">   
+                                <input type="text" class="form-control" name="location" required="" aria-required="true">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group form-float">
+                        <div class="col-md-3">
+                            <label class="form-label">Company</label>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="form-line">   
+                                <input type="text" class="form-control" name="location" required="" aria-required="true">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group form-float">
+                        <div class="col-md-3">
+                            <label class="form-label">Title</label>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="form-line">   
+                                <input type="text" class="form-control" name="location" required="" aria-required="true">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group form-float">
+                        <div class="col-md-3">
+                            <label class="form-label">Birthday</label>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="form-line" id="bs_datepicker_container">   
+                                <input type="text" class="form-control" name="location" required="" aria-required="true">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group form-float">
+                        <div class="col-md-3">
+                            <label class="fo
+                            rm-label">Gender</label>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="form-group">
+                                <input type="radio" name="Gender" id="unspecified" class="with-gap">
+                                <label for="unspecified">Unspecified</label>
+    
+                                <input type="radio" name="Gender" id="male" class="with-gap">
+                                <label for="male" class="m-l-20">male</label>
+
+                                <input type="radio" name="Gender" id="female" class="with-gap">
+                                <label for="female" class="m-l-20">Female</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group form-float">
+                        <div class="col-md-3">
+                            <label class="form-label">note</label>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="form-line">   
+                                <textarea name="note" id="note" cols="50" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group form-float">
+                        <div class="col-md-3">
+                            <label class="form-label">Home</label>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="form-line d-flex align-items-center">
+                                <i class="material-icons font-20 m-r-10">email</i>  
+                                <input type="text" class="form-control email" name="email" placeholder="Ex: example@example.com">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group form-float">
+                        <div class="col-md-3">
+                            <label class="form-label">moblie</label>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="form-line d-flex align-items-center">
+                                <i class="material-icons font-20 m-r-10">phone_iphone</i>
+                                <input type="text" class="form-control mobile-phone-number" placeholder="Ex: +00 (000) 000-00-00">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group form-float">
+                        <div class="col-md-3">
+                            <label class="form-label">work</label>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="form-line d-flex align-items-center">
+                                <i class="material-icons font-20 m-r-10">phone</i>
+                                <input type="text" class="form-control mobile-phone-number" name="guestemplete" placeholder="Ex: +00 (000) 000-00-00" required="" aria-required="true">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group form-float">
+                        <div class="col-md-3">
+                            <label class="form-label">Adress</label>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="form-line d-flex align-items-center">
+                                <i class="material-icons font-20 m-r-10">place</i>
+                                <input type="text" class="form-control" name="guestemplete" required="" aria-required="true">
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="footer">
+                    <a href="" class=" d-flex align-items-center">
+                        <i class="material-icons m-r-10">add_box</i>
+                        Add Field 
+                    </a>
+                </div>
+            </form>
+        </div>
             </div>
             <!-- #END# Vertical Layout -->
         </div>

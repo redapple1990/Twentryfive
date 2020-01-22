@@ -34,7 +34,7 @@ class ContactsController extends Controller
 
     public function single()
     {
-        return view('events.single');
+        return view('contacts.single');
     }
 
     public function newContactStore(Request $request)
@@ -46,6 +46,20 @@ class ContactsController extends Controller
             $phone = $request->guest_phone;
 
             Guests::create(['name' => $name, 'email' => $email, 'phone' => $phone]);
+        }
+        
+        return redirect()->back();
+    }
+
+    public function DetailStore(Request $request)
+    {
+        if($request->cBirthday != null && $request->cGender != null && $request->cCompany != null && $request->cEmail != null && $request->cMobile != null && $request->cOffice != null && $request->cNotes != null)
+        {
+            $str = $request->cBirthday;
+            $a = explode("/",$str);
+            $date = date("Y-m-d",mktime($a[2],$a[0],$a[1]));
+
+           Guests::where('email', $request->cEmail)->update(['birthday' => $date,'gender' => $request->cGender, 'company' => $cCompany, 'email' => $cEmail, 'phone' => $cMobile, 'office' => $cOffice, 'notes' => $cNotes]);
         }
         
         return redirect()->back();

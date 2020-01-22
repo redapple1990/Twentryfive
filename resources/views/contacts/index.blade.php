@@ -59,7 +59,7 @@
                                             <td>{{ $data->created_at }}</td>
                                             <td class="text-center py-0 align-middle">
                                                 <div class="btn-group btn-group-sm">
-                                                    <a href="#" class="btn btn-primary"><i class="material-icons">remove_red_eye</i></a>
+                                                    <a href="javascript:void(0);" data-toggle="modal" data-target="#contactdetail" class="btn btn-primary"><i class="material-icons">remove_red_eye</i></a>
                                                     <a href="#" class="btn btn-danger"><i class="material-icons">delete</i></a>
                                                 </div>
                                             </td>
@@ -73,8 +73,55 @@
                 </div>
             </div>
             <!-- #END# Vertical Layout -->
-           
         </div>    
+
+        <div class="modal fade" id="contactdetail" tabindex="-1" role="dialog" style="display: none;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" style="background-color: #343A40;">
+            <form id="form_validation" method="POST" novalidate="novalidate">
+                <div class="header">
+                </div>
+                <div class="body">
+                    <div class="col-md-12 m-t-20" style = "text-align:center;">
+                        <img src="../images/user.png" width="150" height="150" alt="User" class="img-circle">
+                    </div>
+                    <div class="col-md-12 m-t-20" style = "text-align:center;">
+                        <label class="form-label" style = "font-size:20px; color:#EBECEC;">Timson Jhons</label>
+                    </div>  
+                    <div class="col-md-9 m-t-20">
+                        <div class="form-line" id="bs_datepicker_container">   
+                            <input type="text" class="form-control" placeholder = "Birthday" name="cBirthday" required="" aria-required="true">
+                        </div>
+                    </div>
+                    <div class="col-md-3 m-t-20">
+                        <select class="form-control bootstrap-select" name="cGender" style="display: none;">
+                            <option value="1">Male</option>
+                            <option value="0">Female</option>
+                        </select>
+                    </div>
+                    <div class="col-md-12 m-t-15" style = "text-align:center;">
+                        <input type="text" class="form-control" placeholder = "Company" name="cCompany" required="" aria-required="true">
+                    </div>
+                    <div class="col-md-12 m-t-15" style = "text-align:center;">
+                        <input type="text" class="form-control" placeholder = "Email: example@example.com" name="cEmail" required="" aria-required="true">
+                    </div>
+                    <div class="col-md-12 m-t-15" style = "text-align:center;">
+                        <input type="text" class="form-control" placeholder = "Mobile: +00 (000) 000-00-00" name="cMobile" required="" aria-required="true">
+                    </div>
+                    <div class="col-md-12 m-t-15" style = "text-align:center;">
+                        <input type="text" class="form-control" placeholder = "Office: +00 (000) 000-00-00" name="cOffice" required="" aria-required="true">
+                    </div>
+                    <div class="col-md-12 m-t-15 m-b-40">
+                        <input type="text" class="form-control" placeholder = "Notes" name="cNotes" required="" aria-required="true">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary waves-effect">Update</button>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @section('extra-script')

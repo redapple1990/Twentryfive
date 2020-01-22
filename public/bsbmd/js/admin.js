@@ -185,33 +185,6 @@ $.AdminBSB.rightSideBar = {
         return $('.right-sidebar').hasClass('open');
     }
 }
-$.AdminBSB.userightSideBar = {
-        activate: function() {
-            var _this = this;
-            var $sidebar = $('#userightsidebar');
-            var $overlay = $('.overlay');
-
-            //Close sidebar
-            $(window).click(function(e) {
-                var $target = $(e.target);
-                if (e.target.nodeName.toLowerCase() === 'i') { $target = $(e.target).parent(); }
-
-                if (!$target.hasClass('js-user-right-sidebar') && _this.isOpen() && $target.parents('#userightsidebar').length === 0) {
-                    if (!$target.hasClass('bars')) $overlay.fadeOut();
-                    $sidebar.removeClass('user-right-sidebar');
-                }
-            });
-
-            $('.js-user-right-sidebar').on('click', function() {
-                $sidebar.toggleClass('user-right-sidebar');
-                if (_this.isOpen()) { $overlay.fadeIn(); } else { $overlay.fadeOut(); }
-            });
-        },
-        isOpen: function() {
-            return $('.right-sidebar').hasClass('user-right-sidebar');
-        }
-    }
-    //==========================================================================================================================
 
 /* Searchbar - Function ================================================================================================
  *  You can manage the search bar
@@ -475,7 +448,6 @@ $(function() {
     $.AdminBSB.browser.activate();
     $.AdminBSB.leftSideBar.activate();
     $.AdminBSB.rightSideBar.activate();
-    $.AdminBSB.userightSideBar.activate();
     $.AdminBSB.navbar.activate();
     $.AdminBSB.dropdownMenu.activate();
     $.AdminBSB.input.activate();
