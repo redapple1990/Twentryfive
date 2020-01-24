@@ -209,7 +209,7 @@
     <div class="modal fade" id="newContact" tabindex="-1" role="dialog" style="display: none;">
         <div class="modal-dialog" role="document">
             <div class="modal-content" style="background-color: #343A40;">
-                <form id="form_validation" action="{{ url('contacts/store') }}" method="POST" novalidate="novalidate">
+                <form id="form_validation" action="{{ url('contacts/detailstore') }}" method="POST" novalidate="novalidate">
                 {{ csrf_field() }}
                     <div class="modal-header">
                         <h4 class="modal-title" id="largeModalLabel" style="color: white;">NEW CONTACT</h4>
